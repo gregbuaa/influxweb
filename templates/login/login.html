@@ -1,0 +1,30 @@
+{% extends 'login/base.html' %}
+{% load staticfiles %}
+{% block title %}登录{% endblock %}
+
+{% block content_extends %}
+
+<div class="middle-box text-center loginscreen  animated fadeInDown">
+    <div>
+        <h2>欢迎登录</h2>
+
+        <form class="m-t" role="form" action="{{ request.get_full_path  }}" method="post" target='_parent'>
+            {% csrf_token %}
+            <div class="form-group">
+                {{ login_form.username}}
+            </div>
+            <div class="form-group">
+                {{ login_form.password }}
+            </div>
+            <div class="form-group">
+                {{ login_form.captcha.errors }}
+                {{login_form.message}}
+                {{ login_form.captcha.label_tag }}
+                {{ login_form.captcha }}
+            </div>
+            <button type="reset" class="btn btn-default pull-left">重置</button>
+            <button type="submit" class="btn btn-primary pull-right">提交</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

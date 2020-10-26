@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>美国国会与世界政情信息库</title>
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="/static/hplus-admin/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="/static/hplus-admin/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/static/hplus-admin/css/animate.min.css" rel="stylesheet">
+    <link href="/static/hplus-admin/css/style.min.css?v=4.0.0" rel="stylesheet">
+    <base target="_blank">
+
+    {% block head_extends %}{% endblock %}
+</head>
+
+<body class="gray-bg top-navigation">
+    <div id="wrapper">
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom white-bg">
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <div class="navbar-header">
+                        <button aria-controls="navbar" aria-expanded="false" data-target="#navbar"
+                            data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                            <i class="fa fa-reorder"></i>
+                        </button>
+                        <a href="" class="navbar-brand">美国国会与世界政情信息库</a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="navbar">
+                        <ul class="nav navbar-top-links navbar-right">
+                            {% if request.session.is_login %}
+                            <li><a>当前在线：{{ request.session.user_name }}</a></li>
+                            <li><a href="{% url 'logout' %}">登出</a></li>
+                            {% else %}
+                            <li><a href="{% url 'login' %}">登录</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- 在此模块添加内容 -->
+    {% block content_extends %}{% endblock %}
+</body>
+
+</html>
