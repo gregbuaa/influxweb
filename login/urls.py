@@ -18,7 +18,7 @@ from . import views
 from .utils import login_required
 
 urlpatterns = [
-    path('/test',login_required(views.hello),name='hello'),
+    path('test',login_required(views.hello),name='hello'),
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
     path('captcha', include('captcha.urls'))  # 增加这一行
