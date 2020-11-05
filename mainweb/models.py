@@ -85,6 +85,19 @@ class CaptchaCaptchastore(models.Model):
         db_table = 'captcha_captchastore'
 
 
+class Deviceinfo(models.Model):
+    device_name = models.CharField(primary_key=True, max_length=255)
+    device_chinese_name = models.CharField(max_length=255, blank=True, null=True)
+    data_name = models.CharField(max_length=255)
+    data_chinese_name = models.CharField(max_length=255, blank=True, null=True)
+    table_name = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'deviceinfo'
+        unique_together = (('device_name', 'data_name'),)
+
+
 class DjangoAdminLog(models.Model):
     action_time = models.DateTimeField()
     object_id = models.TextField(blank=True, null=True)

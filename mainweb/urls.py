@@ -18,6 +18,7 @@ from . import views
 from login.utils import login_required
 
 urlpatterns = [
+    path('',login_required(views.load_home), name="home"),
     path('load_tables_info',views.load_tables_info,name='load_tables_info'),
     path('load_site_table',views.load_site_table,name='load_site_table'),
     path('load_config_table',views.load_config_table,name='load_config_table'),
