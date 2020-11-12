@@ -21,6 +21,7 @@
 <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/style.css" />
 
+
 <!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
@@ -28,6 +29,9 @@
 <!--/meta 作为公共模版分离出去-->
 
 <title>数据库管理系统</title>
+
+
+
 </head>
 <body>
 <!--_header 作为公共模版分离出去-->
@@ -78,7 +82,6 @@
 </div>
 </div>
 <script src="{% static 'h-ui/js/vue.js' %}"></script>
-
 <style>
 *{
 	box-sizing: border;
@@ -169,6 +172,9 @@ ul.l_tree:before {
 </header>
 
 <aside class="Hui-aside">
+	<nav class="breadcrumb">
+		<span class="c-666">所有数据库</span> 
+		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <table>
   <tr>
     <td height="50%">
@@ -209,16 +215,7 @@ ul.l_tree:before {
 					// console.log(item.name)
 					// console.log(item.database)
 					// console.log(item.site_no)
-					data = {'site_no':item.site_no, "database":item.database, 'table_name':item.name,'table_chinese_name':item.chinese_name}
-					$.ajax({
-						url:"{% url 'load_site_table' %}",
-						type:"GET",
-						data:data,
-						success:function(result) {
-							// console.log(result)
-							show_influx_table(result)
-						}
-					})
+					on_click_influx_table(item.site_no, item.database, item.name, item.chinese_name)
 				}
 			}
 		});
@@ -262,16 +259,7 @@ ul.l_tree:before {
 						return;
 					}
 					// console.log(item.name)
-					data = {'table':item.name,'table_chinese_name':item.chinese_name}
-					$.ajax({
-						url:"{% url 'load_config_table' %}",
-						type:"GET",
-						data:data,
-						success:function(result) {
-							// console.log(result)
-							show_config_table(result)
-						}
-					})
+					on_click_config_table(item.name, item.chinese_name)
 				}
 			}
 		});
@@ -288,10 +276,15 @@ ul.l_tree:before {
 <section class="Hui-article-box">
 	<nav class="breadcrumb">
 		<span class="c-666">数据展示</span> 
-		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+		<button type="button" class="btn btn-default" id="addRowbtn">添加行</button>
+			<button type="button" class="btn btn-default" id="saveRowbtn">保存</button>
+			<button type="button" class="btn btn-default" id="dropbtn">丢弃修改</button>
+		</nav>
 	<div class="Hui-article">
 		<article class="cl pd-20" style="width: 1200px">
-			<table class="table table-border table-bordered table-bg" id="show_data" />
+			
+			<!-- <table class="table table-border table-bordered table-bg" id="show_data" /> -->
+			<table class="table table-striped table-hover" id="reportTable"></table>
 	
 
 </article>
@@ -304,11 +297,72 @@ ul.l_tree:before {
 <script type="text/javascript" src="{% static 'lib/layer/2.4/layer.js' %}"></script>
 <script type="text/javascript" src="{% static 'h-ui/js/H-ui.js' %}"></script> 
 <script type="text/javascript" src="{% static 'h-ui.admin/js/H-ui.admin.page.js' %}"></script>
+<!-- <script type="text/javascript" src="/static/bootstrap-3.3.7/plus/import.inc.js"></script> -->
+<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table-zh-CN.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table-edit.js"></script>
+<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/bootstrap-select.js"></script>
+<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="/static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap-3.3.7/js/html5shiv.min.js"></script>
+<link rel='stylesheet' type='text/css' href="/static/bootstrap-3.3.7/plus/table/bootstrap-table.min.css"></script></link>
+<!-- <link rel='stylesheet' type='text/css' href="/static/bootstrap-3.3.7/css/bootstrap.min.css"></link> -->
+<link rel='stylesheet' type='text/css' href="/static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.css"></link>
+<script>
+	$.ajaxSetup({
+		data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+	})
+</script>
 <!--/_footer /作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript">
-	site_tables = []
+
+		current_config = {
+			database_type: "mysql",
+			table_name:"",
+			table_chinese_name:"",
+			site_no:"",
+			database:""
+		}
+
+		// current_database_type = "mysql"
+		// current_config_table_name = ""  //当前点击的表名
+		// current_config_table_chinese_name = "" //当前点击的表中文名
+		function on_click_config_table(name,chinese_name){
+			data = {'table':name,'table_chinese_name':chinese_name}
+					$.ajax({
+						url:"{% url 'load_config_table' %}",
+						type:"GET",
+						data:data,
+						success:function(result) {
+							// console.log(result)
+							current_config.database_type = "mysql"
+							current_config.table_name = name
+							current_config.table_chinese_name = chinese_name
+							// console.log(current_table_name,current_table_chinese_name)
+							show_config_table(data, result)
+						}
+					})
+		}
+		function on_click_influx_table(site_no, database, name, chinese_name){
+			data = {'site_no':site_no, "database":database, 'table_name':name,'table_chinese_name':chinese_name}
+					$.ajax({
+						url:"{% url 'load_site_table' %}",
+						type:"GET",
+						data:data,
+						success:function(result) {
+							current_config.database_type = "influx"
+							current_config.table_name = name
+							current_config.table_chinese_name = chinese_name
+							current_config.site_no = site_no
+							console.log(result);
+							show_influx_table(data, result)
+						}
+					})
+		}
+
 		$(document).ready(function(){ 
 			data = {}
 			$.ajax({
@@ -316,7 +370,7 @@ ul.l_tree:before {
             type:"GET",
             data:data,
 			success:function (result) { // result is String
-				console.log(result)
+				// console.log(result)
 				site_tables = result['site_tables']
 				config_tables = result['config_tables']
 
@@ -346,59 +400,261 @@ ul.l_tree:before {
 		});
 	})
 
-	// 点击表名之后，返回表的部分数据，用于表格展示
-	function show_influx_table(result) {
-		// console.log(result)
-		show_config_table(result)
-	}
+			var all_modify_index = new Set()
+			var current_table_name = ""
+			// var current_data_format = {}
+			function set_report_table(result) {
 
-	function show_config_table(result) {
-		// console.log(result)
-		table_name = result['table_name']
-		table_data = result['table_data']
-		chinese_title = result['chinese_title']
+				table_name = result['table_name'] //一个名字
+				table_chinese_name = result['table_chinese_name'] //一个名字
+				current_table_name = table_name
+				table_data = result['table_data']
+				chinese_title = result['chinese_title']
+				var title_filed = []
 
-		var attribute_list = []
-		var realtime_list = []
-		
-		str = "<thead><tr><th colspan='11' scope='col'>"+table_name+"</th></tr><tr class='text-c'>"
-		$.each(chinese_title, function(index, item){
-			// console.log(index,item)
-			
-			attribute_list.push(item["domain_name"])
-			// console.log(item['isrealtime'])
-			if(item['isrealtime']==1){
-				str+= "<th><font color='red'>"+item['domain_chinese_name']+"</font></th>"
-				realtime_list.push(item['domain_name'])
-			}else{
-				str+="<th>"+item['domain_chinese_name']+"</th>"
+				$.each(chinese_title, function(index, item){
+					// var edited = true;
+					// current_data_format[item['domain_name']] = "-"
+					
+					if(item['modified']==0){
+						if(item['domaintype']=="datetime") {
+							title_filed.push({field:String(item['domain_name']),edit:{
+							type:'date',//日期
+							required:true,
+							click:function(){
+								
+							}
+						},title:String(item['domain_chinese_name']),align:"center"});
+						}else if(item['isrealtime']==1){
+							title_filed.push({field: String(item['domain_name']),title: String(item['domain_chinese_name']),align:"center",
+							cellStyle: function (value,row,index){
+								return {css: {"color": "red","font-weight":"bloder"}};
+							} })
+						}else
+						{
+							title_filed.push({field: String(item['domain_name']),title: String(item['domain_chinese_name']),align:"center",sortable:true })
+						}
+						
+						
+					}else{
+						title_filed.push({field: String(item['domain_name']),title: String(item['domain_chinese_name']),align:"center",edit:false,sortable:true })
+					}
+					// console.log(edited)
+					
+				});
+				if(current_config.database_type=="mysql") {
+					title_filed.push({field:"del_field",title:"删除数据",align:"center",formatter:function(value,row,rowIndex){
+							var strHtml = '<a href="javascript:void(0);" onclick="removeRow('+rowIndex+')">删除</a>';
+							return strHtml;
+						},edit:false})
+				}
+
+
+							//编辑表格
+				$('#reportTable').bootstrapTable({
+					method: 'get',
+					editable:true,//开启编辑模式
+					clickToSelect: true,
+					columns: [
+						[
+							{colspan:16,title:table_chinese_name,align:"center"}
+						],
+						title_filed
+						// [
+						
+						// {field:"table_name",title:"设备号",align:"center"},	
+						
+						// {field:"user_company",edit:{
+						// 					type:'select',//下拉框
+						// 					//url:'user/getUser.htm',
+						// 					data:[{id:1,text:'MODBUS'},{id:2,text:'M-BUS'}],
+						// 					valueField:'id',
+						// 					textField:'text',
+						// 					onSelect:function(val,rec){
+						// 						console.log(val,rec);
+						// 					}
+						// },title:"设备类型",align:"center",width:"200px"},
+						
+						// {field:"type",title:"传感器编号",align:"center"},
+						// {field:"table_chinese_name",title:"该传感器属于的锅炉房ID",align:"center"},
+						// {field:"userstatus_usertype",title:"该传感器属于的锅炉ID",align:"center"},
+						// {field:"userstatus_package_id",title:"该传感器数据属于的实体种类",align:"center"},
+							
+						// {field:"user_dates",edit:{
+						// 	type:'date',//日期
+						// 	required:true,
+						// 	click:function(){
+								
+						// 	}
+						// },title:"时间戳",align:"center"},
+							
+						// {field:"userstatus_end_time",title:"删除数据",align:"center",formatter:function(value,row,rowIndex){
+						// 	var strHtml = '<a href="javascript:void(0);" onclick="removeRow('+rowIndex+')">删除</a>';
+						// 	return strHtml;
+						// },edit:false}
+						// ]
+					],
+					onClickRow: function (row,$element) {
+						var index = $element.data('index');
+						console.log(row)
+						current_table_name = table_name
+						all_modify_index.add(index)				
+					},
+					data: table_data
+				}); 
+
 			}
-		});
-		str+= "</tr></thead><tbody>"
-		
-		// console.log(attribute_list)
 
-		$.each(table_data, function(index,item){
-			str += "<tr class='text-c'>"
-			for(var i = 0; i < attribute_list.length; i++){
-				if($.inArray(attribute_list[i], realtime_list) >=0){
-					str+= "<td><strong><font color='red' size='2'>"+item[attribute_list[i]]+"</font></strong></td>"
-				}else{
-					str+= "<td>"+item[attribute_list[i]]+"</td>"
+			
+
+			
+			$('#addRowbtn').click(function(){
+				var data= {}
+				// $.extend(true, data, current_data_format);
+				// console.log(data)
+				$('#reportTable').bootstrapTable('append',data);
+				$('#reportTable').bootstrapTable('scrollTo', 'bottom');
+				// var showdiv = document.getElementById("reportTable")
+				// showdiv.scrollTop = showdiv.scrollHeight
+				
+			});
+
+			$('#saveRowbtn').click(function(){
+				if(current_config.database_type == "mysql") {
+					if(window.confirm('你确定要保存吗？保存完后不可恢复！')){
+							if(all_modify_index.size==0) {
+								alert("目前未做任何更改！");
+							} else {
+								save_data(current_table_name, all_modify_index);
+							}				
+						return true;
+					}else{
+						//alert("取消");
+						return false;
+					}
 				}
 				
-			}
-			str+="</tr>"
-		});
+				// console.log(all_modify_data)
+			});
 
-		str+= "</tbody>"
-		$('#show_data').html(str)
+			$('#dropbtn').click(function(){
+				if(current_config.table_name==""){
+					return;
+				}
+				if(current_config.database_type == "mysql") {
+					if(window.confirm('你确定要丢弃已修改的内容吗？')){
+					// save_data(current_table_name, all_modify_index)
+					on_click_config_table(current_config.table_name,current_config.table_chinese_name);
+					all_modify_index = new Set();
+                 return true;
+              }else{
+                 //alert("取消");
+                 return false;
+             }
+				// console.log(all_modify_data)
+		}
+				
+			});
+
+			$('.form_datetime').datetimepicker({
+				weekStart: 1,
+				todayBtn:  1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 2,
+				forceParse: 0,
+				language:'zh-CN',
+				format: 'yyyy-mm-dd hh:ii:ss',
+				pickerPosition: 'bottom-left',
+				showMeridian: 1
+			});
+    	// });
+		function removeRow(rowIndex){
+			if(current_config.database_type == "mysql") {
+				if(window.confirm('你确定要删除这条记录吗？')){
+					
+					var rows= $('#reportTable').bootstrapTable('getData',useCurrentPage=true)[rowIndex];
+					console.log(rows);
+					delete_config_data(current_config.table_name,rows);
+
+					$('#reportTable').bootstrapTable('removeRow',rowIndex);
+					return true;
+				}else{
+					//alert("取消");
+					return false;
+				}
+			}
+			
+		}
+
+	// 点击表名之后，返回表的部分数据，用于表格展示
+	function show_influx_table(data, result) {
+		$("#reportTable").bootstrapTable(('destroy'));
+		set_report_table(result)
 	}
 
+	function delete_config_data(table_name,row){
 
+		var data = {modify_row: JSON.stringify(row),table_name:table_name}
+		$.ajax({
+            url:"{% url 'del_config_tables' %}",
+            type:"POST",
+            data:data,
+			success:function (result) { // result is String
+				del_state = result['del_state']
+				del_info = result['del_info']
+				if(del_state==1){
+					alert(del_info);
+				} else {
+					alert(del_info);
+				}
+			
+			}
+		});
+
+	}
+
+	function save_data(table_name, row){
+		var all_modify_data = []
+		console.log(row)
+		for(var x of row){
+			var r= $('#reportTable').bootstrapTable('getData',useCurrentPage=true)[x];
+			var newr = {}
+			$.extend(true, newr, r);
+			delete newr['del_field'];
+			all_modify_data.push(newr)
+		}
+
+		console.log(all_modify_data)
+		
+		var data = {modify_row: JSON.stringify(all_modify_data),table_name:table_name}
+		$.ajax({
+            url:"{% url 'save_config_tables' %}",
+            type:"POST",
+            data:data,
+			success:function (result) { // result is String
+				update_state = result['update_state']
+				update_info = result['update_info']
+				if(update_state==1){
+					alert(update_info);
+				} else {
+					alert(update_info);
+				}
+				
+				all_modify_index = new Set()
+			}
+		});
+
+	}
+
+	function show_config_table(data, result) {
+		$("#reportTable").bootstrapTable(('destroy'));
+		set_report_table(result)
+	}
 
 </script>
 <!--/请在上方写此页面业务相关的脚本-->
+
 
 </body>
 </html>

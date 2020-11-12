@@ -86,7 +86,7 @@ class CaptchaCaptchastore(models.Model):
 
 
 class Deviceinfo(models.Model):
-    device_name = models.CharField(primary_key=True, max_length=255)
+    device_name = models.CharField(max_length=255)
     device_chinese_name = models.CharField(max_length=255, blank=True, null=True)
     data_name = models.CharField(max_length=255)
     data_chinese_name = models.CharField(max_length=255, blank=True, null=True)
@@ -95,7 +95,6 @@ class Deviceinfo(models.Model):
     class Meta:
         managed = False
         db_table = 'deviceinfo'
-        unique_together = (('device_name', 'data_name'),)
 
 
 class DjangoAdminLog(models.Model):
@@ -150,7 +149,7 @@ class Domaininfo(models.Model):
     isoptional = models.IntegerField(blank=True, null=True)
     optional = models.CharField(max_length=2000, blank=True, null=True)
     isrealtime = models.IntegerField(blank=True, null=True)
-    scale = models.IntegerField(blank=True, null=True)
+    modified = models.IntegerField(blank=True, null=True)
     pre = models.IntegerField(blank=True, null=True)
 
     class Meta:
@@ -188,7 +187,7 @@ class LoginUser(models.Model):
 
 
 class Siteinfo(models.Model):
-    site_name = models.CharField(primary_key=True, max_length=255)
+    site_name = models.CharField(max_length=255)
     site_chinese_name = models.CharField(max_length=50, blank=True, null=True)
     site_level = models.CharField(max_length=5, blank=True, null=True)
     site_address = models.CharField(max_length=255, blank=True, null=True)
@@ -201,7 +200,7 @@ class Siteinfo(models.Model):
 
 
 class Tableinfo(models.Model):
-    table_name = models.CharField(primary_key=True, max_length=20)
+    table_name = models.CharField(max_length=20)
     type = models.IntegerField(blank=True, null=True)
     table_chinese_name = models.CharField(max_length=100, blank=True, null=True)
 
