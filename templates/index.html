@@ -281,7 +281,7 @@ ul.l_tree:before {
 			<button type="button" class="btn btn-default" id="dropbtn">丢弃修改</button>
 		</nav>
 	<div class="Hui-article">
-		<article class="cl pd-20" style="width: 1200px">
+		<article class="cl pd-20" style="width: 1300px">
 			
 			<!-- <table class="table table-border table-bordered table-bg" id="show_data" /> -->
 			<table class="table table-striped table-hover" id="reportTable"></table>
@@ -320,7 +320,7 @@ ul.l_tree:before {
 <script type="text/javascript">
 
 		current_config = {
-			database_type: "mysql",
+			database_type: "",
 			table_name:"",
 			table_chinese_name:"",
 			site_no:"",
@@ -357,6 +357,7 @@ ul.l_tree:before {
 							current_config.table_name = name
 							current_config.table_chinese_name = chinese_name
 							current_config.site_no = site_no
+							current_config.database = database
 							console.log(result);
 							show_influx_table(data, result)
 						}
@@ -400,8 +401,40 @@ ul.l_tree:before {
 		});
 	})
 
+	function generate_selector(device_name, rowIndex, joint_optional_content){
+		var setInfo = device_name;
+		
+		if(setInfo==null){
+			return '<input type="text" value="无" class="form-control" id="select_'+rowIndex+'">';
+		}else {
+			if(setInfo ==""){
+				setInfo = Object.keys(joint_optional_content)[0];
+			}
+			var opt = joint_optional_content[setInfo];
+			str = '<select class="form-control" style="width:120px;" id="select_'+rowIndex+'" onchange="select_change('+rowIndex+')">';
+			for(i = 0; i < opt.length; i++) {
+				row2 = opt[i];
+				str+='<option value="'+row2['id']+'">'+row2['text']+'</option>'
+			}
+			str+='</select>'
+		}
+		return str;
+	}
+
+	function select_change(rowIndex){
+		var objs =  document.getElementById("select_"+String(rowIndex));
+		current_select_index = objs.selectedIndex;
+		
+		var current_value = objs.options[current_select_index].value;
+		
+		var row= $('#reportTable').bootstrapTable('getData',useCurrentPage=true)[rowIndex];
+		// console.log(row);
+		row.data_name = current_value;
+	}
+
 			var all_modify_index = new Set()
 			var current_table_name = ""
+			var current_click_row = -1
 			// var current_data_format = {}
 			function set_report_table(result) {
 
@@ -410,6 +443,10 @@ ul.l_tree:before {
 				current_table_name = table_name
 				table_data = result['table_data']
 				chinese_title = result['chinese_title']
+				optional_content = result['optional_content']
+				joint_optional_content = result['joint_optional_content']
+
+				// console.log(joint_optional_content);
 				var title_filed = []
 
 				$.each(chinese_title, function(index, item){
@@ -420,16 +457,54 @@ ul.l_tree:before {
 						if(item['domaintype']=="datetime") {
 							title_filed.push({field:String(item['domain_name']),edit:{
 							type:'date',//日期
-							required:true,
+							// required:true,
+							sortable:true,
 							click:function(){
-								
 							}
 						},title:String(item['domain_chinese_name']),align:"center"});
 						}else if(item['isrealtime']==1){
 							title_filed.push({field: String(item['domain_name']),title: String(item['domain_chinese_name']),align:"center",
 							cellStyle: function (value,row,index){
-								return {css: {"color": "red","font-weight":"bloder"}};
+								return {css: {"color": "red","font-weight":"bloder"},sortable:true };
 							} })
+						} else if(item['isoptional']==1){
+							title_filed.push( {field: String(item['domain_name']), title: String(item['domain_chinese_name']),sortable:true, edit:{
+											type:'select',//下拉框
+											//url:'user/getUser.htm',
+											data:optional_content[item['domain_name']],
+											valueField:'id',
+											textField:'text',
+											onSelect:function(val,rec){
+												console.log(val,rec);
+												// console.log($element);
+												if(item['domain_name']=='device_name'){
+													// var row=$("#reportTable").bootstrapTable('getSelections');
+													// console.log(row);
+													if(current_click_row > -1) {
+														var current_selector = document.getElementById("select_"+String(current_click_row));
+														console.log(current_selector);
+														// var row= $('#reportTable').bootstrapTable('getData',useCurrentPage=true)[current_click_row];
+															str = generate_selector(val, current_click_row, joint_optional_content);
+															// console.log(str);
+															current_selector.innerHTML = str;
+													}
+												}
+											}
+							}
+						})
+						} else if(item['isoptional']==2) {
+							title_filed.push({
+								field: String(item['domain_name']), 
+								title: String(item['domain_chinese_name']),
+								align: 'center',
+								// edit:{type:'select'},
+								sortable:true,
+								edit:false,
+								formatter: function(value,row,rowIndex){
+
+									return generate_selector(row.device_name, rowIndex, joint_optional_content);
+								}
+							})
 						}else
 						{
 							title_filed.push({field: String(item['domain_name']),title: String(item['domain_chinese_name']),align:"center",sortable:true })
@@ -496,14 +571,27 @@ ul.l_tree:before {
 					],
 					onClickRow: function (row,$element) {
 						var index = $element.data('index');
-						console.log(row)
+						console.log(row);
 						current_table_name = table_name
-						all_modify_index.add(index)				
+						all_modify_index.add(index)	
+						current_click_row = index			
+					},
+					onClickCell: function(field,value,row,$element){
+						// console.log(field,value,row);
+						// if(field=="data_name"){
+						// 	console.log(field,value,row);
+							
+						// }
+
 					},
 					data: table_data
 				}); 
 
 			}
+
+			// function setInfoForm(value, row, index){
+
+			// }
 
 			
 
@@ -532,6 +620,18 @@ ul.l_tree:before {
 						//alert("取消");
 						return false;
 					}
+				}else if(current_config.database_type == "influx") {
+					if(window.confirm('你确定要保存吗？保存完后不可恢复！')){
+							if(all_modify_index.size==0) {
+								alert("目前未做任何更改！");
+							} else {
+								save_data_influx(current_config.site_no, current_config.database,current_config.table_name,  all_modify_index);
+							}			
+						return true;
+					}else{
+						//alert("取消");
+						return false;
+					}
 				}
 				
 				// console.log(all_modify_data)
@@ -541,16 +641,19 @@ ul.l_tree:before {
 				if(current_config.table_name==""){
 					return;
 				}
+				if(window.confirm('你确定要丢弃已修改的内容吗？')){
 				if(current_config.database_type == "mysql") {
-					if(window.confirm('你确定要丢弃已修改的内容吗？')){
 					// save_data(current_table_name, all_modify_index)
 					on_click_config_table(current_config.table_name,current_config.table_chinese_name);
 					all_modify_index = new Set();
                  return true;
-              }else{
-                 //alert("取消");
-                 return false;
-             }
+              }else if(current_config.database_type == "influx"){
+                //  alert("取消");
+				 on_click_influx_table(current_config.site_no, current_config.database, current_config.table_name, current_config.chinese_name);
+                 return true;
+             } else {
+				 return false;
+			 }
 				// console.log(all_modify_data)
 		}
 				
@@ -644,6 +747,40 @@ ul.l_tree:before {
 				all_modify_index = new Set()
 			}
 		});
+
+	}
+
+	function save_data_influx(site_no, database, table_name, row){
+		var all_modify_data = []
+		console.log(row)
+		for(var x of row){
+			var r= $('#reportTable').bootstrapTable('getData',useCurrentPage=true)[x];
+			var newr = {}
+			$.extend(true, newr, r);
+			// delete newr['del_field'];
+			all_modify_data.push(newr)
+		}
+
+		console.log(all_modify_data)
+		var data = {modify_row: JSON.stringify(all_modify_data),table_name:table_name, site_no:site_no, database:database}
+
+		$.ajax({
+            url:"{% url 'save_influx_tables' %}",
+            type:"POST",
+            data:data,
+			success:function (result) { // result is String
+				update_state = result['update_state']
+				update_info = result['update_info']
+				if(update_state==1){
+					alert(update_info);
+				} else {
+					alert(update_info);
+				}
+				
+				all_modify_index = new Set()
+			}
+		});
+
 
 	}
 

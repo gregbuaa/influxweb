@@ -24,4 +24,5 @@ urlpatterns = [
     path('load_config_table',views.load_config_table,name='load_config_table'),
     path('save_config_tables',views.save_config_tables,name='save_config_tables'),
     path('del_config_tables',views.del_config_tables,name='del_config_tables'),
+    path('save_influx_tables',views.save_influx_tables,name='save_influx_tables')
 ]
