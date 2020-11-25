@@ -87,15 +87,30 @@ def load_site_table(request):
     database = request.GET.get('database', 'iot')
     table = request.GET.get('table_name','telemetry')
     table_chinese_name = request.GET.get('table_chinese_name','')
+
+    all_keys = request.GET.get('all_keys','')
+
+    all_keys = json.loads(all_keys)
+
+    condition_sql = ""
+    for domain_name1, domain_value1 in all_keys.items():
+        if domain_value1 != "all":
+            condition_sql += "%s='%s' and "%(domain_name1, domain_value1)
+
+    if condition_sql !="":
+        condition_sql = "where "+condition_sql[0:-4]+" "
+
     # site_port = request.POST.get()
     # print(database,table,site_no)
     content = {}
     site_info = Influxsite.objects.get(site_no=site_no,database=database)
     
     client = InfluxDBClient(host=site_info.ip,port=site_info.port,username=site_info.user,password=site_info.passwd,database=site_info.database)
-    
-    result = client.query('select * from %s'%(table)) ## 需要加上时间限制，否则读取的数据过多，导致卡死。
+    print("influx sql", 'select * from %s %s order by time desc LIMIT 100'%(table, condition_sql))
 
+    result = client.query('select * from %s %s order by time desc LIMIT 100'%(table, condition_sql)) ## 需要加上时间限制，否则读取的数据过多，导致卡死。
+
+   
     # print("Result: {0}".format(result))
     test_points = list(result.get_points(measurement=table))
     # print(test_points)
@@ -119,7 +134,7 @@ def load_site_table(request):
             domain_name = result_split[1]
             domain_chinese_name = result_split[2]
 
-            select_sql = "select DISTINCT `%s`,`%s` from `%s` "%(domain_name, domain_chinese_name, table_name)
+            select_sql = "select DISTINCT `%s`,`%s` from `%s`"%(domain_name, domain_chinese_name, table_name)
             cursor.execute(select_sql)
 
             for row in cursor.fetchall():
@@ -429,7 +444,10 @@ def save_influx_tables(request):
             body['measurement'] = table_name
             if title_name['time'] in data:
                 if data[title_name['time']] !='':
-                    timestamp = datetime.datetime.strptime(data[title_name['time']], '%Y-%m-%d %H:%M:%S').isoformat("T")
+                    if 'T' in data[title_name['time']]:
+                        timestamp = data[title_name['time']]
+                    else:
+                        timestamp = datetime.datetime.strptime(data[title_name['time']], '%Y-%m-%d %H:%M:%S').isoformat("T")
                     body['time'] = timestamp
             body['tags'] = {}
             body['fields'] = {}
@@ -458,8 +476,38 @@ def save_influx_tables(request):
     return JsonResponse(content,safe=False)
 
 
-    
 
+def refresh_influx_table(request):
+    site_no = request.POST.get('site_no', '1')
+    database = request.POST.get('database', 'iot')
+    table_name = request.POST.get('table_name','telemetry')
+    refresh_time = request.POST.get('refresh_time','1000')
+    all_keys = request.POST.get('all_keys','')
+
+    all_keys = json.loads(all_keys)
+
+    condition_sql = ""
+    for domain_name1, domain_value1 in all_keys.items():
+        if domain_value1 != "all":
+            condition_sql += "%s='%s' and "%(domain_name1, domain_value1)
+
+    if condition_sql !="":
+        condition_sql = "and "+condition_sql[0:-4]+" "
+
+
+    site_info = Influxsite.objects.get(site_no=site_no,database=database)
+    client = InfluxDBClient(host=site_info.ip,port=site_info.port,username=site_info.user,password=site_info.passwd,database=site_info.database)
+    
+    result = client.query('select * from %s where time >= NOW() -%sms and time <= Now() %s order by time desc'%(table_name,refresh_time, condition_sql)) 
+    print("Result: {0}".format(result))
+    test_points = list(result.get_points(measurement=table_name))
+    test_points = [dict([(x,str(y))for x, y in l.items()])for l in test_points]
+
+    content = {
+        "update_data": test_points
+    }
+
+    return JsonResponse(content,safe=False)
 
 
 
