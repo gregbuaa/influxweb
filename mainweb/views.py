@@ -94,8 +94,16 @@ def load_site_table(request):
 
     condition_sql = ""
     for domain_name1, domain_value1 in all_keys.items():
-        if domain_value1 != "all":
-            condition_sql += "%s='%s' and "%(domain_name1, domain_value1)
+        if 'time' in domain_name1:
+            time_value = datetime.datetime.strptime(domain_value1, '%Y-%m-%d %H:%M:%S').isoformat("T")+"Z"
+            # print(time_value)
+            if domain_name1 == "from_time":
+                condition_sql += "time >= '%s' and " %(time_value)
+            elif domain_name1 == "to_time":
+                condition_sql += "time <= '%s' and " %(time_value)
+        else:
+            if domain_value1 != "all":
+                condition_sql += "%s='%s' and "%(domain_name1, domain_value1)
 
     if condition_sql !="":
         condition_sql = "where "+condition_sql[0:-4]+" "
@@ -478,18 +486,26 @@ def save_influx_tables(request):
 
 
 def refresh_influx_table(request):
+    print('hello world')
     site_no = request.POST.get('site_no', '1')
     database = request.POST.get('database', 'iot')
     table_name = request.POST.get('table_name','telemetry')
     refresh_time = request.POST.get('refresh_time','1000')
     all_keys = request.POST.get('all_keys','')
 
-    all_keys = json.loads(all_keys)
+    # all_keys = json.loads(all_keys)
+    # print('all_keys',all_keys)
 
     condition_sql = ""
+    
     for domain_name1, domain_value1 in all_keys.items():
-        if domain_value1 != "all":
-            condition_sql += "%s='%s' and "%(domain_name1, domain_value1)
+        # print('domain_name1',domain_name1)
+        if 'time' in domain_name1:
+            pass
+        else:
+            if domain_value1 != "all":
+                condition_sql += "%s='%s' and "%(domain_name1, domain_value1)
+
 
     if condition_sql !="":
         condition_sql = "and "+condition_sql[0:-4]+" "

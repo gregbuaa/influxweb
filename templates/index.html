@@ -1,5 +1,5 @@
 ﻿{% load static %}
-<DOCTYPE HTML>
+<div HTML>
 <!--_meta 作为公共模版分离出去-->
 
 <html>
@@ -20,7 +20,23 @@
 <link rel="stylesheet" type="text/css" href="/static/lib/Hui-iconfont/1.0.8/iconfont.css" />
 <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/style.css" />
-
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="{% static 'lib/jquery/1.9.1/jquery.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'lib/layer/2.4/layer.js' %}"></script>
+<script type="text/javascript" src="{% static 'h-ui/js/H-ui.js' %}"></script> 
+<script type="text/javascript" src="{% static 'h-ui.admin/js/H-ui.admin.page.js' %}"></script>
+<!-- <script type="text/javascript" src="/static/bootstrap-3.3.7/plus/import.inc.js"></script> -->
+<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table-zh-CN.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table-edit.js"></script>
+<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/bootstrap-select.js"></script>
+<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="/static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap-3.3.7/js/html5shiv.min.js"></script>
+<link rel='stylesheet' type='text/css' href="/static/bootstrap-3.3.7/plus/table/bootstrap-table.min.css"></script></link>
+<!-- <link rel='stylesheet' type='text/css' href="/static/bootstrap-3.3.7/css/bootstrap.min.css"></link> -->
+<link rel='stylesheet' type='text/css' href="/static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.css"></link>
 
 <!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
@@ -292,27 +308,44 @@ ul.l_tree:before {
 				</div>
 
 				<div id="select_key_div" class="div2"></div>
+
+				
+				<div class="div1" id="from_time_div_id">
+				
+				<div class="input-group date form_datetime col-sm-12" data-link-field="dt_set_order_time_input">
+					从<input class="form-control"  id="from_time_id" type="text" value="2020-12-02" onchange="select_change_keys(this)"/>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+					<!-- <input type="hidden" id="dt_set_order_time_input" value="2015-10-16" name="set_order_time"/> -->
+				</div>
+				</div>
+
+				<div class="div1" id="to_time_div_id">
+					
+				<div class="input-group date form_datetime col-sm-12" data-link-field="dt_set_order_time_input">
+					到<input class="form-control"  id="to_time_id" type="text" value="2020-12-03" onchange="select_change_keys(this)"/>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+					<!-- <input type="hidden" id="dt_set_order_time_input" value="2015-10-16" name="set_order_time"/> -->
+				</div>
+				</div>
+
+		
 			
 				<style>
 					.div1 {
 					display: inline-block;
-					margin-left:20px;
+					margin-left:5px;
 					}
 					.div2 {
 					display: inline-block;
-					margin-left:20px;
+					margin-left:5px;
 					}
 					</style>
-				
-				
-			
-			
 
 	</nav>
 
 
 	<div class="Hui-article">
-		<article class="cl pd-20" style="width: 1300px">
+		<article class="cl pd-20" style="width: 1200px">
 			
 			<!-- <table class="table table-border table-bordered table-bg" id="show_data" /> -->
 			<table class="table table-striped table-hover" id="reportTable"></table>
@@ -323,23 +356,7 @@ ul.l_tree:before {
 </div>
 </section>
 
-<!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="{% static 'lib/jquery/1.9.1/jquery.min.js' %}"></script> 
-<script type="text/javascript" src="{% static 'lib/layer/2.4/layer.js' %}"></script>
-<script type="text/javascript" src="{% static 'h-ui/js/H-ui.js' %}"></script> 
-<script type="text/javascript" src="{% static 'h-ui.admin/js/H-ui.admin.page.js' %}"></script>
-<!-- <script type="text/javascript" src="/static/bootstrap-3.3.7/plus/import.inc.js"></script> -->
-<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table.min.js"></script>
-<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table-zh-CN.min.js"></script>
-<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table-edit.js"></script>
-<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/bootstrap-select.js"></script>
-<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.js"></script>
-<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.zh-CN.js"></script>
-<script type="text/javascript" src="/static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/static/bootstrap-3.3.7/js/html5shiv.min.js"></script>
-<link rel='stylesheet' type='text/css' href="/static/bootstrap-3.3.7/plus/table/bootstrap-table.min.css"></script></link>
-<!-- <link rel='stylesheet' type='text/css' href="/static/bootstrap-3.3.7/css/bootstrap.min.css"></link> -->
-<link rel='stylesheet' type='text/css' href="/static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.css"></link>
+<!--请在下方写此页面业务相关的脚本-->
 <script>
 	$.ajaxSetup({
 		data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
@@ -347,10 +364,47 @@ ul.l_tree:before {
 </script>
 <!--/_footer /作为公共模版分离出去-->
 
-<!--请在下方写此页面业务相关的脚本-->
+
 <script type="text/javascript">
+	// 对Date的扩展，将 Date 转化为指定格式的String
+	// 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，
+	// 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
+	// 例子：
+	// (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
+	// (new Date()).Format("yyyy-M-d h:m:s.S") ==> 2006-7-2 8:9:4.18
+	
+	Date.prototype.Format = function (fmt) { // author: meizz
+		var o = {
+			"M+": this.getMonth() + 1, // 月份
+			"d+": this.getDate(), // 日
+			"h+": this.getHours(), // 小时
+			"m+": this.getMinutes(), // 分
+			"s+": this.getSeconds(), // 秒
+			"q+": Math.floor((this.getMonth() + 3) / 3), // 季度
+			"S": this.getMilliseconds() // 毫秒
+		};
+		if (/(y+)/.test(fmt))
+			fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+		for (var k in o)
+			if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+			return fmt;
+	}
+	$('.form_datetime').datetimepicker({
+				weekStart: 1,
+				todayBtn:  1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 2,
+				forceParse: 0,
+				language:'zh-CN',
+				format: 'yyyy-mm-dd hh:ii:ss',
+				pickerPosition: 'bottom-left',
+				showMeridian: 1
+			});
 		$('#refresh_component').css({ "display": "none" });
 		$('#select_key_div').css({ "display": "none" });
+		$('#from_time_div_id').css({ "display": "none" });
+		$('#to_time_div_id').css({ "display": "none" });
 
 		current_config = {
 			database_type: "",
@@ -363,8 +417,11 @@ ul.l_tree:before {
 		var all_modify_index = new Set()
 		// 当前的表名
 		var current_table_name = ""
+		// 当前点击的行
 		var current_click_row = -1
+		//当前可供选择的字段名称，用于筛选
 		var current_select_keys = []
+		// 当前选择好的字段是哪些，用于筛选
 		var current_select_key_values = {}
 
 		function show_selected_key(result, all_keys) {
@@ -388,10 +445,18 @@ ul.l_tree:before {
 			select_key_string = "";
 
 			for(var key in all_keys) {
-				value = all_keys[key]
-				// $('#select_'+current_select_keys[i]+" option[value="+all_keys[current_select_keys[i]]+"]").attr('selected', true);
+				value = all_keys[key];
 				console.log(key, value);
-				$('#select_'+key+" option[value="+value+"]").attr('selected', true);
+				if(key=='from_time' | key=="to_time"){
+					if(key=="from_time"){
+						$('#from_time_id').val(value);
+					}else{
+						$('#to_time_id').val(value);
+					}
+				}else {
+					$('#select_'+key+" option[value="+value+"]").attr('selected', true);
+				}
+				// $('#select_'+current_select_keys[i]+" option[value="+all_keys[current_select_keys[i]]+"]").attr('selected', true);				
 			}
 		}
 
@@ -417,6 +482,8 @@ ul.l_tree:before {
 							show_config_table(data, result);
 							$('#refresh_component').css({ "display": "none" });
 							$('#select_key_div').css({ "display": "none" });
+							$('#from_time_div_id').css({ "display": "none" });
+							$('#to_time_div_id').css({ "display": "none" });
 							// $('#checkbox_div').css({ "display": "none" });
 							// $('#select_key_div').html("");
 						}
@@ -439,10 +506,20 @@ ul.l_tree:before {
 							current_table_name = ""
 							current_click_row = -1
 							current_select_keys = []
+
+							let  date=new Date();
+							var end_time = date.Format("yyyy-MM-dd hh:mm:ss");
+							$('#to_time_id').val(end_time);
+							date.setDate(date.getDate()-1);
+							start_time = date.Format("yyyy-MM-dd hh:mm:ss");
+							$('#from_time_id').val(start_time);
+
 							show_selected_key(result, all_keys);
 							show_influx_table(data, result);
-							$('#refresh_component').css({ "display": "inline" });
-							$('#select_key_div').css({ "display": "inline" });
+							$('#refresh_component').css({ "display": "inline-block" });
+							$('#select_key_div').css({ "display": "inline-block" });
+							$('#from_time_div_id').css({ "display": "inline-block" });
+							$('#to_time_div_id').css({ "display": "inline-block" });
 							// $('#checkbox_div').css({ "display": "inline" });
 							// $('#select_key_div').html("");
 
@@ -535,7 +612,7 @@ ul.l_tree:before {
 				joint_optional_content = result['joint_optional_content']
 
 				select_key_string = ""
-				var title_filed = []
+				var title_filed = [{checkbox:true,}]
 
 				$.each(chinese_title, function(index, item){
 					
@@ -622,6 +699,7 @@ ul.l_tree:before {
 					method: 'get',
 					editable:true,//开启编辑模式
 					clickToSelect: true,
+					height: 5000,  
 					columns: [
 						[
 							{colspan:16,title:table_chinese_name,align:"center"}
@@ -929,8 +1007,17 @@ ul.l_tree:before {
 			all_keys[current_select_keys[i]] = $('#select_'+current_select_keys[i]).val();
 		}
 
+		all_keys['from_time'] = $('#from_time_id').val();
+		all_keys['to_time'] = $('#to_time_id').val();
+
+		// console.log( $('#from_time_id').val());
+
 		on_click_influx_table(current_config.site_no, current_config.database, current_config.table_name, current_config.chinese_name,all_keys);
 	}
+
+	// function on_change_time(elem) {
+	// 	console.log($('#from_time_id').val());
+	// }
 
 </script>
 <!--/请在上方写此页面业务相关的脚本-->
