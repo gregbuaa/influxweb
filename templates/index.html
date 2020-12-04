@@ -345,7 +345,7 @@ ul.l_tree:before {
 
 
 	<div class="Hui-article">
-		<article class="cl pd-20" style="width: 1200px">
+		<article class="cl pd-20" style="width: 1400px">
 			
 			<!-- <table class="table table-border table-bordered table-bg" id="show_data" /> -->
 			<table class="table table-striped table-hover" id="reportTable"></table>
@@ -446,7 +446,7 @@ ul.l_tree:before {
 
 			for(var key in all_keys) {
 				value = all_keys[key];
-				console.log(key, value);
+				// console.log(key, value);
 				if(key=='from_time' | key=="to_time"){
 					if(key=="from_time"){
 						$('#from_time_id').val(value);
@@ -611,26 +611,45 @@ ul.l_tree:before {
 				optional_content = result['optional_content']
 				joint_optional_content = result['joint_optional_content']
 
+				field_type = {} //所有字段的类型
+
 				select_key_string = ""
-				var title_filed = [{checkbox:true,}]
+				var title_filed = []
+				if(current_config.database_type=="influx") {
+					title_filed.push({field:"checkbox",title:"可选",checkbox:true,});
+					title_filed.push({
+						field:"number",
+						title:"行号",
+						edit:false,
+						formatter: function (value,row,index) {
+							row['number'] = index;
+							return index;
+						},
+						cellStyle: function (value,row,index){
+							return {css: {"font-weight":1000},sortable:true };
+						}
+					});
+				}
 
 				$.each(chinese_title, function(index, item){
 					
 					if(item['modified']==0){
 						if(item['domaintype']=="datetime") {
+							field_type[item['domain_name']] = "datetime";
 							title_filed.push({field:String(item['domain_name']),edit:{
 							type:'date',//日期
 							// required:true,
-							sortable:true,
 							click:function(){
 							}
-						},title:String(item['domain_chinese_name']),align:"center"});
+						},title:String(item['domain_chinese_name']),align:"center",sortable:true,});
 						}else if(item['isrealtime']==1){
+							field_type[item['domain_name']] = "text";
 							title_filed.push({field: String(item['domain_name']),title: String(item['domain_chinese_name']),align:"center",
 							cellStyle: function (value,row,index){
 								return {css: {"color": "red","font-weight":"bloder"},sortable:true };
 							} })
 						} else if(item['isoptional']==1){
+							field_type[item['domain_name']] = "option";
 							title_filed.push( {field: String(item['domain_name']), title: String(item['domain_chinese_name']),sortable:true, edit:{
 											type:'select',//下拉框
 											//url:'user/getUser.htm',
@@ -654,6 +673,7 @@ ul.l_tree:before {
 						});
 
 						} else if(item['isoptional']==2) {
+							field_type[item['domain_name']] = "option2";
 							title_filed.push({
 								field: String(item['domain_name']), 
 								title: String(item['domain_chinese_name']),
@@ -669,7 +689,13 @@ ul.l_tree:before {
 							})
 						}else
 						{
-							title_filed.push({field: String(item['domain_name']),title: String(item['domain_chinese_name']),align:"center",sortable:true })
+							field_type[item['domain_name']] = "text";
+							title_filed.push({
+								field: String(item['domain_name']),
+								title: String(item['domain_chinese_name']),
+								align:"center",
+								sortable:true,
+							})
 						}
 						
 						
@@ -698,7 +724,7 @@ ul.l_tree:before {
 				$('#reportTable').bootstrapTable({
 					method: 'get',
 					editable:true,//开启编辑模式
-					clickToSelect: true,
+					// clickToSelect: true,
 					height: 5000,  
 					columns: [
 						[
@@ -714,12 +740,41 @@ ul.l_tree:before {
 						current_click_row = index			
 					},
 					onClickCell: function(field,value,row,$element){
+						// var index = $element.data('index');
+						// console.log(index);
+						// console.log($element.html());
 						// console.log(field,value,row);
 						// if(field=="data_name"){
 						// 	console.log(field,value,row);
-							
+							// $element.
 						// }
 
+					},
+					onCheck:function(row,$element){
+						// console.log(row.id);
+						// var index = $element.data('index');
+						// console.log(index);
+					},
+					onDblClickCell: function(field,value,row,$element){
+						// 双击之后，将该value复制到所有选中的行，以完成批量操作。该操作只对“text”类型的field有效。
+						current_value = $element.find("input").val();
+						console.log("current_value:"+current_value);
+
+
+						if(current_config.database_type == "influx" && field_type[field]=="text") {
+							//所有选中的行
+							var rows=$("#reportTable").bootstrapTable('getSelections');
+							for(var i = 0; i < rows.length; i++) {
+								index_id =  rows[i].number;
+								console.log(index_id);
+								current_row = rows[i];
+								// current_row = $('#reportTable').bootstrapTable('getData',useCurrentPage=true)[index_id];		
+								current_row[field] = current_value;
+								$('#reportTable').bootstrapTable("updateRow",{index:index_id,row:current_row});
+								all_modify_index.add(index_id);
+							}
+							// console.log(rows);
+						}
 					},
 					data: table_data
 				}); 
@@ -729,7 +784,11 @@ ul.l_tree:before {
 			// function setInfoForm(value, row, index){
 
 			// }
-
+			
+			// $('#reportTable').on('blur','.input_sm',function(){
+			// 	var txt = $(this).val();
+			// 	console.log(txt);
+			// });
 			
 
 			
