@@ -601,185 +601,181 @@ ul.l_tree:before {
 		// console.log(row);
 	}
 
-			function set_report_table(result) {
+	function set_report_table(result) {
 
-				table_name = result['table_name'] //一个名字
-				table_chinese_name = result['table_chinese_name'] //一个名字
-				current_table_name = table_name
-				table_data = result['table_data']
-				chinese_title = result['chinese_title']
-				optional_content = result['optional_content']
-				joint_optional_content = result['joint_optional_content']
+		table_name = result['table_name'] //一个名字
+		table_chinese_name = result['table_chinese_name'] //一个名字
+		current_table_name = table_name
+		table_data = result['table_data']
+		chinese_title = result['chinese_title']
+		optional_content = result['optional_content']
+		joint_optional_content = result['joint_optional_content']
 
-				field_type = {} //所有字段的类型
+		field_type = {} //所有字段的类型
 
-				select_key_string = ""
-				var title_filed = []
-				if(current_config.database_type=="influx") {
-					title_filed.push({field:"checkbox",title:"可选",checkbox:true,});
-					title_filed.push({
-						field:"number",
-						title:"行号",
-						edit:false,
-						formatter: function (value,row,index) {
-							row['number'] = index;
-							return index;
-						},
-						cellStyle: function (value,row,index){
-							return {css: {"font-weight":1000},sortable:true };
-						}
-					});
+		select_key_string = ""
+		var title_filed = []
+		if(current_config.database_type=="influx") {
+			title_filed.push({field:"checkbox",title:"可选",checkbox:true,});
+			title_filed.push({
+				field:"number",
+				title:"行号",
+				edit:false,
+				formatter: function (value,row,index) {
+					row['number'] = index;
+					return index;
+				},
+				cellStyle: function (value,row,index){
+					return {css: {"font-weight":1000},sortable:true };
 				}
+			});
+		}
 
-				$.each(chinese_title, function(index, item){
-					
-					if(item['modified']==0){
-						if(item['domaintype']=="datetime") {
-							field_type[item['domain_name']] = "datetime";
-							title_filed.push({field:String(item['domain_name']),edit:{
-							type:'date',//日期
-							// required:true,
-							click:function(){
-							}
-						},title:String(item['domain_chinese_name']),align:"center",sortable:true,});
-						}else if(item['isrealtime']==1){
-							field_type[item['domain_name']] = "text";
-							title_filed.push({field: String(item['domain_name']),title: String(item['domain_chinese_name']),align:"center",
-							cellStyle: function (value,row,index){
-								return {css: {"color": "red","font-weight":"bloder"},sortable:true };
-							} })
-						} else if(item['isoptional']==1){
-							field_type[item['domain_name']] = "option";
-							title_filed.push( {field: String(item['domain_name']), title: String(item['domain_chinese_name']),sortable:true, edit:{
-											type:'select',//下拉框
-											//url:'user/getUser.htm',
-											data:optional_content[item['domain_name']],
-											valueField:'id',
-											textField:'text',
-											onSelect:function(val,rec){
-												console.log(val,rec);
-												// console.log($element);
-												if(item['domain_name']=='device_name'){
-													if(current_click_row > -1) {
-														var current_selector = document.getElementById("select_"+String(current_click_row));
-														console.log(current_selector);
-															str = generate_selector(val, current_click_row, joint_optional_content, null);
-															// console.log(str);
-															current_selector.innerHTML = str;
-													}
-												}
-											}
-							}
-						});
-
-						} else if(item['isoptional']==2) {
-							field_type[item['domain_name']] = "option2";
-							title_filed.push({
-								field: String(item['domain_name']), 
-								title: String(item['domain_chinese_name']),
-								align: 'center',
-								// edit:{type:'select'},
-								sortable:true,
-								edit:false,
-								formatter: function(value,row,rowIndex){
-									// console.log(value);
-
-									return generate_selector(row.device_name, rowIndex, joint_optional_content, value);
-								}
-							})
-						}else
-						{
-							field_type[item['domain_name']] = "text";
-							title_filed.push({
-								field: String(item['domain_name']),
-								title: String(item['domain_chinese_name']),
-								align:"center",
-								sortable:true,
-							})
-						}
-						
-						
-					}else{
-						title_filed.push({field: String(item['domain_name']),title: String(item['domain_chinese_name']),align:"center",edit:false,sortable:true })
+		$.each(chinese_title, function(index, item){
+			
+			if(item['modified']==0){
+				if(item['domaintype']=="datetime") {
+					field_type[item['domain_name']] = "datetime";
+					title_filed.push({field:String(item['domain_name']),edit:{
+					type:'date',//日期
+					// required:true,
+					click:function(){
 					}
-					// console.log(edited)
-					
+				},title:String(item['domain_chinese_name']),align:"center",sortable:true,});
+				}else if(item['isrealtime']==1){
+					field_type[item['domain_name']] = "text";
+					title_filed.push({field: String(item['domain_name']),title: String(item['domain_chinese_name']),align:"center",
+					cellStyle: function (value,row,index){
+						return {css: {"color": "red","font-weight":"800"},sortable:true };
+					} })
+				} else if(item['isoptional']==1){
+					field_type[item['domain_name']] = "option";
+					title_filed.push( {field: String(item['domain_name']), title: String(item['domain_chinese_name']),sortable:true, edit:{
+									type:'select',//下拉框
+									//url:'user/getUser.htm',
+									data:optional_content[item['domain_name']],
+									valueField:'id',
+									textField:'text',
+									onSelect:function(val,rec){
+										console.log(val,rec);
+										// console.log($element);
+										if(item['domain_name']=='device_name'){
+											if(current_click_row > -1) {
+												var current_selector = document.getElementById("select_"+String(current_click_row));
+												console.log(current_selector);
+													str = generate_selector(val, current_click_row, joint_optional_content, null);
+													// console.log(str);
+													current_selector.innerHTML = str;
+											}
+										}
+									}
+					}
 				});
-				// var select_key_elem = document.getElementById("select_key_div");
-				// // $('#select_key_div').html("<p>hello</p>");
-				// console.log(select_key_string);
-				// select_key_elem.innerHTML = select_key_string;
-				// // $('#select_key').html(select_key_string);
-				// select_key_string = "";
 
-				if(current_config.database_type=="mysql") {
-					title_filed.push({field:"del_field",title:"删除数据",align:"center",formatter:function(value,row,rowIndex){
-							var strHtml = '<a href="javascript:void(0);" onclick="removeRow('+rowIndex+')">删除</a>';
-							return strHtml;
-						},edit:false})
-				}
+				} else if(item['isoptional']==2) {
+					field_type[item['domain_name']] = "option2";
+					title_filed.push({
+						field: String(item['domain_name']), 
+						title: String(item['domain_chinese_name']),
+						align: 'center',
+						// edit:{type:'select'},
+						sortable:true,
+						edit:false,
+						formatter: function(value,row,rowIndex){
+							// console.log(value);
 
-
-							//编辑表格
-				$('#reportTable').bootstrapTable({
-					method: 'get',
-					editable:true,//开启编辑模式
-					// clickToSelect: true,
-					height: 5000,  
-					columns: [
-						[
-							{colspan:16,title:table_chinese_name,align:"center"}
-						],
-						title_filed
-					],
-					onClickRow: function (row,$element) {
-						var index = $element.data('index');
-						console.log(row);
-						current_table_name = table_name
-						all_modify_index.add(index)	
-						current_click_row = index			
-					},
-					onClickCell: function(field,value,row,$element){
-						// var index = $element.data('index');
-						// console.log(index);
-						// console.log($element.html());
-						// console.log(field,value,row);
-						// if(field=="data_name"){
-						// 	console.log(field,value,row);
-							// $element.
-						// }
-
-					},
-					onCheck:function(row,$element){
-						// console.log(row.id);
-						// var index = $element.data('index');
-						// console.log(index);
-					},
-					onDblClickCell: function(field,value,row,$element){
-						// 双击之后，将该value复制到所有选中的行，以完成批量操作。该操作只对“text”类型的field有效。
-						current_value = $element.find("input").val();
-						console.log("current_value:"+current_value);
-
-
-						if(current_config.database_type == "influx" && field_type[field]=="text") {
-							//所有选中的行
-							var rows=$("#reportTable").bootstrapTable('getSelections');
-							for(var i = 0; i < rows.length; i++) {
-								index_id =  rows[i].number;
-								console.log(index_id);
-								current_row = rows[i];
-								// current_row = $('#reportTable').bootstrapTable('getData',useCurrentPage=true)[index_id];		
-								current_row[field] = current_value;
-								$('#reportTable').bootstrapTable("updateRow",{index:index_id,row:current_row});
-								all_modify_index.add(index_id);
-							}
-							// console.log(rows);
+							return generate_selector(row.device_name, rowIndex, joint_optional_content, value);
 						}
-					},
-					data: table_data
-				}); 
-
+					})
+				}else
+				{
+					field_type[item['domain_name']] = "text";
+					title_filed.push({
+						field: String(item['domain_name']),
+						title: String(item['domain_chinese_name']),
+						align:"center",
+						sortable:true,
+					})
+				}
+				
+				
+			}else{
+				title_filed.push({field: String(item['domain_name']),title: String(item['domain_chinese_name']),align:"center",edit:false,sortable:true })
 			}
+			
+		});
+
+		if(current_config.database_type=="mysql") {
+			title_filed.push({field:"del_field",title:"删除数据",align:"center",formatter:function(value,row,rowIndex){
+					var strHtml = '<a href="javascript:void(0);" onclick="removeRow('+rowIndex+')">删除</a>';
+					return strHtml;
+				},edit:false})
+		}
+
+
+		//编辑表格
+		$('#reportTable').bootstrapTable({
+			method: 'get',
+			editable:true,//开启编辑模式
+			// clickToSelect: true,
+			height: 5000,  
+			columns: [
+				[
+					{colspan:20,title:table_chinese_name,align:"center"}
+				],
+				title_filed
+			],
+			onClickRow: function (row,$element) {
+				var index = $element.data('index');
+				console.log(row);
+				current_table_name = table_name
+				all_modify_index.add(index)	
+				current_click_row = index			
+			},
+			onClickCell: function(field,value,row,$element){
+				// var index = $element.data('index');
+				// console.log(index);
+				// console.log($element.html());
+				// console.log(field,value,row);
+				// if(field=="data_name"){
+				// 	console.log(field,value,row);
+					// $element.
+				// }
+
+			},
+			onDblClickCell: function(field,value,row,$element){
+				// 双击之后，将该value复制到所有选中的行，以完成批量操作。该操作只对“text”类型的field有效。
+				current_value = $element.find("input").val();
+				console.log("current_value:"+current_value);
+
+				// if(current_config.database_type == "influx" && field_type[field]=="text") {
+				// 	row[field] = current_value;
+				// 	var selection_rows=$("#reportTable").bootstrapTable('getSelections');
+				// 	for(var i = 0; i <selection_rows.length; i++) {
+				// 		index_id = selection_rows[i].number;
+				// 		$('#reportTable').bootstrapTable("updateRow",{index:index_id,row:row});
+				// 		all_modify_index.add(index_id);
+				// 	}
+				// }
+				if(current_config.database_type == "influx" && field_type[field]=="text") {
+					//所有选中的行
+					var rows=$("#reportTable").bootstrapTable('getSelections');
+					for(var i = 0; i < rows.length; i++) {
+						index_id =  rows[i].number;
+						console.log(index_id);
+						current_row = rows[i];
+						// current_row = $('#reportTable').bootstrapTable('getData',useCurrentPage=true)[index_id];		
+						current_row[field] = current_value;
+						$('#reportTable').bootstrapTable("updateRow",{index:index_id,row:current_row});
+						all_modify_index.add(index_id);
+					}
+					// console.log(rows);
+				}
+			},
+			data: table_data
+		}); 
+
+	}
 
 			// function setInfoForm(value, row, index){
 
@@ -859,6 +855,8 @@ ul.l_tree:before {
 		}
 				
 			});
+
+			//是否选中了刷新checkbox
 			var current_timer_id = null;
 			$('#refresh_check').click(function(){
 				// console.log("refresh");
@@ -901,7 +899,7 @@ ul.l_tree:before {
 				pickerPosition: 'bottom-left',
 				showMeridian: 1
 			});
-    	// });
+    	
 		function removeRow(rowIndex){
 			if(current_config.database_type == "mysql") {
 				if(window.confirm('你确定要删除这条记录吗？')){

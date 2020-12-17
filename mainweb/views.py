@@ -419,6 +419,8 @@ def save_influx_tables(request):
     table_name = request.POST.get('table_name','telemetry')
     modify_rows = request.POST.get('modify_row','')
 
+    print("current modify rows ",modify_rows)
+
     site_info = Influxsite.objects.get(site_no=site_no,database=database)
     
     client = InfluxDBClient(host=site_info.ip,port=site_info.port,username=site_info.user,password=site_info.passwd,database=site_info.database)
@@ -455,7 +457,7 @@ def save_influx_tables(request):
                     if 'T' in data[title_name['time']]:
                         timestamp = data[title_name['time']]
                     else:
-                        timestamp = datetime.datetime.strptime(data[title_name['time']], '%Y-%m-%d %H:%M:%S').isoformat("T")
+                        timestamp = datetime.datetime.strptime(data[title_name['time']], '%Y-%m-%d %H:%M:%S').isoformat("T")+"Z"
                     body['time'] = timestamp
             body['tags'] = {}
             body['fields'] = {}
@@ -493,8 +495,8 @@ def refresh_influx_table(request):
     refresh_time = request.POST.get('refresh_time','1000')
     all_keys = request.POST.get('all_keys','')
 
-    # all_keys = json.loads(all_keys)
-    # print('all_keys',all_keys)
+    all_keys = json.loads(all_keys)
+    print('all_keys',all_keys)
 
     condition_sql = ""
     
