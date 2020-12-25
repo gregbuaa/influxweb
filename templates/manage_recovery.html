@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!--360浏览器优先以webkit内核解析-->
+
+		<title>Influx扩容管理</title>
+
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link href="/static/hplus-admin/css/bootstrap.min.css?v=3.3.7" rel="stylesheet" />
+		<link href="/static/hplus-admin/css/font-awesome.css?v=4.4.0" rel="stylesheet" />
+
+		<link href="/static/hplus-admin/css/animate.css" rel="stylesheet" />
+		<link href="/static/hplus-admin/css/style.css?v=4.1.0" rel="stylesheet" />
+		<!-- Morris -->
+		<link href="/static/hplus-admin/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+
+		<!-- Gritter -->
+		<link href="/static/hplus-admin/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+		<link href="/static/hplus-admin/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+		<link href="/static/hplus-admin/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+	</head>
+
+	<body class="gray-bg">
+		<div class="wrapper wrapper-content">
+			<div class="col-sm-8">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>InfluxDB恢复管理</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form class="form-horizontal">
+                            <p>当出现 influxdb 实例机器故障，甚至无法恢复的情形，需要对故障 circle 的进行数据恢复</p>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">从Circle</label>
+
+                                <div class="col-sm-8">
+                                    <select class="form-control m-b" name="account">
+                                        <option value="0">cirle-0</option>
+                                        <option value="1">circle-1</option>
+                                    </select><span class="help-block m-b-none">来源的Circle</span>
+                                </div>
+							</div>
+							<div class="form-group">
+                                <label class="col-sm-3 control-label">到Circle</label>
+
+                                <div class="col-sm-8">
+                                    <select class="form-control m-b" name="account">
+                                        <option value="0">cirle-0</option>
+                                        <option value="1">circle-1</option>
+                                    </select><span class="help-block m-b-none">待恢复的Circle</span>
+                                </div>
+							</div>
+							<div class="form-group">
+                                <label class="col-sm-3 control-label">待恢复的实例：</label>
+
+                                <div class="col-sm-8">
+                                    <input type="email" placeholder="用户名" class="form-control"> <span class="help-block m-b-none">待恢复的influxdb实例url列表，以英文逗号 ',' 分隔，为空时将默认为待恢复circle的全部influxdb实例url列表</span>
+                                </div>
+							</div>
+							
+							<div class="form-group">
+                                <label class="col-sm-3 control-label">线程数：</label>
+
+                                <div class="col-sm-8">
+                                    <select class="form-control m-b" name="account">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+										<option value="4">4</option>
+										<option value="4">8</option>
+                                    </select><span class="help-block m-b-none">同步的最大线程数</span>
+                                </div>
+                            </div>
+							
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-8">
+                                    <button class="btn btn-sm btn-white" type="submit">开始恢复</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>	
+
+			{% for item in sync_state %}
+			<div class="row">
+				<div class="col-sm-8">
+					<div class="ibox float-e-margins">
+						<div class="ibox-title">
+							<h5>{{ forloop.counter }}-circle</h5>
+							<div class="ibox-tools">
+								<a class="collapse-link">
+									<i class="fa fa-chevron-up"></i>
+								</a>
+								<a class="close-link">
+									<i class="fa fa-times"></i>
+								</a>
+							</div>
+						</div>
+						<div class="ibox-content">
+
+							<div class="row">
+								<div class="col-sm-12">
+									<table class="table table-hover margin bottom">
+										<thead>
+											<tr>
+												<!-- <th style="width: 1%" class="text-center">序号</th> -->
+												<th>url</th>
+												<th class="text-center">平衡状态</th>
+												<th class="text-center">总数据库数</th>
+												<th class="text-center">已完成数据库数</th>
+												<th class="text-center">总表数</th>
+												<th class="text-center">已完成表数</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for urlname, meta in item.items %}
+											<tr>
+											<td><a href="#">{{	urlname	}}</a></td>
+											<td  class="text-center small">
+												{% if meta.database_total == meta.database_done and meta.measurement_total == meta.measurement_done %}
+												<span class="label label-primary">已完成</span>	
+												{% else %}	
+												<span class="label label-warning">未完成</span>	
+												{% endif %}		
+											</td>
+											<td class="text-center">{{meta.database_total}}</td>
+											<td class="text-center">{{meta.database_done}}</td>
+											<td class="text-center">{{meta.measurement_total}}</td>
+											<td class="text-center">{{meta.measurement_done}}</td>
+											<!-- <td  class="text-center small">
+												{% if not backend.rewrite %}
+												<span class="label label-primary">{{backend.rewrite}}</span>	
+												{% else %}	
+												<span class="label label-warning">{{backend.rewrite}}</span>	
+												{% endif %}	
+											</td>
+											<td  class="text-center small">
+												{% if not backend.backlog %}
+												<span class="label label-primary">{{backend.backlog}}</span>	
+												{% else %}	
+												<span class="label label-warning">{{backend.backlog}}</span>	
+												{% endif %}	
+											</td>
+											<td  class="text-center small">
+												{% if backend.healthy %}
+												<span class="label label-primary">{{backend.healthy}}</span>	
+												{% else %}	
+												<span class="label label-warning">{{backend.healthy}}</span>	
+												{% endif %}	
+											</td> -->
+											</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+
+
+		    <!-- 全局js -->
+			<script src="/static/hplus-admin/js/jquery.min.js?v=2.1.4"></script>
+			<script src="/static/hplus-admin/js/bootstrap.min.js?v=3.3.7"></script>
+			<script src="/static/hplus-admin/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+			<!-- <script src="/static/hplus-admin/js/plugins/bootstrap-table/bootstrap-table.min.js"></script> -->
+			<!-- <script src="/static/hplus-admin/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script> -->
+			<!-- <script src="/static/hplus-admin/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script> -->
+			<!-- <script src="/static/hplus-admin/js/demo/bootstrap-table-demo.js"></script> -->
+			 <link rel='stylesheet' type='text/css' href="/static/bootstrap-3.3.7/plus/table/bootstrap-table.min.css"></script></link> 
+			<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table.min.js"></script>
+		<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table-zh-CN.min.js"></script> 
+		<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table-edit.js"></script>
+
+			<script>
+		
+
+
+
+			</script>
+	</body>
+</html>
