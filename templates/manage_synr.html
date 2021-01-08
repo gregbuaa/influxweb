@@ -38,38 +38,36 @@
                         </div>
                     </div>
                     <div class="ibox-content">
-                        <form class="form-horizontal">
+                        <div class="form-horizontal">
                             <p>因为网络、磁盘等各种环境原因，可能会有极少概率出现各个 circle 数据不一致的情况、导致脏读问题，因此需要定期做数据同步，以达到数据一致性，实现方案是对所有 circle 的数据进行互相同步</p>
                             <div class="form-group">
 								<label class="col-sm-3 control-label">时间点：</label>
 								<div class="col-sm-8">
 								<div class="input-group date">
 									<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-									<input type="text" class="form-control" value="2014-11-11">
+									<input type="text" class="form-control" value="2020-10-01" id="from_timestap_id">
 								</div><span class="help-block m-b-none">互相同步从该时间点开始的数据,默认为0,同步所有数据</span>
 								</div>
-                                
-                                    <!-- <input type="email" placeholder="时间点" class="form-control"> 
-                                </div> -->
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">线程数：</label>
 
                                 <div class="col-sm-8">
-                                    <select class="form-control m-b" name="account">
+									<select class="form-control m-b" name="account" id="worker_id">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
-                                        <option value="4">4</option>
+                                        <option value="4" selected>4</option>
                                     </select><span class="help-block m-b-none">同步的最大线程数</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-8">
-                                    <button class="btn btn-sm btn-white" type="submit">开始同步</button>
+									<button class="btn btn-sm btn-white" id="synrbutton">开始同步</button>
+									<span class="help-block m-b-none" id="prompt">请开始同步</span>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>	
@@ -96,7 +94,6 @@
 									<table class="table table-hover margin bottom">
 										<thead>
 											<tr>
-												<!-- <th style="width: 1%" class="text-center">序号</th> -->
 												<th>url</th>
 												<th class="text-center">同步状态</th>
 												<th class="text-center">总数据库数</th>
@@ -105,7 +102,7 @@
 												<th class="text-center">已完成表数</th>
 											</tr>
 										</thead>
-										<tbody>
+										<tbody id="tbody_{{ forloop.counter }}">
 											{% for urlname, meta in item.items %}
 											<tr>
 											<td><a href="#">{{	urlname	}}</a></td>
@@ -120,27 +117,6 @@
 											<td class="text-center">{{meta.database_done}}</td>
 											<td class="text-center">{{meta.measurement_total}}</td>
 											<td class="text-center">{{meta.measurement_done}}</td>
-											<!-- <td  class="text-center small">
-												{% if not backend.rewrite %}
-												<span class="label label-primary">{{backend.rewrite}}</span>	
-												{% else %}	
-												<span class="label label-warning">{{backend.rewrite}}</span>	
-												{% endif %}	
-											</td>
-											<td  class="text-center small">
-												{% if not backend.backlog %}
-												<span class="label label-primary">{{backend.backlog}}</span>	
-												{% else %}	
-												<span class="label label-warning">{{backend.backlog}}</span>	
-												{% endif %}	
-											</td>
-											<td  class="text-center small">
-												{% if backend.healthy %}
-												<span class="label label-primary">{{backend.healthy}}</span>	
-												{% else %}	
-												<span class="label label-warning">{{backend.healthy}}</span>	
-												{% endif %}	
-											</td> -->
 											</tr>
 											{% endfor %}
 										</tbody>
@@ -158,6 +134,88 @@
 		    <!-- 全局js -->
 			<script src="/static/hplus-admin/js/jquery.min.js?v=2.1.4"></script>
 			<script src="/static/hplus-admin/js/bootstrap.min.js?v=3.3.7"></script>
-			<script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+			<script src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+			<script>
+				$.ajaxSetup({
+					data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+				})
+			</script>
+			<!-- 逻辑代码 -->
+			<script>
+				var current_timer_id = null;
+				$('#synrbutton').on("click", function(){
+					var from_timestap = $('#from_timestap_id').val();
+					var worker_num = $('#worker_id').val();
+
+					var data = {'from_timestap':from_timestap, "worker_num":worker_num};
+					$.ajax({
+            			url:"{% url 'data_sync' %}",
+            			type:"GET",
+            			data:data,
+						success:function (result) { // result is String
+							response_state = result['response_state']
+							console.log(response_state);
+							// if(response_state == "accepted"){
+								// 正在同步所有的cricles。
+								$('#synrbutton').attr("disabled", true);
+								$('#prompt').html("<font color='red'>正在开始同步</font>");
+								current_timer_id = setInterval(function(){
+										update_table();
+									}, 1000);
+							// }	
+						}
+					});
+				});
+
+				// 更新下面的状态表
+				function update_table(){
+					$.ajax({
+            			url:"/manage/json/influx_sync",
+            			type:"GET",
+            			data:{},
+						success:function (result) { // result is String
+							sync_state = result["sync_state"]
+							has_sync = result["has_sync"]
+							for(var i = 0; i < sync_state.length; i++) {
+								tbody_str = ""
+								for(var key in sync_state[i]){
+									values = sync_state[i][key]
+									tbody_str += "<tr><td><a href='#'>"+key+"</a></td><td  class='text-center small'>"
+									if(values['database_total'] == values['database_done'] & values['measurement_total']==values['measurement_done']){
+										tbody_str += "	<span class='label label-primary'>已完成</span>	"
+									}else{
+										tbody_str += "	<span class='label label-warning'>未完成</span>"
+									}
+									tbody_str += "</td>"+
+											"<td class='text-center'>"+values['database_total']+"</td>"+
+											"<td class='text-center'>"+values['database_done']+"</td>"+
+											"<td class='text-center'>"+values['measurement_total']+"</td>"+
+											"<td class='text-center'>"+values['measurement_done']+"</td>"+
+											"</tr>"
+								}
+								$('#tbody_'+String(i+1)).html(tbody_str);
+							}
+							is_sync = true
+							// 判断是否更新完毕
+							for(var key in has_sync) {
+								if(has_sync[key]==false){
+									is_sync = false;
+									break;
+								} 
+							}
+
+							if(is_sync) {
+								alert("已同步完成！");
+								$('#synrbutton').attr("disabled", false);
+								$('#prompt').html("请开始同步");
+								if(current_timer_id!=null) {
+									clearInterval(current_timer_id);
+								}
+							}
+						}
+					});
+				}
+
+			</script>
 	</body>
 </html>

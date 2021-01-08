@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,20 +8,34 @@
 		<!--360浏览器优先以webkit内核解析-->
 
 		<title>Influx扩容管理</title>
+	
+			<!-- 全局js -->
+			
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel='stylesheet' type='text/css' href="/static/bootstrap-3.3.7/css/bootstrap.min.css"></link>
+	<link href="/static/hplus-admin/css/font-awesome.css" rel="stylesheet" />
 
-		<link rel="shortcut icon" href="favicon.ico" />
-		<link href="/static/hplus-admin/css/bootstrap.min.css?v=3.3.7" rel="stylesheet" />
-		<link href="/static/hplus-admin/css/font-awesome.css?v=4.4.0" rel="stylesheet" />
+	<link href="/static/hplus-admin/css/animate.css" rel="stylesheet" />
+	<link href="/static/hplus-admin/css/style.css" rel="stylesheet" />
+	<link rel='stylesheet' type='text/css' href="/static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.css"></link>
+	<link rel='stylesheet' type='text/css' href="/static/bootstrap-3.3.7/plus/table/bootstrap-table.min.css"></link> 
+	<script type="text/javascript" src="{% static 'lib/jquery/1.9.1/jquery.min.js' %}"></script> 
+	<script type="text/javascript" src="/static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 
-		<link href="/static/hplus-admin/css/animate.css" rel="stylesheet" />
-		<link href="/static/hplus-admin/css/style.css?v=4.1.0" rel="stylesheet" />
+	<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table.min.js"></script>
+	<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.zh-CN.js"></script>
+	<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table-zh-CN.min.js"></script> 
+	<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table-edit.js"></script>
+	<script type="text/javascript" src="/static/bootstrap-3.3.7/js/html5shiv.min.js"></script>
+	<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/bootstrap-select.js"></script>
+
 		<!-- Morris -->
-		<link href="/static/hplus-admin/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+		<!-- <link href="/static/hplus-admin/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet"> -->
 
 		<!-- Gritter -->
-		<link href="/static/hplus-admin/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
-		<link href="/static/hplus-admin/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
-		<link href="/static/hplus-admin/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+		<!-- <link href="/static/hplus-admin/js/plugins/gritter/jquery.gritter.css" rel="stylesheet"> -->
+		<!-- <link href="/static/hplus-admin/css/plugins/datapicker/datepicker3.css" rel="stylesheet"> -->
 	</head>
 
 	<body class="gray-bg">
@@ -39,42 +54,36 @@
                         </div>
                     </div>
                     <div class="ibox-content">
-                        <form class="form-horizontal">
+                        <div class="form-horizontal">
                             <p>当 influxdb 实例无法承载当前数据量时，需要扩充新的 influxdb 实例，或者当前所有 influxdb 实例硬件资源严重过剩，需要缩减 influxdb 实例，则需要进行扩缩容操作</p>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Circle选择</label>
 
                                 <div class="col-sm-8">
-                                    <select class="form-control m-b" name="account">
-                                        <option value="0">cirle-0</option>
-                                        <option value="1">circle-1</option>
+                                    <select class="form-control m-b" name="account" id="circle_id">
+										{% for circle in proxy_config.circles %}
+                                        <option value="{{circle.name}}">{{circle.name}}</option>
+										<!-- <option value="1">circle-1</option> -->
+										{% endfor %}
                                     </select><span class="help-block m-b-none">选择要扩(缩)容的Circle</span>
                                 </div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">InfluxDB实例</label>
 							<div class = "col-sm-8">
-										<table id="exampleTableToolbar2" class="table table-striped table-hover"></table>
-											<!-- <thead>
-												<tr>
-													<th data-field="name">实例名</th>
-													<th data-field="star">实例URL</th>
-													<th data-field="license">用户名</th>
-													<th data-field="license">密码</th>
-													<th data-field="license">是否验证</th>
-													<th data-field=>
-												</tr>
-											</thead>
-											<tr><td>1</td><td>2</td><td>3</td></tr> -->
-										</table>
+								<button type="button" class="btn btn-outline btn-default" id="add_btn">
+									<i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
+								</button>
+										<table id="reportTable" class="table table-striped table-hover"></table>
 							</div>
 							</div>
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-8">
-                                    <button class="btn btn-sm btn-white" type="submit">开始扩容</button>
+									<button class="btn btn-sm btn-white" id="synrbutton">开始扩容</button>
+									<span class="help-block m-b-none" id="prompt">请开始扩容</span>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>	
@@ -125,27 +134,6 @@
 											<td class="text-center">{{meta.database_done}}</td>
 											<td class="text-center">{{meta.measurement_total}}</td>
 											<td class="text-center">{{meta.measurement_done}}</td>
-											<!-- <td  class="text-center small">
-												{% if not backend.rewrite %}
-												<span class="label label-primary">{{backend.rewrite}}</span>	
-												{% else %}	
-												<span class="label label-warning">{{backend.rewrite}}</span>	
-												{% endif %}	
-											</td>
-											<td  class="text-center small">
-												{% if not backend.backlog %}
-												<span class="label label-primary">{{backend.backlog}}</span>	
-												{% else %}	
-												<span class="label label-warning">{{backend.backlog}}</span>	
-												{% endif %}	
-											</td>
-											<td  class="text-center small">
-												{% if backend.healthy %}
-												<span class="label label-primary">{{backend.healthy}}</span>	
-												{% else %}	
-												<span class="label label-warning">{{backend.healthy}}</span>	
-												{% endif %}	
-											</td> -->
 											</tr>
 											{% endfor %}
 										</tbody>
@@ -159,56 +147,161 @@
 			{% endfor %}
 		</div>
 
+		<script>
+			$.ajaxSetup({
+				data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+			})
+		</script>
+		<script>
 
-		    <!-- 全局js -->
-			<script src="/static/hplus-admin/js/jquery.min.js?v=2.1.4"></script>
-			<script src="/static/hplus-admin/js/bootstrap.min.js?v=3.3.7"></script>
-			<script src="/static/hplus-admin/js/plugins/datapicker/bootstrap-datepicker.js"></script>
-			<!-- <script src="/static/hplus-admin/js/plugins/bootstrap-table/bootstrap-table.min.js"></script> -->
-			<!-- <script src="/static/hplus-admin/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script> -->
-			<!-- <script src="/static/hplus-admin/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script> -->
-			<!-- <script src="/static/hplus-admin/js/demo/bootstrap-table-demo.js"></script> -->
-			 <link rel='stylesheet' type='text/css' href="/static/bootstrap-3.3.7/plus/table/bootstrap-table.min.css"></script></link> 
-			<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table.min.js"></script>
-		<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table-zh-CN.min.js"></script> 
-		<script type="text/javascript" src="/static/bootstrap-3.3.7/plus/table/bootstrap-table-edit.js"></script>
+		var proxy_config = {}
 
-			<script>
-		
-		$(document).ready(function(){ 
-			console.log("starting");
+		$('#circle_id').change(
+			function(){
+				circle_select = $('#circle_id').val();
+				var circle_data = {};
+				for(var i = 0; i < proxy_config['circles'].length; i++){
+					current_circle = proxy_config['circles'][i];
+					if(current_circle['name']==circle_select) {
+						circle_data = current_circle['backends'];
+					}
+				}
+				set_config_table(circle_select, circle_data)
+			}
+		);
 
-			$('#exampleTableToolbar2').bootstrapTable({
-				method: 'get',
-				// editable:true,//开启编辑模式
-				// clickToSelect: true,
-				height: 50,  
-				columns: [
-				// [
-				// 	{colspan:20,title:"中国",align:"center"}
-				// ],
-					[
-						{colspan:30, field:"name", title:"实例名",align:"center"},
-						{colspan:30, filed:"url",title: "实例URL",align:"center"},
-						{colspan:30, filed:"username",title: "用户名",align:"center"},
-						{colspan:30, filed:"password",title: "密码",align:"center"},
-						{colspan:30, filed:"auth_secure",title: "是否验证",align:"center"},
-					]
-				],
-				// onClickRow: function (row,$element) {
-				// },
-				// onClickCell: function(field,value,row,$element){
-				// },
-				// onDblClickCell: function(field,value,row,$element){
-				// },
-				data: [{"name":"1","url":"1234","username":"","password":"","auth_secure":"true"},{"name":"2","url":"1234","username":"","password":"","auth_secure":"true"}]
-			}); 
-
-
+		$('#add_btn').on("click", function(){
+			var data = {"name":"influxdb"};
+			$('#reportTable').bootstrapTable('append',data);
 		});
 
+		function set_config_table(circle_name, circle_data){
+			$("#reportTable").bootstrapTable(('destroy'));
+			$('#reportTable').bootstrapTable({
+				method: 'get',
+				editable:true,//开启编辑模式
+				// clickToSelect: true,
+				columns: [
+					[
+						{colspan:10,title:circle_name,align:"center"}
+					],
+					[			
+						{field:"name",title:"实例名",align:"center"},
+						{field:"url",title: "实例URL",align:"center"},
+						{field:"username",title: "用户名",align:"center"},
+						{field:"password",title: "密码",align:"center"},
+						{field:"auth_secure",title: "是否验证",align:"center"},	
+						{field:"checkbox",title:"是否删除",checkbox:true,},
+					]
+				],
+				onClickRow: function (row,$element) {
+						console.log(row);	
+					},
+				data : circle_data
+			}); 
+		}
+		
+		$(document).ready(function(){ 
+			var data = {};
+			$.ajax({
+					url:"/manage/json/influx_rebalance",
+					type:"GET",
+					data:data,
+					success:function (result) { // result is String
+						proxy_config  = result['proxy_config'];
+						
+						circle_select = $('#circle_id').val();
+						// console.log(circle_select);
+						var circle_data = {};
+						for(var i = 0; i < proxy_config['circles'].length; i++){
+							current_circle = proxy_config['circles'][i];
+							// console.log(current_circle);
+							if(current_circle['name']==circle_select) {
+								circle_data = current_circle['backends'];
+							}
+						}
+							set_config_table(circle_select, circle_data);
+					}
+			});
+		});
+
+		var current_timer_id = null;
+		$('#synrbutton').on("click", function(){
+			var circle_select = $('#circle_id').val();
+			// var worker_num = $('#worker_id').val();
+			var table_content = $('#reportTable').bootstrapTable('getData',useCurrentPage=true);
 
 
-			</script>
+			var data = {'circle_select':circle_select, "table_content":JSON.stringify(table_content)};
+			$.ajax({
+				url:"{% url 'data_rebalance' %}",
+				type:"POST",
+				data:data,
+				success:function (result) { // result is String
+					response_state = result['response_state']
+					console.log(response_state);
+					// if(response_state == "accepted"){
+						// 正在同步所有的cricles。
+						$('#synrbutton').attr("disabled", true);
+						$('#prompt').html("<font color='red'>正在开始扩容</font>");
+						current_timer_id = setInterval(function(){
+								update_table();
+							}, 1000);
+					// }	
+				}
+			});
+		});
+
+		// 更新下面的状态表
+		function update_table(){
+			$.ajax({
+				url:"/manage/json/influx_rebalance",
+				type:"GET",
+				data:{},
+				success:function (result) { // result is String
+					sync_state = result["sync_state"]
+					has_sync = result["has_sync"]
+					for(var i = 0; i < sync_state.length; i++) {
+						tbody_str = ""
+						for(var key in sync_state[i]){
+							values = sync_state[i][key]
+							tbody_str += "<tr><td><a href='#'>"+key+"</a></td><td  class='text-center small'>"
+							if(values['database_total'] == values['database_done'] & values['measurement_total']==values['measurement_done']){
+								tbody_str += "	<span class='label label-primary'>已完成</span>	"
+							}else{
+								tbody_str += "	<span class='label label-warning'>未完成</span>"
+							}
+							tbody_str += "</td>"+
+									"<td class='text-center'>"+values['database_total']+"</td>"+
+									"<td class='text-center'>"+values['database_done']+"</td>"+
+									"<td class='text-center'>"+values['measurement_total']+"</td>"+
+									"<td class='text-center'>"+values['measurement_done']+"</td>"+
+									"</tr>"
+						}
+						$('#tbody_'+String(i+1)).html(tbody_str);
+					}
+					is_sync = true
+					// 判断是否更新完毕
+					for(var key in has_sync) {
+						if(has_sync[key]==false){
+							is_sync = false;
+							break;
+						} 
+					}
+
+					if(is_sync) {
+						alert("已扩容完成！");
+						$('#synrbutton').attr("disabled", false);
+						$('#prompt').html("请开始扩容");
+						if(current_timer_id!=null) {
+							clearInterval(current_timer_id);
+						}
+					}
+				}
+			});
+		}
+
+
+		</script>
 	</body>
 </html>

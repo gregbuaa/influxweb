@@ -1,0 +1,66 @@
+<html>
+	<head>
+    <base href="<%=basePath%>">
+    <meta charset="utf-8">
+    <!--支持 浏览器内核 webkit、ie-comp IE兼容、ie-stand IE标准 -->
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <!--开启IE兼容模式  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <!--移动设备支持， width=device-width 自适应宽度,initial-scale=1.0 初始缩放比例为1:1,user-scalable 用户是否可以手动缩放-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+
+		<!--360浏览器优先以webkit内核解析-->
+
+		<title>Influx扩容管理</title>
+
+<link rel='stylesheet' type='text/css' href="../static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.css"></link>
+<link rel='stylesheet' type='text/css' href="../static/bootstrap-3.3.7/plus/table/bootstrap-table.min.css"></link> 
+<link rel='stylesheet' type='text/css' href="../static/bootstrap-3.3.7/css/bootstrap.min.css"></link>
+<script type="text/javascript" src="../static/bootstrap-3.3.7/js/jquery.min.js"></script> 
+<script type="text/javascript" src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="../static/bootstrap-3.3.7/plus/table/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="../static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="../static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../static/bootstrap-3.3.7/plus/table/bootstrap-table-zh-CN.min.js"></script> 
+<script type="text/javascript" src="../static/bootstrap-3.3.7/plus/table/bootstrap-table-edit.js"></script>
+<script type="text/javascript" src="../static/bootstrap-3.3.7/js/html5shiv.min.js"></script>
+<script type="text/javascript" src="../static/bootstrap-3.3.7/plus/bootstrap-select.js"></script>
+
+</head>
+
+<body>
+    <table id="exampleTable" class="table table-striped table-hover"></table>
+
+    <script>
+		
+		$(document).ready(function(){ 
+			console.log("starting");
+
+			$('#exampleTable').bootstrapTable({
+				method: 'get',
+				editable:true,//开启编辑模式
+				height: 50,  
+				columns: [
+					[
+						{colspan:30, field:"name", title:"实例名",align:"center"},
+						{colspan:30, filed:"url",title: "实例URL",align:"center"},
+						{colspan:30, filed:"username",title: "用户名",align:"center"},
+						{colspan:30, filed:"password",title: "密码",align:"center"},
+						{colspan:30, filed:"auth_secure",title: "是否验证",align:"center"},
+					]
+				],
+                data: []
+                //{"name":"1","url":"1234","username":"","password":"","auth_secure":"true"},{"name":"2","url":"1234","username":"","password":"","auth_secure":"true"}
+			}); 
+			var data = {};
+			$('#exampleTable').bootstrapTable('append',data);
+		});
+
+
+
+		</script>
+</body>
+
+</html>
