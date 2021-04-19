@@ -168,6 +168,7 @@ class Influxsite(models.Model):
     passwd = models.CharField(max_length=255, blank=True, null=True)
     database = models.CharField(max_length=255, blank=True, null=True)
     database_chinese_name = models.CharField(max_length=255, blank=True, null=True)
+    config_file = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         managed = False

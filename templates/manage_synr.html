@@ -24,10 +24,11 @@
 
 	<body class="gray-bg">
 		<div class="wrapper wrapper-content">
+			{% for item in site_list %}
 			<div class="col-sm-8">
-                <div class="ibox float-e-margins">
+                <div class="ibox float-e-margins" >
                     <div class="ibox-title">
-                        <h5>InfluxDB同步管理</h5>
+                        <h5>站点{{item.chinese_name}}{{item.site_name}}同步</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -37,6 +38,7 @@
                             </a>
                         </div>
                     </div>
+					
                     <div class="ibox-content">
                         <div class="form-horizontal">
                             <p>因为网络、磁盘等各种环境原因，可能会有极少概率出现各个 circle 数据不一致的情况、导致脏读问题，因此需要定期做数据同步，以达到数据一致性，实现方案是对所有 circle 的数据进行互相同步</p>
@@ -45,7 +47,7 @@
 								<div class="col-sm-8">
 								<div class="input-group date">
 									<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-									<input type="text" class="form-control" value="2020-10-01" id="from_timestap_id">
+									<input type="text" class="form-control" value="2020-10-01" id="from_timestap_id{{item.site_no}}">
 								</div><span class="help-block m-b-none">互相同步从该时间点开始的数据,默认为0,同步所有数据</span>
 								</div>
                             </div>
@@ -53,7 +55,7 @@
                                 <label class="col-sm-3 control-label">线程数：</label>
 
                                 <div class="col-sm-8">
-									<select class="form-control m-b" name="account" id="worker_id">
+									<select class="form-control m-b" name="account" id="worker_id{{item.site_no}}">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -63,21 +65,29 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-8">
-									<button class="btn btn-sm btn-white" id="synrbutton">开始同步</button>
-									<span class="help-block m-b-none" id="prompt">请开始同步</span>
+									<button class="btn btn-sm btn-white" id="synrbutton_{{item.site_no}}" onclick="synr(this)">开始同步</button>
+									<span class="help-block m-b-none" id="prompt{{item.site_no}}">请开始同步</span>
+									<div id="sync_div{{item.site_no}}">
+									{% if item.states != "False" %}
+									<span class="label label-warning">未完成</span>	
+									{% else %}	
+									<span class="label label-primary">已完成</span>	
+									{% endif %}
+									</div>	
                                 </div>
                             </div>
                         </div>
                     </div>
+					
                 </div>
             </div>	
-
+			{% endfor %}
 			{% for item in sync_state %}
 			<div class="row">
 				<div class="col-sm-8">
 					<div class="ibox float-e-margins">
 						<div class="ibox-title">
-							<h5>{{ forloop.counter }}-circle</h5>
+							<h5>{{item.site_no}}</h5>
 							<div class="ibox-tools">
 								<a class="collapse-link">
 									<i class="fa fa-chevron-up"></i>
@@ -104,6 +114,7 @@
 										</thead>
 										<tbody id="tbody_{{ forloop.counter }}">
 											{% for urlname, meta in item.items %}
+											{% if 'http' in urlname %}
 											<tr>
 											<td><a href="#">{{	urlname	}}</a></td>
 											<td  class="text-center small">
@@ -118,6 +129,7 @@
 											<td class="text-center">{{meta.measurement_total}}</td>
 											<td class="text-center">{{meta.measurement_done}}</td>
 											</tr>
+											{% endif %}
 											{% endfor %}
 										</tbody>
 									</table>
@@ -143,29 +155,38 @@
 			<!-- 逻辑代码 -->
 			<script>
 				var current_timer_id = null;
-				$('#synrbutton').on("click", function(){
-					var from_timestap = $('#from_timestap_id').val();
-					var worker_num = $('#worker_id').val();
 
-					var data = {'from_timestap':from_timestap, "worker_num":worker_num};
-					$.ajax({
-            			url:"{% url 'data_sync' %}",
-            			type:"GET",
-            			data:data,
-						success:function (result) { // result is String
-							response_state = result['response_state']
-							console.log(response_state);
-							// if(response_state == "accepted"){
-								// 正在同步所有的cricles。
-								$('#synrbutton').attr("disabled", true);
-								$('#prompt').html("<font color='red'>正在开始同步</font>");
-								current_timer_id = setInterval(function(){
-										update_table();
-									}, 1000);
-							// }	
-						}
-					});
-				});
+				function synr(ob) {
+					
+						var id = $(ob).attr("id");
+						var site_no = id.split('_')[1];
+					if(window.confirm('你确定要同步吗？')){	
+						var from_timestap = $('#from_timestap_id'+site_no).val();
+						var worker_num = $('#worker_id'+site_no).val();
+						// console.log(from_timestap,worker_num);
+						var data = {'from_timestap':from_timestap, "worker_num":worker_num, "site_no":site_no};
+						$.ajax({
+							url:"{% url 'data_sync' %}",
+							type:"GET",
+							data:data,
+							success:function (result) { // result is String
+								response_state = result['response_state']
+								console.log(response_state);
+								// if(response_state == "accepted"){
+									// 正在同步所有的cricles。
+									$('#synrbutton_'+site_no).attr("disabled", true);
+									$('#prompt'+site_no).html("<font color='red'>正在开始同步</font>");
+									current_timer_id = setInterval(function(){
+											update_table();
+										}, 1000);
+								// }	
+							}
+						});
+						return true;
+					}else {
+						return false;
+					}
+				}
 
 				// 更新下面的状态表
 				function update_table(){
@@ -174,11 +195,16 @@
             			type:"GET",
             			data:{},
 						success:function (result) { // result is String
+							site_list = result["site_list"]
+
 							sync_state = result["sync_state"]
 							has_sync = result["has_sync"]
 							for(var i = 0; i < sync_state.length; i++) {
 								tbody_str = ""
 								for(var key in sync_state[i]){
+									if(key.indexOf("http") == -1){
+										continue
+									}
 									values = sync_state[i][key]
 									tbody_str += "<tr><td><a href='#'>"+key+"</a></td><td  class='text-center small'>"
 									if(values['database_total'] == values['database_done'] & values['measurement_total']==values['measurement_done']){
@@ -195,23 +221,33 @@
 								}
 								$('#tbody_'+String(i+1)).html(tbody_str);
 							}
-							is_sync = true
-							// 判断是否更新完毕
-							for(var key in has_sync) {
-								if(has_sync[key]==false){
-									is_sync = false;
-									break;
-								} 
-							}
 
-							if(is_sync) {
+							all_state = "False"
+							for(var i = 0; i < site_list.length; i++) {
+								is_sync = site_list[i]["states"]
+								site_no = site_list[i]["site_no"]
+								div_str = ""
+								if(is_sync=="True"){
+									div_str = "<span class='label label-warning'>未完成</span>	"
+									all_state = "True"
+								} else {
+									div_str = "<span class='label label-primary'>已完成</span>	"
+								}
+								$('#sync_div'+site_no).html(div_str);
+							}
+							if(all_state=="False") {
 								alert("已同步完成！");
-								$('#synrbutton').attr("disabled", false);
-								$('#prompt').html("请开始同步");
-								if(current_timer_id!=null) {
-									clearInterval(current_timer_id);
+								for(var i = 0; i < site_list.length; i++) {
+									site_no = site_list[i]["site_no"]
+									$('#synrbutton_'+site_no).attr("disabled", false);
+									$('#prompt'+site_no).html("请开始同步");
+									if(current_timer_id!=null) {
+										clearInterval(current_timer_id);
+									}
 								}
 							}
+
+							
 						}
 					});
 				}

@@ -32,7 +32,7 @@ def load_tables_info(request):
             influx_tables.append(temp_con)
 
 
-    site_sql = "select `site_no`,`site_name`,`site_chinese_name`,`database`,`database_chinese_name` from `influxsite` order by `site_name`"
+    site_sql = "select `site_no`,`site_name`,`site_chinese_name`,`database`,`database_chinese_name` from `influxsite` order by `site_name` desc" 
     cursor.execute(site_sql)
     site_tables = []
     # database_dict = {}
@@ -42,6 +42,7 @@ def load_tables_info(request):
     current_db = []
     for row in cursor.fetchall():
         site_no = str(row[0])
+        print("site_no",site_no)
         site_name = row[1]
         site_chinese_name = row[2]
         db_name = row[3]
@@ -71,7 +72,7 @@ def load_tables_info(request):
                 "children": tables
             })
 
-    site_tables[-1]['children']=current_db
+        site_tables[-1]['children']=current_db
 
     contents = {
         "config_tables":config_tables,

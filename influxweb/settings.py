@@ -25,7 +25,7 @@ SECRET_KEY = '*y8ochq%#dcy^r@fk#wrip$jm-_r7d+ep3g*xr7a++fy^vcakh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost","127.0.0.1","10.109.253.3"]
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 	'login',
     'captcha',
     'mainweb',
+    'management',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'root',
         'PORT': '3306', # 3306
-        'HOST': '219.224.169.20',
+        'HOST': '127.0.0.1',
     }
 }
 
