@@ -192,11 +192,6 @@
 			$('#reportTable'+site_no).bootstrapTable('append',data);
 		}
 
-		$('#add_btn').on("click", function(){
-			var data = {"name":"influxdb"};
-			$('#reportTable').bootstrapTable('append',data);
-		});
-
 		function set_config_table(circle_name, circle_data, site_no){
 			$("#reportTable"+site_no).bootstrapTable(('destroy'));
 			$('#reportTable'+site_no).bootstrapTable({
@@ -262,7 +257,7 @@
 			var id = $(ob).attr("id");
 			var site_no = String(id.split('_')[1]);
 			console.log(site_no);
-			if(window.confirm('你确定要同步吗？')){	
+			if(window.confirm('你确定要扩容吗？')){	
 				var circle_select = $('#circleid_'+site_no).val();
 				var table_content = $('#reportTable'+site_no).bootstrapTable('getData',useCurrentPage=true);
 				var data = {'circle_select':circle_select, "table_content":JSON.stringify(table_content),"site_no":site_no};
@@ -289,67 +284,67 @@
 			}
 		}
 
-						// 更新下面的状态表
-						function update_table(){
-					$.ajax({
-            			url:"/manage/json/influx_rebalance",
-            			type:"GET",
-            			data:{},
-						success:function (result) { // result is String
-							site_list = result["site_list"]
+				// 更新下面的状态表
+		function update_table(){
+			$.ajax({
+				url:"/manage/json/influx_rebalance",
+				type:"GET",
+				data:{},
+				success:function (result) { // result is String
+					site_list = result["site_list"]
 
-							sync_state = result["sync_state"]
-							has_sync = result["has_sync"]
-							for(var i = 0; i < sync_state.length; i++) {
-								tbody_str = ""
-								for(var key in sync_state[i]){
-									if(key.indexOf("http") == -1){
-										continue
-									}
-									values = sync_state[i][key]
-									tbody_str += "<tr><td><a href='#'>"+key+"</a></td><td  class='text-center small'>"
-									if(values['database_total'] == values['database_done'] & values['measurement_total']==values['measurement_done']){
-										tbody_str += "	<span class='label label-primary'>已完成</span>	"
-									}else{
-										tbody_str += "	<span class='label label-warning'>未完成</span>"
-									}
-									tbody_str += "</td>"+
-											"<td class='text-center'>"+values['database_total']+"</td>"+
-											"<td class='text-center'>"+values['database_done']+"</td>"+
-											"<td class='text-center'>"+values['measurement_total']+"</td>"+
-											"<td class='text-center'>"+values['measurement_done']+"</td>"+
-											"</tr>"
-								}
-								$('#tbody_'+String(i+1)).html(tbody_str);
+					sync_state = result["sync_state"]
+					has_sync = result["has_sync"]
+					for(var i = 0; i < sync_state.length; i++) {
+						tbody_str = ""
+						for(var key in sync_state[i]){
+							if(key.indexOf("http") == -1){
+								continue
 							}
-							all_state = "False"
-							for(var i = 0; i < site_list.length; i++) {
-								// is_sync = false
-								is_sync = site_list[i]["states"]
-								site_no = site_list[i]["site_no"]
-								div_str = ""
-								if(is_sync=="True"){
-									div_str = "<span class='label label-warning'>未完成</span>	"
-									all_state = "True"
-								} else {
-									div_str = "<span class='label label-primary'>已完成</span>	"
-								}
-								$('#sync_div'+site_no).html(div_str);
+							values = sync_state[i][key]
+							tbody_str += "<tr><td><a href='#'>"+key+"</a></td><td  class='text-center small'>"
+							if(values['database_total'] == values['database_done'] & values['measurement_total']==values['measurement_done']){
+								tbody_str += "	<span class='label label-primary'>已完成</span>	"
+							}else{
+								tbody_str += "	<span class='label label-warning'>未完成</span>"
 							}
-							if(all_state=="False") {
-								alert("已扩容完成！");
-								for(var i = 0; i < site_list.length; i++) {
-									site_no = site_list[i]["site_no"]
-									$('#synrbutton_'+site_no).attr("disabled", false);
-									$('#prompt_'+site_no).html("请开始扩容");
-									if(current_timer_id!=null) {
-										clearInterval(current_timer_id);
-									}
-								}
-							}						
+							tbody_str += "</td>"+
+									"<td class='text-center'>"+values['database_total']+"</td>"+
+									"<td class='text-center'>"+values['database_done']+"</td>"+
+									"<td class='text-center'>"+values['measurement_total']+"</td>"+
+									"<td class='text-center'>"+values['measurement_done']+"</td>"+
+									"</tr>"
 						}
-					});
+						$('#tbody_'+String(i+1)).html(tbody_str);
+					}
+					all_state = "False"
+					for(var i = 0; i < site_list.length; i++) {
+						// is_sync = false
+						is_sync = site_list[i]["states"]
+						site_no = site_list[i]["site_no"]
+						div_str = ""
+						if(is_sync=="True"){
+							div_str = "<span class='label label-warning'>未完成</span>	"
+							all_state = "True"
+						} else {
+							div_str = "<span class='label label-primary'>已完成</span>	"
+						}
+						$('#sync_div'+site_no).html(div_str);
+					}
+					if(all_state=="False") {
+						alert("已扩容完成！");
+						for(var i = 0; i < site_list.length; i++) {
+							site_no = site_list[i]["site_no"]
+							$('#synrbutton_'+site_no).attr("disabled", false);
+							$('#prompt_'+site_no).html("请开始扩容");
+							if(current_timer_id!=null) {
+								clearInterval(current_timer_id);
+							}
+						}
+					}						
 				}
+			});
+		}
 
 		</script>
 	</body>

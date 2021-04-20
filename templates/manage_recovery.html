@@ -30,10 +30,11 @@
 
 	<body class="gray-bg">
 		<div class="wrapper wrapper-content">
+			{% for item in site_list %}
 			<div class="col-sm-8">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>InfluxDB恢复管理</h5>
+                        <h5>站点{{item.chinese_name}}{{item.site_name}}恢复管理</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -50,8 +51,8 @@
                                 <label class="col-sm-3 control-label">从Circle</label>
 
                                 <div class="col-sm-8">
-                                    <select class="form-control m-b" name="account" id="from_circle_id">
-										{% for circle in proxy_config.circles %}
+                                    <select class="form-control m-b" name="account" id="fromcircleid_{{item.site_no}}">
+										{% for circle in item.config_file.circles %}
                                         <option value="{{circle.name}}">{{circle.name}}</option>
 										<!-- <option value="1">circle-1</option> -->
 										{% endfor %}
@@ -61,8 +62,8 @@
 							<div class="form-group">
                                 <label class="col-sm-3 control-label">到Circle</label>
                                 <div class="col-sm-8">
-                                    <select class="form-control m-b" name="account" id="to_circle_id">
-										{% for circle in proxy_config.circles %}
+                                    <select class="form-control m-b" name="account" id="tocircleid_{{item.site_no}}" onchange="change_circle(this)">
+										{% for circle in item.config_file.circles %}
                                         <option value="{{circle.name}}">{{circle.name}}</option>
 										<!-- <option value="1">circle-1</option> -->
 										{% endfor %}
@@ -72,17 +73,17 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">InfluxDB实例</label>
 							<div class = "col-sm-8">
-								<button type="button" class="btn btn-outline btn-default" id="add_btn">
+								<button type="button" class="btn btn-outline btn-default" id="addbtn_{{item.site_no}}"  onclick="addclickevent(this)">
 									<i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
 								</button>
-										<table id="reportTable" class="table table-striped table-hover"></table><span class="help-block m-b-none">请删除或添加influxDB实例</span>
+										<table id="reportTable{{item.site_no}}" class="table table-striped table-hover"></table><span class="help-block m-b-none">请删除或添加influxDB实例</span>
 							</div>
 							</div>
 							<div class="form-group">
                                 <label class="col-sm-3 control-label">待恢复的实例：</label>
 
                                 <div class="col-sm-8">
-                                    <input type="email" placeholder="http://127.0.0.1:14001,http://127.0.0.1:14002" class="form-control" id="recovery_influx_id"> <span class="help-block m-b-none">待恢复的influxdb实例url列表，以英文逗号 ',' 分隔，为空时将默认为待恢复circle的全部influxdb实例url列表</span>
+                                    <input type="email" placeholder="http://127.0.0.1:14001,http://127.0.0.1:14002" class="form-control" id="recoveryinflux_{{item.site_no}}"> <span class="help-block m-b-none">待恢复的influxdb实例url列表，以英文逗号 ',' 分隔，为空时将默认为待恢复circle的全部influxdb实例url列表</span>
                                 </div>
 							</div>
 							
@@ -90,7 +91,7 @@
                                 <label class="col-sm-3 control-label">线程数：</label>
 
                                 <div class="col-sm-8">
-                                    <select class="form-control m-b" id="worker_id">
+                                    <select class="form-control m-b" id="workerid_{{item.site_no}}">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -102,21 +103,29 @@
 							
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-8">
-									<button class="btn btn-sm btn-white" id="synrbutton">开始恢复</button>
-									<span class="help-block m-b-none" id="prompt">请开始恢复</span>
+									<button class="btn btn-sm btn-white" id="synrbutton_{{item.site_no}}" onclick="synrclickevent(this)">开始恢复</button>
+									<span class="help-block m-b-none" id="prompt_{{item.site_no}}">请开始恢复</span>
+									<div id="sync_div{{item.site_no}}">
+										{% if item.states != "False" %}
+										<span class="label label-warning">未完成</span>	
+										{% else %}	
+										<span class="label label-primary">已完成</span>	
+										{% endif %}
+										</div>	
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>	
+			{% endfor %}
 
 			{% for item in sync_state %}
 			<div class="row">
 				<div class="col-sm-8">
 					<div class="ibox float-e-margins">
 						<div class="ibox-title">
-							<h5>{{ forloop.counter }}-circle</h5>
+							<h5>{{item.site_no}}</h5>
 							<div class="ibox-tools">
 								<a class="collapse-link">
 									<i class="fa fa-chevron-up"></i>
@@ -143,6 +152,7 @@
 										</thead>
 										<tbody>
 											{% for urlname, meta in item.items %}
+											{% if 'http' in urlname %}
 											<tr>
 											<td><a href="#">{{	urlname	}}</a></td>
 											<td  class="text-center small">
@@ -157,6 +167,7 @@
 											<td class="text-center">{{meta.measurement_total}}</td>
 											<td class="text-center">{{meta.measurement_done}}</td>
 											</tr>
+											{% endif %}
 											{% endfor %}
 										</tbody>
 									</table>
@@ -178,30 +189,37 @@
 		</script>
 		<script>
 
-		var proxy_config = {}
+		var all_proxy_config = {};
 
-		$('#to_circle_id').change(
-			function(){
-				circle_select = $('#to_circle_id').val();
-				var circle_data = {};
-				for(var i = 0; i < proxy_config['circles'].length; i++){
-					current_circle = proxy_config['circles'][i];
-					if(current_circle['name']==circle_select) {
-						circle_data = current_circle['backends'];
-					}
+		function change_circle(ob) {
+			var id = $(ob).attr("id");
+			var site_no = String(id.split('_')[1]);
+			console.log(site_no);
+			proxy_config = all_proxy_config[site_no+"site"];
+
+			circle_select = $('#tocircleid_'+site_no).val();
+			var circle_data = {};
+			for(var i = 0; i < proxy_config['circles'].length; i++){
+				current_circle = proxy_config['circles'][i];
+				if(current_circle['name']==circle_select) {
+					circle_data = current_circle['backends'];	
 				}
-				set_config_table(circle_select, circle_data)
 			}
-		);
+			set_config_table(circle_select, circle_data, site_no);
+		}
 
-		$('#add_btn').on("click", function(){
+		function addclickevent(ob) {
+			var id = $(ob).attr("id");
+			var site_no = String(id.split('_')[1]);
+			console.log(site_no);
 			var data = {"name":"influxdb"};
-			$('#reportTable').bootstrapTable('append',data);
-		});
+			$('#reportTable'+site_no).bootstrapTable('append',data);
+		}
 
-		function set_config_table(circle_name, circle_data){
-			$("#reportTable").bootstrapTable(('destroy'));
-			$('#reportTable').bootstrapTable({
+
+		function set_config_table(circle_name, circle_data, site_no){
+			$("#reportTable"+site_no).bootstrapTable(('destroy'));
+			$('#reportTable'+site_no).bootstrapTable({
 				method: 'get',
 				editable:true,//开启编辑模式
 				// clickToSelect: true,
@@ -228,68 +246,95 @@
 		$(document).ready(function(){ 
 			var data = {};
 			$.ajax({
-					url:"/manage/json/influx_rebalance",
+					url:"/manage/json/influx_recovery",
 					type:"GET",
 					data:data,
 					success:function (result) { // result is String
-						proxy_config  = result['proxy_config'];
-						
-						circle_select = $('#to_circle_id').val();
-						// console.log(circle_select);
-						var circle_data = {};
-						for(var i = 0; i < proxy_config['circles'].length; i++){
-							current_circle = proxy_config['circles'][i];
-							// console.log(current_circle);
-							if(current_circle['name']==circle_select) {
-								circle_data = current_circle['backends'];
+						var influx_sites = result["site_list"];
+
+						for(var s = 0; s < influx_sites.length; s++) {
+							current_site = influx_sites[s];
+							proxy_config = current_site["config_file"];
+							all_proxy_config[current_site["site_no"]+"site"] = proxy_config;
+							circle_select = $('#tocircleid_'+current_site["site_no"]).val();
+							console.log(circle_select)
+							var circle_data = {};
+							for(var i = 0; i < proxy_config['circles'].length; i++){
+								current_circle = proxy_config['circles'][i];
+								// console.log(current_circle);
+								if(current_circle['name']==circle_select) {
+									circle_data = current_circle['backends'];
+									
+								}
 							}
+							set_config_table(circle_select, circle_data,current_site["site_no"]);
 						}
-							set_config_table(circle_select, circle_data);
 					}
+						
+
 			});
 		});
 
+		
 		var current_timer_id = null;
-		$('#synrbutton').on("click", function(){
-			var to_circle = $('#to_circle_id').val();
-			var worker_num = $('#worker_id').val();
-			var from_circle = $('#from_circle_id').val();
-			var recovery_influx = $('recovery_influx_id').val();
-			var table_content = $('#reportTable').bootstrapTable('getData',useCurrentPage=true);
 
+		function synrclickevent(ob) {
+			
+			var id = $(ob).attr("id");
+			var site_no = String(id.split('_')[1]);
+			console.log(site_no);
+			if(window.confirm('你确定要恢复吗？')){	
+				var to_circle = $('#tocircleid_'+site_no).val();
+				var worker_num = $('#workerid_'+site_no).val();
+				var from_circle = $('#fromcircleid_'+site_no).val();
+				var recovery_influx = $('recoveryinflux_'+site_no).val();
+				var table_content = $('#reportTable'+site_no).bootstrapTable('getData',useCurrentPage=true);
 
-			var data = {' to_circle': to_circle, "table_content":JSON.stringify(table_content),'from_circle':from_circle, 'worker_num':worker_num, 'recovery_influx':recovery_influx};
-			$.ajax({
-				url:"{% url 'data_recovery' %}",
-				type:"POST",
-				data:data,
-				success:function (result) { // result is String
-					response_state = result['response_state']
-					console.log(response_state);
-					// if(response_state == "accepted"){
-						// 正在同步所有的cricles。
-						$('#synrbutton').attr("disabled", true);
-						$('#prompt').html("<font color='red'>正在开始恢复</font>");
-						current_timer_id = setInterval(function(){
-								update_table();
-							}, 1000);
-					// }	
-				}
-			});
-		});
+				console.log("from_circle"+from_circle);
+
+				console.log("to_circle"+to_circle);
+				var data = {'to_circle': to_circle, "table_content":JSON.stringify(table_content),'from_circle':from_circle, 'worker_num':worker_num, 'recovery_influx':recovery_influx,"site_no":site_no};
+				$.ajax({
+					url:"{% url 'data_recovery' %}",
+					type:"POST",
+					data:data,
+					success:function (result) { // result is String
+						response_state = result['response_state']
+						console.log(response_state);
+						// if(response_state == "accepted"){
+							// 正在同步所有的cricles。
+							$('#synrbutton_'+site_no).attr("disabled", true);
+							$('#prompt_'+site_no).html("<font color='red'>正在开始恢复</font>");
+							current_timer_id = setInterval(function(){
+									update_table(false);
+								}, 1000);
+						// }	
+					}
+				});
+				return true;
+			}else {
+				return false;
+			}
+		}
+
 
 		// 更新下面的状态表
-		function update_table(){
+		function update_table(is_last){
 			$.ajax({
-				url:"/manage/json/influx_recovery",
+				url:"/manage/json/influx_rebalance",
 				type:"GET",
 				data:{},
 				success:function (result) { // result is String
+					site_list = result["site_list"]
+
 					sync_state = result["sync_state"]
 					has_sync = result["has_sync"]
 					for(var i = 0; i < sync_state.length; i++) {
 						tbody_str = ""
 						for(var key in sync_state[i]){
+							if(key.indexOf("http") == -1){
+								continue
+							}
 							values = sync_state[i][key]
 							tbody_str += "<tr><td><a href='#'>"+key+"</a></td><td  class='text-center small'>"
 							if(values['database_total'] == values['database_done'] & values['measurement_total']==values['measurement_done']){
@@ -306,23 +351,38 @@
 						}
 						$('#tbody_'+String(i+1)).html(tbody_str);
 					}
-					is_sync = true
-					// 判断是否更新完毕
-					for(var key in has_sync) {
-						if(has_sync[key]==false){
-							is_sync = false;
-							break;
-						} 
-					}
 
-					if(is_sync) {
+					all_state = "False"
+					for(var i = 0; i < site_list.length; i++) {
+						// is_sync = false
+						is_sync = site_list[i]["states"]
+						site_no = site_list[i]["site_no"]
+						div_str = ""
+						if(is_sync=="True"){
+							div_str = "<span class='label label-warning'>未完成</span>	"
+							all_state = "True"
+						} else {
+							div_str = "<span class='label label-primary'>已完成</span>	"
+						}
+						$('#sync_div'+site_no).html(div_str);
+					}
+					if(all_state=="False") {
 						alert("已恢复完成！");
-						$('#synrbutton').attr("disabled", false);
-						$('#prompt').html("请开始恢复");
-						if(current_timer_id!=null) {
-							clearInterval(current_timer_id);
+						
+						for(var i = 0; i < site_list.length; i++) {
+							site_no = site_list[i]["site_no"]
+							$('#synrbutton_'+site_no).attr("disabled", false);
+							$('#prompt_'+site_no).html("请开始恢复");
+							// update_table();
+							if(current_timer_id!=null) {
+								clearInterval(current_timer_id);
+							}
+						}
+						if(is_last == false){
+							update_table(true);
 						}
 					}
+						
 				}
 			});
 		}
