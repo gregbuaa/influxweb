@@ -82,9 +82,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'timeservice',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'PORT': '3306', # 3306
-        'HOST': '127.0.0.1',
+        'PASSWORD': '123456',
+        'PORT': '8066', # 3306
+        'HOST': '192.168.231.204',
     }
 }
 

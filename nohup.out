@@ -1,0 +1,1613 @@
+[21/Apr/2021 01:59:00] "GET /load_site_table?csrfmiddlewaretoken=eNW5o9Uo8De1lHXIufpj9K3LIBzavuzrgVkADq04hkcYu8Zd6z4TEgtEW6t3pkjK&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 03:29:10] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 03:29:10] "GET /static/h-ui.admin/css/H-ui.admin.css HTTP/1.1" 200 7042
+[21/Apr/2021 03:29:10] "GET /static/h-ui/css/H-ui.min.css HTTP/1.1" 200 174693
+[21/Apr/2021 03:29:10] "GET /static/lib/Hui-iconfont/1.0.8/iconfont.css HTTP/1.1" 200 16591
+[21/Apr/2021 03:29:10] "GET /static/h-ui.admin/skin/default/skin.css HTTP/1.1" 200 1173
+[21/Apr/2021 03:29:10] "GET /static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.css HTTP/1.1" 200 22598
+[21/Apr/2021 03:29:10] "GET /static/lib/jquery/1.9.1/jquery.min.js HTTP/1.1" 200 92629
+[21/Apr/2021 03:29:10] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 03:29:10] "GET /static/lib/layer/2.4/layer.js HTTP/1.1" 200 19843
+[21/Apr/2021 03:29:10] "GET /static/bootstrap-3.3.7/plus/table/bootstrap-table.min.css HTTP/1.1" 200 5309
+[21/Apr/2021 03:29:10] "GET /static/h-ui/js/H-ui.js HTTP/1.1" 200 293004
+[21/Apr/2021 03:29:10] "GET /static/h-ui.admin/js/H-ui.admin.page.js HTTP/1.1" 200 3090
+[21/Apr/2021 03:29:10] "GET /static/bootstrap-3.3.7/plus/table/bootstrap-table.min.js HTTP/1.1" 200 45501
+[21/Apr/2021 03:29:10] "GET /static/bootstrap-3.3.7/plus/table/bootstrap-table-edit.js HTTP/1.1" 200 13691
+[21/Apr/2021 03:29:10] "GET /static/bootstrap-3.3.7/plus/table/bootstrap-table-zh-CN.min.js HTTP/1.1" 200 852
+[21/Apr/2021 03:29:10] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 03:29:10] "GET /static/bootstrap-3.3.7/plus/bootstrap-select.js HTTP/1.1" 200 29142
+[21/Apr/2021 03:29:10] "GET /static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.js HTTP/1.1" 200 36623
+[21/Apr/2021 03:29:10] "GET /static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.zh-CN.js HTTP/1.1" 200 813
+[21/Apr/2021 03:29:11] "GET /static/bootstrap-3.3.7/js/bootstrap.min.js HTTP/1.1" 200 36816
+[21/Apr/2021 03:29:11] "GET /static/bootstrap-3.3.7/js/html5shiv.min.js HTTP/1.1" 200 2636
+[21/Apr/2021 03:29:11] "GET /static/h-ui/js/vue.js HTTP/1.1" 200 340880
+[21/Apr/2021 03:29:11] "GET /static/lib/layer/2.4/skin/layer.css HTTP/1.1" 200 14042
+[21/Apr/2021 03:29:11] "GET /static/h-ui.admin/skin/default/icon_arrow.png HTTP/1.1" 200 1484
+[21/Apr/2021 03:29:11] "GET /static/lib/Hui-iconfont/1.0.8/iconfont.woff HTTP/1.1" 200 80688
+Not Found: /favicon.ico
+[21/Apr/2021 03:29:11] "GET /favicon.ico HTTP/1.1" 404 4236
+[21/Apr/2021 03:29:11] "GET /load_tables_info?csrfmiddlewaretoken=9WHDmPxGFvoqXPkqshiLaUGxqfOYgRDTH5Cc0JjxTpn54m10MWNOnqZLj9fys41h HTTP/1.1" 200 1006
+[21/Apr/2021 06:07:54] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:07:54] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:07:55] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:07:55] "GET /load_tables_info?csrfmiddlewaretoken=zWxgI9A2BqGSyf2NmtCttKwMRaeXT6eu75sPm3mTPkFxFMJnG87wGgP0K4Fx5jCS HTTP/1.1" 200 1006
+Not Found: /favicon.ico
+[21/Apr/2021 06:07:55] "GET /favicon.ico HTTP/1.1" 404 4236
+[21/Apr/2021 06:34:23] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:34:23] "GET /static/h-ui/css/H-ui.min.css HTTP/1.1" 200 174693
+[21/Apr/2021 06:34:23] "GET /static/h-ui.admin/css/H-ui.admin.css HTTP/1.1" 200 7042
+[21/Apr/2021 06:34:23] "GET /static/lib/Hui-iconfont/1.0.8/iconfont.css HTTP/1.1" 200 16591
+[21/Apr/2021 06:34:23] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:34:23] "GET /static/lib/layer/2.4/layer.js HTTP/1.1" 200 19843
+[21/Apr/2021 06:34:23] "GET /static/lib/jquery/1.9.1/jquery.min.js HTTP/1.1" 200 92629
+[21/Apr/2021 06:34:23] "GET /static/h-ui.admin/skin/default/skin.css HTTP/1.1" 200 1173
+[21/Apr/2021 06:34:23] "GET /static/bootstrap-3.3.7/plus/table/bootstrap-table.min.css HTTP/1.1" 200 5309
+[21/Apr/2021 06:34:23] "GET /static/bootstrap-3.3.7/plus/table/bootstrap-table-edit.js HTTP/1.1" 200 13691
+[21/Apr/2021 06:34:23] "GET /static/h-ui.admin/js/H-ui.admin.page.js HTTP/1.1" 200 3090
+[21/Apr/2021 06:34:23] "GET /static/bootstrap-3.3.7/plus/table/bootstrap-table-zh-CN.min.js HTTP/1.1" 200 852
+[21/Apr/2021 06:34:23] "GET /static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.css HTTP/1.1" 200 22598
+[21/Apr/2021 06:34:23] "GET /static/bootstrap-3.3.7/plus/bootstrap-select.js HTTP/1.1" 200 29142
+[21/Apr/2021 06:34:23] "GET /static/bootstrap-3.3.7/plus/table/bootstrap-table.min.js HTTP/1.1" 200 45501
+[21/Apr/2021 06:34:23] "GET /static/h-ui/js/H-ui.js HTTP/1.1" 200 293004
+[21/Apr/2021 06:34:24] "GET /static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.js HTTP/1.1" 200 36623
+[21/Apr/2021 06:34:24] "GET /static/bootstrap-3.3.7/js/bootstrap.min.js HTTP/1.1" 200 36816
+[21/Apr/2021 06:34:24] "GET /static/bootstrap-3.3.7/js/html5shiv.min.js HTTP/1.1" 200 2636
+[21/Apr/2021 06:34:24] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:34:24] "GET /static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.zh-CN.js HTTP/1.1" 200 813
+[21/Apr/2021 06:34:24] "GET /static/h-ui/js/vue.js HTTP/1.1" 200 340880
+[21/Apr/2021 06:34:24] "GET /static/lib/layer/2.4/skin/layer.css HTTP/1.1" 200 14042
+[21/Apr/2021 06:34:24] "GET /static/lib/Hui-iconfont/1.0.8/iconfont.woff HTTP/1.1" 200 80688
+[21/Apr/2021 06:34:24] "GET /static/h-ui.admin/skin/default/icon_arrow.png HTTP/1.1" 200 1484
+[21/Apr/2021 06:34:24] "GET /load_tables_info?csrfmiddlewaretoken=VSK3clpUKYjeTdAJKznXeyePUg7C23LFcOZZBVoi9cIxXcukz3hdb7vQjDUIT4vq HTTP/1.1" 200 1006
+[21/Apr/2021 06:34:27] "GET /load_site_table?csrfmiddlewaretoken=VSK3clpUKYjeTdAJKznXeyePUg7C23LFcOZZBVoi9cIxXcukz3hdb7vQjDUIT4vq&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 54533
+[21/Apr/2021 06:34:29] "GET /load_site_table?csrfmiddlewaretoken=VSK3clpUKYjeTdAJKznXeyePUg7C23LFcOZZBVoi9cIxXcukz3hdb7vQjDUIT4vq&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 20183
+[21/Apr/2021 06:34:30] "GET /load_site_table?csrfmiddlewaretoken=VSK3clpUKYjeTdAJKznXeyePUg7C23LFcOZZBVoi9cIxXcukz3hdb7vQjDUIT4vq&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 54533
+[21/Apr/2021 06:34:31] "GET /load_site_table?csrfmiddlewaretoken=VSK3clpUKYjeTdAJKznXeyePUg7C23LFcOZZBVoi9cIxXcukz3hdb7vQjDUIT4vq&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 54533
+[21/Apr/2021 06:34:31] "GET /load_site_table?csrfmiddlewaretoken=VSK3clpUKYjeTdAJKznXeyePUg7C23LFcOZZBVoi9cIxXcukz3hdb7vQjDUIT4vq&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 54533
+[21/Apr/2021 06:34:32] "GET /load_site_table?csrfmiddlewaretoken=VSK3clpUKYjeTdAJKznXeyePUg7C23LFcOZZBVoi9cIxXcukz3hdb7vQjDUIT4vq&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 54533
+[21/Apr/2021 06:34:35] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:34:35] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:34:35] "GET /load_tables_info?csrfmiddlewaretoken=S6B4UH3e47N3FnZt6bREqj1PvVLZ4W8892Q0jh2CtlcmJmT4VFLUnSiQUiy5VXST HTTP/1.1" 200 1006
+[21/Apr/2021 06:34:35] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:34:35] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:34:35] "GET /load_tables_info?csrfmiddlewaretoken=HpkAXjls2L1IdBedulwIH7U4SHZ51ybgYlzwmTkQrZq1hA8OjPqYEGb5h4MbSzV1 HTTP/1.1" 200 1006
+[21/Apr/2021 06:34:37] "GET /load_site_table?csrfmiddlewaretoken=HpkAXjls2L1IdBedulwIH7U4SHZ51ybgYlzwmTkQrZq1hA8OjPqYEGb5h4MbSzV1&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 54533
+[21/Apr/2021 06:34:41] "GET /load_site_table?csrfmiddlewaretoken=HpkAXjls2L1IdBedulwIH7U4SHZ51ybgYlzwmTkQrZq1hA8OjPqYEGb5h4MbSzV1&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 54533
+[21/Apr/2021 06:34:44] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:34:44] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:34:44] "GET /load_tables_info?csrfmiddlewaretoken=yqN9x8YnkLkyyJVi8jFvRkW0p0XRQwSfPm25WIXLJZJRCIPTXNzLOTd1OnKXHxC0 HTTP/1.1" 200 1006
+[21/Apr/2021 06:34:46] "GET /load_site_table?csrfmiddlewaretoken=yqN9x8YnkLkyyJVi8jFvRkW0p0XRQwSfPm25WIXLJZJRCIPTXNzLOTd1OnKXHxC0&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 54533
+[21/Apr/2021 06:34:50] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:34:50] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:34:50] "GET /load_tables_info?csrfmiddlewaretoken=NBxYLyARPLVrKxjtNQ9q5LGuMsTlFNZc4xMUa8zfeZkKOwd4Ck3G2kXvbPGrwOJX HTTP/1.1" 200 1006
+[21/Apr/2021 06:34:52] "GET /load_site_table?csrfmiddlewaretoken=NBxYLyARPLVrKxjtNQ9q5LGuMsTlFNZc4xMUa8zfeZkKOwd4Ck3G2kXvbPGrwOJX&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 54533
+[21/Apr/2021 06:35:37] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:35:37] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:35:37] "GET /load_tables_info?csrfmiddlewaretoken=bAC2eKc1ye6ZxCfSh5kIevuV4QGUKzL4swRYDkbpXsviBB9t6zeYb4LWtdt0BAvP HTTP/1.1" 200 1006
+[21/Apr/2021 06:41:38] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:41:38] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:41:38] "GET /load_tables_info?csrfmiddlewaretoken=HifF7qJHEsZ29KedIjQhh5HPwWubGrqnYeuBw0I53GoldJ8OxNKxeEYQVjhhxsa8 HTTP/1.1" 200 1006
+[21/Apr/2021 06:44:53] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:44:53] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:44:54] "GET /load_tables_info?csrfmiddlewaretoken=Ha8xROLGYlu98JUYZyNki3LTpvfc66WnY6ntgoK4nzTscIOzO2HAfC2UOS2iX7G8 HTTP/1.1" 200 1006
+[21/Apr/2021 06:44:56] "GET /load_site_table?csrfmiddlewaretoken=Ha8xROLGYlu98JUYZyNki3LTpvfc66WnY6ntgoK4nzTscIOzO2HAfC2UOS2iX7G8&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56355
+[21/Apr/2021 06:44:57] "GET /load_site_table?csrfmiddlewaretoken=Ha8xROLGYlu98JUYZyNki3LTpvfc66WnY6ntgoK4nzTscIOzO2HAfC2UOS2iX7G8&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 06:45:00] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:45:00] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:45:00] "GET /load_tables_info?csrfmiddlewaretoken=Z9ZeGrHKpZhFMlk5vppxwIutC9sKikjPg5ea51G8OdGYQkeGkTjNthLu1wfQ9l3A HTTP/1.1" 200 1006
+[21/Apr/2021 06:45:09] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:45:20] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:45:21] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:45:21] "GET /load_tables_info?csrfmiddlewaretoken=3XzzSPq6aDWMWQBDVScZfKKXBj2BvXRHkTOvhppuzRl50PveKm6fcj1Y0GPHmYBs HTTP/1.1" 200 1006
+[21/Apr/2021 06:46:12] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:46:12] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:46:12] "GET /load_tables_info?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI HTTP/1.1" 200 1006
+[21/Apr/2021 06:46:14] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:46:18] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:46:20] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:46:23] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:46:49] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:46:50] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:46:52] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 06:46:52] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56383
+[21/Apr/2021 06:46:54] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:46:59] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:47:09] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:47:14] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:47:30] "POST /refresh_influx_table HTTP/1.1" 200 19
+[21/Apr/2021 06:47:31] "POST /refresh_influx_table HTTP/1.1" 200 19
+[21/Apr/2021 06:47:32] "POST /refresh_influx_table HTTP/1.1" 200 19
+[21/Apr/2021 06:47:33] "POST /refresh_influx_table HTTP/1.1" 200 19
+[21/Apr/2021 06:47:34] "POST /refresh_influx_table HTTP/1.1" 200 19
+[21/Apr/2021 06:47:35] "POST /refresh_influx_table HTTP/1.1" 200 19
+[21/Apr/2021 06:47:36] "POST /refresh_influx_table HTTP/1.1" 200 19
+[21/Apr/2021 06:47:37] "POST /refresh_influx_table HTTP/1.1" 200 19
+[21/Apr/2021 06:47:38] "POST /refresh_influx_table HTTP/1.1" 200 19
+[21/Apr/2021 06:47:38] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:47:38] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+Not Found: /favicon.ico
+[21/Apr/2021 06:47:38] "GET /favicon.ico HTTP/1.1" 404 4236
+[21/Apr/2021 06:47:38] "GET /load_tables_info?csrfmiddlewaretoken=2sPiUnwEo83bH5AwMQWHPLOHwfnTmgUk4AdN9ECkxP18QwC1oaBhkheAKKhMg6ED HTTP/1.1" 200 1006
+[21/Apr/2021 06:47:39] "POST /refresh_influx_table HTTP/1.1" 200 19
+[21/Apr/2021 06:47:40] "GET /load_site_table?csrfmiddlewaretoken=2sPiUnwEo83bH5AwMQWHPLOHwfnTmgUk4AdN9ECkxP18QwC1oaBhkheAKKhMg6ED&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56446
+[21/Apr/2021 06:47:40] "POST /refresh_influx_table HTTP/1.1" 200 19
+[21/Apr/2021 06:47:40] "GET /load_site_table?csrfmiddlewaretoken=2sPiUnwEo83bH5AwMQWHPLOHwfnTmgUk4AdN9ECkxP18QwC1oaBhkheAKKhMg6ED&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 21, 2021 - 01:56:44
+Django version 2.1.8, using settings 'influxweb.settings'
+Starting development server at http://0:9090/
+Quit the server with CONTROL-C.
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+hello world
+all_keys {'site_name': 'all', 'device_name': 'all'}
+Result: ResultSet({})
+hello world
+all_keys {'site_name': 'all', 'device_name': 'all'}
+Result: ResultSet({})
+hello world
+all_keys {'site_name': 'all', 'device_name': 'all'}
+Result: ResultSet({})
+hello world
+all_keys {'site_name': 'all', 'device_name': 'all'}
+Result: ResultSet({})
+hello world
+all_keys {'site_name': 'all', 'device_name': 'all'}
+Result: ResultSet({})
+hello world
+all_keys {'site_name': 'all', 'device_name': 'all'}
+Result: ResultSet({})
+hello world
+all_keys {'site_name': 'all', 'device_name': 'all'}
+Result: ResultSet({})
+hello world
+all_keys {'site_name': 'all', 'device_name': 'all'}
+Result: ResultSet({})
+hello world
+all_keys {'site_name': 'all', 'device_name': 'all'}
+Result: ResultSet({})
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+hello world
+all_keys {'site_name': 'all', 'device_name': 'all'}
+Result: ResultSet({})
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+hello world
+all_keys {'site_name': 'all', 'device_name': 'all'}
+Result: ResultSet({})
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+hello world
+all_keys {'site_name': 'all', 'device_name': 'all'}[21/Apr/2021 06:47:41] "POST /refresh_influx_table HTTP/1.1" 200 19
+[21/Apr/2021 06:47:41] "GET /load_site_table?csrfmiddlewaretoken=2sPiUnwEo83bH5AwMQWHPLOHwfnTmgUk4AdN9ECkxP18QwC1oaBhkheAKKhMg6ED&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:47:42] "GET /load_site_table?csrfmiddlewaretoken=2sPiUnwEo83bH5AwMQWHPLOHwfnTmgUk4AdN9ECkxP18QwC1oaBhkheAKKhMg6ED&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:47:43] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:47:44] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:47:46] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:47:47] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:47:59] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:48:00] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:48:01] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:48:07] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 06:48:08] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56446
+[21/Apr/2021 06:48:10] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 06:48:12] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56446
+[21/Apr/2021 06:48:13] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56446
+[21/Apr/2021 06:48:13] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56446
+[21/Apr/2021 06:48:13] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56446
+[21/Apr/2021 06:48:13] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56446
+[21/Apr/2021 06:48:14] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56446
+[21/Apr/2021 06:48:14] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 06:48:16] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:48:17] "GET /load_site_table?csrfmiddlewaretoken=nrccTPhXdCsVFjI9qegwLC4PKpmR60rXEnr8ipglCQReJiCKfIaMIblQ9M9XX1bI&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:48:18] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:48:18] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:48:19] "GET /load_tables_info?csrfmiddlewaretoken=EXtcHxMAGX1XdeMK1sEMpLDdggqDLns7VTI867LY5bqghdGlQWy2mkUeFDdJCocS HTTP/1.1" 200 1006
+[21/Apr/2021 06:48:20] "GET /load_site_table?csrfmiddlewaretoken=EXtcHxMAGX1XdeMK1sEMpLDdggqDLns7VTI867LY5bqghdGlQWy2mkUeFDdJCocS&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 06:48:22] "GET /load_site_table?csrfmiddlewaretoken=EXtcHxMAGX1XdeMK1sEMpLDdggqDLns7VTI867LY5bqghdGlQWy2mkUeFDdJCocS&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56446
+[21/Apr/2021 06:48:23] "GET /load_site_table?csrfmiddlewaretoken=EXtcHxMAGX1XdeMK1sEMpLDdggqDLns7VTI867LY5bqghdGlQWy2mkUeFDdJCocS&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 06:48:24] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:48:24] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:48:24] "GET /load_tables_info?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq HTTP/1.1" 200 1006
+[21/Apr/2021 06:48:25] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 06:48:30] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:48:31] "GET /load_config_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 06:48:37] "GET /load_config_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&table=domaininfo&table_chinese_name=%E5%9F%9F%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 12507
+[21/Apr/2021 06:48:41] "GET /load_config_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&table=siteinfo&table_chinese_name=%E7%AB%99%E7%82%B9%E8%A1%A8 HTTP/1.1" 200 6735
+[21/Apr/2021 06:48:42] "GET /load_config_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&table=tableinfo&table_chinese_name=%E8%A1%A8%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 1614
+[21/Apr/2021 06:48:45] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 06:48:46] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:50:03] "GET /load_config_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&table=domaininfo&table_chinese_name=%E5%9F%9F%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 12507
+[21/Apr/2021 06:50:03] "GET /load_config_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&table=domaininfo&table_chinese_name=%E5%9F%9F%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 12507
+[21/Apr/2021 06:50:05] "GET /load_config_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&table=siteinfo&table_chinese_name=%E7%AB%99%E7%82%B9%E8%A1%A8 HTTP/1.1" 200 6735
+[21/Apr/2021 06:50:07] "GET /load_config_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&table=tableinfo&table_chinese_name=%E8%A1%A8%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 1614
+[21/Apr/2021 06:50:09] "GET /load_config_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 06:50:50] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:50:53] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:50:58] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:50:58] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:50:58] "GET /load_tables_info?csrfmiddlewaretoken=xUwOMLeR6M2BgaOFQbgbJM6pUGxYVJ2Sz2Uj12kxft0ypBQasvVLeiwi8brRPzMb HTTP/1.1" 200 1006
+[21/Apr/2021 06:50:59] "GET /load_site_table?csrfmiddlewaretoken=xUwOMLeR6M2BgaOFQbgbJM6pUGxYVJ2Sz2Uj12kxft0ypBQasvVLeiwi8brRPzMb&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:51:00] "GET /load_config_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 06:51:17] "GET /load_config_table?csrfmiddlewaretoken=xUwOMLeR6M2BgaOFQbgbJM6pUGxYVJ2Sz2Uj12kxft0ypBQasvVLeiwi8brRPzMb&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 06:51:20] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:51:22] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:51:34] "GET /load_config_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 06:51:39] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+
+Result: ResultSet({})
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name'][21/Apr/2021 06:51:40] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:52:03] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56347
+[21/Apr/2021 06:52:04] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 06:52:05] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 06:52:13] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:52:14] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:52:14] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:52:15] "GET /load_site_table?csrfmiddlewaretoken=DUlXIqzoeiCF7QzAQZzL4W6atuIAHU5FUQAT70yMDw1YbPtbFtt11vnbSRvGyVPq&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:52:16] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:52:17] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:52:17] "GET /load_tables_info?csrfmiddlewaretoken=2fApYzdz85ZwqvriN9AdGRQSXv4KVornjbPln9cXxjoPuulTCDutDq7TmSRQMpb8 HTTP/1.1" 200 1006
+[21/Apr/2021 06:52:18] "GET /load_config_table?csrfmiddlewaretoken=xUwOMLeR6M2BgaOFQbgbJM6pUGxYVJ2Sz2Uj12kxft0ypBQasvVLeiwi8brRPzMb&table=domaininfo&table_chinese_name=%E5%9F%9F%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 12507
+[21/Apr/2021 06:52:18] "GET /load_config_table?csrfmiddlewaretoken=xUwOMLeR6M2BgaOFQbgbJM6pUGxYVJ2Sz2Uj12kxft0ypBQasvVLeiwi8brRPzMb&table=siteinfo&table_chinese_name=%E7%AB%99%E7%82%B9%E8%A1%A8 HTTP/1.1" 200 6735
+[21/Apr/2021 06:52:19] "GET /load_site_table?csrfmiddlewaretoken=2fApYzdz85ZwqvriN9AdGRQSXv4KVornjbPln9cXxjoPuulTCDutDq7TmSRQMpb8&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:52:20] "GET /load_site_table?csrfmiddlewaretoken=2fApYzdz85ZwqvriN9AdGRQSXv4KVornjbPln9cXxjoPuulTCDutDq7TmSRQMpb8&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:52:22] "GET /load_site_table?csrfmiddlewaretoken=2fApYzdz85ZwqvriN9AdGRQSXv4KVornjbPln9cXxjoPuulTCDutDq7TmSRQMpb8&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:52:23] "GET /load_site_table?csrfmiddlewaretoken=2fApYzdz85ZwqvriN9AdGRQSXv4KVornjbPln9cXxjoPuulTCDutDq7TmSRQMpb8&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:52:24] "GET /load_site_table?csrfmiddlewaretoken=2fApYzdz85ZwqvriN9AdGRQSXv4KVornjbPln9cXxjoPuulTCDutDq7TmSRQMpb8&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:53:32] "GET /load_site_table?csrfmiddlewaretoken=2fApYzdz85ZwqvriN9AdGRQSXv4KVornjbPln9cXxjoPuulTCDutDq7TmSRQMpb8&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56415
+[21/Apr/2021 06:53:34] "GET /load_site_table?csrfmiddlewaretoken=2fApYzdz85ZwqvriN9AdGRQSXv4KVornjbPln9cXxjoPuulTCDutDq7TmSRQMpb8&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 06:53:36] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:53:37] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:53:37] "GET /load_tables_info?csrfmiddlewaretoken=psFHns9eUUsYxaQQeaIoX5xrApAzdgGvGoUDM28Cj8RhB9Kr3ECEUEOsZMnF4hqg HTTP/1.1" 200 1006
+[21/Apr/2021 06:53:38] "GET /load_site_table?csrfmiddlewaretoken=psFHns9eUUsYxaQQeaIoX5xrApAzdgGvGoUDM28Cj8RhB9Kr3ECEUEOsZMnF4hqg&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56415
+[21/Apr/2021 06:53:40] "GET /load_site_table?csrfmiddlewaretoken=psFHns9eUUsYxaQQeaIoX5xrApAzdgGvGoUDM28Cj8RhB9Kr3ECEUEOsZMnF4hqg&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 06:53:41] "GET /load_site_table?csrfmiddlewaretoken=psFHns9eUUsYxaQQeaIoX5xrApAzdgGvGoUDM28Cj8RhB9Kr3ECEUEOsZMnF4hqg&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:53:51] "GET /load_site_table?csrfmiddlewaretoken=psFHns9eUUsYxaQQeaIoX5xrApAzdgGvGoUDM28Cj8RhB9Kr3ECEUEOsZMnF4hqg&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:53:52] "GET /load_site_table?csrfmiddlewaretoken=psFHns9eUUsYxaQQeaIoX5xrApAzdgGvGoUDM28Cj8RhB9Kr3ECEUEOsZMnF4hqg&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:54:55] "GET /load_config_table?csrfmiddlewaretoken=xUwOMLeR6M2BgaOFQbgbJM6pUGxYVJ2Sz2Uj12kxft0ypBQasvVLeiwi8brRPzMb&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 06:55:03] "GET /load_config_table?csrfmiddlewaretoken=psFHns9eUUsYxaQQeaIoX5xrApAzdgGvGoUDM28Cj8RhB9Kr3ECEUEOsZMnF4hqg&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 06:55:05] "GET /load_config_table?csrfmiddlewaretoken=psFHns9eUUsYxaQQeaIoX5xrApAzdgGvGoUDM28Cj8RhB9Kr3ECEUEOsZMnF4hqg&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 06:55:07] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:55:07] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:55:07] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:55:08] "GET /load_tables_info?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3 HTTP/1.1" 200 1006
+[21/Apr/2021 06:55:10] "GET /load_config_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 06:55:14] "GET /load_config_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&table=domaininfo&table_chinese_name=%E5%9F%9F%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 12507
+[21/Apr/2021 06:55:19] "GET /load_config_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&table=siteinfo&table_chinese_name=%E7%AB%99%E7%82%B9%E8%A1%A8 HTTP/1.1" 200 6735
+[21/Apr/2021 06:55:24] "GET /load_config_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&table=tableinfo&table_chinese_name=%E8%A1%A8%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 1614
+[21/Apr/2021 06:55:26] "GET /load_config_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 06:55:56] "GET /load_site_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56445
+[21/Apr/2021 06:55:57] "GET /load_site_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 06:55:59] "GET /load_site_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:56:00] "GET /load_site_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:56:01] "GET /load_site_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:56:03] "GET /load_site_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:56:03] "GET /load_site_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:56:04] "GET /load_site_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:56:04] "GET /load_site_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:56:04] "GET /load_site_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:56:04] "GET /load_site_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:56:04] "GET /load_site_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:56:06] "GET /load_site_table?csrfmiddlewaretoken=l7Rg8lpXHjGQuITzg9fGTvmvX4smHrAiC36cxVol6x59yHNa5D9WQ4Dwmrfsysk3&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:56:08] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:56:08] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:56:08] "GET /load_tables_info?csrfmiddlewaretoken=pcpFNyLlVxAXgRGD3EWtQFPoI6Rpg30QG8EBc8KJkLZgkQAeS8QJNe6p7tEv74KB HTTP/1.1" 200 1006
+[21/Apr/2021 06:56:11] "GET /manage/post/current_state HTTP/1.1" 301 0
+[21/Apr/2021 06:56:11] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[21/Apr/2021 06:56:11] "GET /static/hplus-admin/css/font-awesome.css?v=4.4.0 HTTP/1.1" 200 32318
+[21/Apr/2021 06:56:11] "GET /static/hplus-admin/css/bootstrap.min.css?v=3.3.7 HTTP/1.1" 200 121200
+[21/Apr/2021 06:56:11] "GET /static/hplus-admin/css/animate.css HTTP/1.1" 200 65565
+[21/Apr/2021 06:56:11] "GET /static/hplus-admin/css/plugins/morris/morris-0.4.3.min.css HTTP/1.1" 200 443
+[21/Apr/2021 06:56:11] "GET /static/hplus-admin/css/style.css?v=4.1.0 HTTP/1.1" 200 136484
+[21/Apr/2021 06:56:11] "GET /static/hplus-admin/js/jquery.min.js?v=2.1.4 HTTP/1.1" 200 84345
+[21/Apr/2021 06:56:11] "GET /static/hplus-admin/js/plugins/gritter/jquery.gritter.css HTTP/1.1" 200 2578
+[21/Apr/2021 06:56:11] "GET /static/hplus-admin/js/bootstrap.min.js?v=3.3.7 HTTP/1.1" 200 37045
+[21/Apr/2021 06:56:11] "GET /static/hplus-admin/fonts/fontawesome-webfont.woff2?v=4.4.0 HTTP/1.1" 200 64464
+Not Found: /manage/post/current_state/favicon.ico
+[21/Apr/2021 06:56:11] "GET /manage/post/current_state/favicon.ico HTTP/1.1" 404 5336
+[21/Apr/2021 06:56:25] "GET /manage/post/influx_sync HTTP/1.1" 301 0
+[21/Apr/2021 06:56:25] "GET /manage/post/influx_sync/ HTTP/1.1" 200 18727
+[21/Apr/2021 06:56:25] "GET /static/hplus-admin/css/plugins/datapicker/datepicker3.css HTTP/1.1" 200 33679
+Not Found: /js/plugins/datapicker/bootstrap-datepicker.js
+[21/Apr/2021 06:56:25] "GET /js/plugins/datapicker/bootstrap-datepicker.js HTTP/1.1" 404 4338
+Not Found: /js/plugins/datapicker/bootstrap-datepicker.js
+[21/Apr/2021 06:56:25] "GET /js/plugins/datapicker/bootstrap-datepicker.js HTTP/1.1" 404 4338
+Not Found: /manage/post/influx_sync/favicon.ico
+[21/Apr/2021 06:56:25] "GET /manage/post/influx_sync/favicon.ico HTTP/1.1" 404 5330
+[21/Apr/2021 06:56:30] "GET /manage HTTP/1.1" 301 0
+[21/Apr/2021 06:56:30] "GET /manage/ HTTP/1.1" 200 5261
+[21/Apr/2021 06:56:30] "GET /static/hplus-admin/css/font-awesome.min.css?v=4.4.0 HTTP/1.1" 200 26711
+[21/Apr/2021 06:56:30] "GET /static/hplus-admin/css/jquery.contextMenu.min.css HTTP/1.1" 200 5990
+[21/Apr/2021 06:56:30] "GET /static/hplus-admin/js/plugins/metisMenu/jquery.metisMenu.js HTTP/1.1" 200 3985
+[21/Apr/2021 06:56:30] "GET /static/hplus-admin/js/plugins/slimscroll/jquery.slimscroll.min.js HTTP/1.1" 200 4675
+[21/Apr/2021 06:56:30] "GET /static/hplus-admin/js/plugins/layer/layer.min.js HTTP/1.1" 200 14941
+[21/Apr/2021 06:56:30] "GET /static/hplus-admin/js/plugins/pace/pace.min.js HTTP/1.1" 200 12315
+[21/Apr/2021 06:56:30] "GET /static/hplus-admin/img/bg.png HTTP/1.1" 200 2851
+[21/Apr/2021 06:56:30] "GET /static/hplus-admin/js/plugins/contextMenu/jquery.contextMenu.min.js HTTP/1.1" 200 27807
+[21/Apr/2021 06:56:30] "GET /static/hplus-admin/js/contabs.js HTTP/1.1" 200 13463
+[21/Apr/2021 06:56:30] "GET /static/hplus-admin/css/patterns/header-profile.png HTTP/1.1" 200 5877
+[21/Apr/2021 06:56:30] "GET /static/hplus-admin/js/hplus.js?v=4.1.0 HTTP/1.1" 200 7606
+[21/Apr/2021 06:56:30] "GET /static/hplus-admin/js/plugins/layer/skin/layer.css HTTP/1.1" 200 11303
+[21/Apr/2021 06:56:30] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+Not Found: /manage/favicon.ico
+[21/Apr/2021 06:56:30] "GET /manage/favicon.ico HTTP/1.1" 404 5279
+[21/Apr/2021 06:56:34] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[21/Apr/2021 06:56:35] "GET /manage/post/influx_sync/ HTTP/1.1" 200 18727
+Not Found: /js/plugins/datapicker/bootstrap-datepicker.js
+[21/Apr/2021 06:56:35] "GET /js/plugins/datapicker/bootstrap-datepicker.js HTTP/1.1" 404 4338
+Not Found: /js/plugins/datapicker/bootstrap-datepicker.js
+[21/Apr/2021 06:56:35] "GET /js/plugins/datapicker/bootstrap-datepicker.js HTTP/1.1" 404 4338
+[21/Apr/2021 06:56:36] "GET /manage/post/influx_rebalance HTTP/1.1" 301 0
+[21/Apr/2021 06:56:36] "GET /manage/post/influx_rebalance/ HTTP/1.1" 200 22321
+[21/Apr/2021 06:56:36] "GET /static/bootstrap-3.3.7/css/bootstrap.min.css HTTP/1.1" 200 122540
+[21/Apr/2021 06:56:36] "GET /static/hplus-admin/css/font-awesome.css HTTP/1.1" 200 32318
+[21/Apr/2021 06:56:36] "GET /static/hplus-admin/css/style.css HTTP/1.1" 200 136484
+[21/Apr/2021 06:56:36] "GET /manage/json/influx_rebalance?csrfmiddlewaretoken=BlRBZIzto9MZvW26Q86tIw0Xt8n2srgeSh6xoiyRNnbizVWHFC0JF5hYSva8js0Z HTTP/1.1" 301 0
+[21/Apr/2021 06:56:36] "GET /static/bootstrap-3.3.7/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
+[21/Apr/2021 06:56:36] "GET /manage/json/influx_rebalance/?csrfmiddlewaretoken=BlRBZIzto9MZvW26Q86tIw0Xt8n2srgeSh6xoiyRNnbizVWHFC0JF5hYSva8js0Z HTTP/1.1" 200 4132
+[21/Apr/2021 06:56:37] "GET /manage/post/influx_recovery HTTP/1.1" 301 0
+[21/Apr/2021 06:56:37] "GET /manage/post/influx_recovery/ HTTP/1.1" 200 26142
+[21/Apr/2021 06:56:37] "GET /manage/json/influx_recovery?csrfmiddlewaretoken=EgojtQyNAfaM6rootKi5rhQZVcciEqetVcDfSqxbZtz5aqiZiecloQ70kzZovrYe HTTP/1.1" 301 0
+[21/Apr/2021 06:56:37] "GET /manage/json/influx_recovery/?csrfmiddlewaretoken=EgojtQyNAfaM6rootKi5rhQZVcciEqetVcDfSqxbZtz5aqiZiecloQ70kzZovrYe HTTP/1.1" 200 4132
+[21/Apr/2021 06:56:45] "GET /load_site_table?csrfmiddlewaretoken=pcpFNyLlVxAXgRGD3EWtQFPoI6Rpg30QG8EBc8KJkLZgkQAeS8QJNe6p7tEv74KB&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56360
+[21/Apr/2021 06:56:46] "GET /load_site_table?csrfmiddlewaretoken=pcpFNyLlVxAXgRGD3EWtQFPoI6Rpg30QG8EBc8KJkLZgkQAeS8QJNe6p7tEv74KB&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+info influx_rebalance
+info influx_recovery
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql[21/Apr/2021 06:56:48] "GET /load_site_table?csrfmiddlewaretoken=pcpFNyLlVxAXgRGD3EWtQFPoI6Rpg30QG8EBc8KJkLZgkQAeS8QJNe6p7tEv74KB&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56360
+[21/Apr/2021 06:56:49] "GET /load_site_table?csrfmiddlewaretoken=pcpFNyLlVxAXgRGD3EWtQFPoI6Rpg30QG8EBc8KJkLZgkQAeS8QJNe6p7tEv74KB&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:56:50] "GET /load_site_table?csrfmiddlewaretoken=pcpFNyLlVxAXgRGD3EWtQFPoI6Rpg30QG8EBc8KJkLZgkQAeS8QJNe6p7tEv74KB&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:56:51] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:56:51] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:56:51] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:56:51] "GET /load_tables_info?csrfmiddlewaretoken=z3EBe1FyxQIeoV9oAquvxmbdQA4l1O7BQZTxDBEWW47xsU3ZpUoLuVsefXRrSPRm HTTP/1.1" 200 1006
+[21/Apr/2021 06:56:53] "GET /load_site_table?csrfmiddlewaretoken=z3EBe1FyxQIeoV9oAquvxmbdQA4l1O7BQZTxDBEWW47xsU3ZpUoLuVsefXRrSPRm&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 06:57:41] "GET /load_site_table?csrfmiddlewaretoken=z3EBe1FyxQIeoV9oAquvxmbdQA4l1O7BQZTxDBEWW47xsU3ZpUoLuVsefXRrSPRm&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:57:47] "GET /load_site_table?csrfmiddlewaretoken=z3EBe1FyxQIeoV9oAquvxmbdQA4l1O7BQZTxDBEWW47xsU3ZpUoLuVsefXRrSPRm&site_no=2&database=iot&table_name=telemetry&all_keys=%7B%22device_name%22%3A%22all%22%2C%22site_name%22%3A%22all%22%7D HTTP/1.1" 200 14030
+[21/Apr/2021 06:58:02] "GET /load_site_table?csrfmiddlewaretoken=z3EBe1FyxQIeoV9oAquvxmbdQA4l1O7BQZTxDBEWW47xsU3ZpUoLuVsefXRrSPRm&site_no=2&database=iot&table_name=telemetry&all_keys=%7B%22device_name%22%3A%22all%22%2C%22site_name%22%3A%22all%22%7D HTTP/1.1" 200 14030
+[21/Apr/2021 06:58:04] "GET /load_config_table?csrfmiddlewaretoken=z3EBe1FyxQIeoV9oAquvxmbdQA4l1O7BQZTxDBEWW47xsU3ZpUoLuVsefXRrSPRm&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 06:58:27] "GET /load_site_table?csrfmiddlewaretoken=z3EBe1FyxQIeoV9oAquvxmbdQA4l1O7BQZTxDBEWW47xsU3ZpUoLuVsefXRrSPRm&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56445
+[21/Apr/2021 06:58:29] "GET /load_site_table?csrfmiddlewaretoken=z3EBe1FyxQIeoV9oAquvxmbdQA4l1O7BQZTxDBEWW47xsU3ZpUoLuVsefXRrSPRm&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 06:58:30] "GET /load_site_table?csrfmiddlewaretoken=z3EBe1FyxQIeoV9oAquvxmbdQA4l1O7BQZTxDBEWW47xsU3ZpUoLuVsefXRrSPRm&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 06:58:31] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:58:31] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:58:31] "GET /load_tables_info?csrfmiddlewaretoken=FvFY2tgQc8x3dMSuDOwsPNnebtqXPB3WWrUUr3feBmWmhLM5siqIMmEfAQd3GCNH HTTP/1.1" 200 1006
+[21/Apr/2021 06:58:32] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 06:58:32] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 06:58:32] "GET /load_tables_info?csrfmiddlewaretoken=J5hNJkxVRAFhgtZRkJ5EujDLLub63bW301wJ8UwjgO4AksTs9dZUrSUMaRYcUcGO HTTP/1.1" 200 1006
+[21/Apr/2021 06:58:56] "GET /load_config_table?csrfmiddlewaretoken=J5hNJkxVRAFhgtZRkJ5EujDLLub63bW301wJ8UwjgO4AksTs9dZUrSUMaRYcUcGO&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 06:58:57] "GET /load_config_table?csrfmiddlewaretoken=J5hNJkxVRAFhgtZRkJ5EujDLLub63bW301wJ8UwjgO4AksTs9dZUrSUMaRYcUcGO&table=domaininfo&table_chinese_name=%E5%9F%9F%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 12507
+[21/Apr/2021 06:58:59] "GET /load_config_table?csrfmiddlewaretoken=J5hNJkxVRAFhgtZRkJ5EujDLLub63bW301wJ8UwjgO4AksTs9dZUrSUMaRYcUcGO&table=siteinfo&table_chinese_name=%E7%AB%99%E7%82%B9%E8%A1%A8 HTTP/1.1" 200 6735
+[21/Apr/2021 06:59:00] "GET /load_config_table?csrfmiddlewaretoken=J5hNJkxVRAFhgtZRkJ5EujDLLub63bW301wJ8UwjgO4AksTs9dZUrSUMaRYcUcGO&table=tableinfo&table_chinese_name=%E8%A1%A8%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 1614
+[21/Apr/2021 06:59:06] "GET /load_config_table?csrfmiddlewaretoken=J5hNJkxVRAFhgtZRkJ5EujDLLub63bW301wJ8UwjgO4AksTs9dZUrSUMaRYcUcGO&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 07:00:05] "GET /load_config_table?csrfmiddlewaretoken=J5hNJkxVRAFhgtZRkJ5EujDLLub63bW301wJ8UwjgO4AksTs9dZUrSUMaRYcUcGO&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 07:00:07] "GET /load_config_table?csrfmiddlewaretoken=J5hNJkxVRAFhgtZRkJ5EujDLLub63bW301wJ8UwjgO4AksTs9dZUrSUMaRYcUcGO&table=domaininfo&table_chinese_name=%E5%9F%9F%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 12507
+[21/Apr/2021 07:00:20] "GET /load_site_table?csrfmiddlewaretoken=J5hNJkxVRAFhgtZRkJ5EujDLLub63bW301wJ8UwjgO4AksTs9dZUrSUMaRYcUcGO&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:02:02] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:02:02] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:02:03] "GET /load_tables_info?csrfmiddlewaretoken=A2lHt09PhPBw7H4xy6QPjjwOESfOksgjRYADSA8dG30PbGY8nAK5gSNP3f2Ubt04 HTTP/1.1" 200 1006
+[21/Apr/2021 07:02:09] "GET /load_site_table?csrfmiddlewaretoken=A2lHt09PhPBw7H4xy6QPjjwOESfOksgjRYADSA8dG30PbGY8nAK5gSNP3f2Ubt04&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56438
+[21/Apr/2021 07:02:10] "GET /load_site_table?csrfmiddlewaretoken=A2lHt09PhPBw7H4xy6QPjjwOESfOksgjRYADSA8dG30PbGY8nAK5gSNP3f2Ubt04&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 07:02:11] "GET /load_site_table?csrfmiddlewaretoken=A2lHt09PhPBw7H4xy6QPjjwOESfOksgjRYADSA8dG30PbGY8nAK5gSNP3f2Ubt04&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:02:13] "GET /load_site_table?csrfmiddlewaretoken=A2lHt09PhPBw7H4xy6QPjjwOESfOksgjRYADSA8dG30PbGY8nAK5gSNP3f2Ubt04&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 07:02:14] "GET /load_site_table?csrfmiddlewaretoken=A2lHt09PhPBw7H4xy6QPjjwOESfOksgjRYADSA8dG30PbGY8nAK5gSNP3f2Ubt04&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:02:15] "GET /load_site_table?csrfmiddlewaretoken=A2lHt09PhPBw7H4xy6QPjjwOESfOksgjRYADSA8dG30PbGY8nAK5gSNP3f2Ubt04&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 07:02:16] "GET /load_site_table?csrfmiddlewaretoken=A2lHt09PhPBw7H4xy6QPjjwOESfOksgjRYADSA8dG30PbGY8nAK5gSNP3f2Ubt04&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:02:18] "GET /load_site_table?csrfmiddlewaretoken=A2lHt09PhPBw7H4xy6QPjjwOESfOksgjRYADSA8dG30PbGY8nAK5gSNP3f2Ubt04&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 07:02:20] "GET /load_site_table?csrfmiddlewaretoken=A2lHt09PhPBw7H4xy6QPjjwOESfOksgjRYADSA8dG30PbGY8nAK5gSNP3f2Ubt04&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:02:22] "GET /load_site_table?csrfmiddlewaretoken=A2lHt09PhPBw7H4xy6QPjjwOESfOksgjRYADSA8dG30PbGY8nAK5gSNP3f2Ubt04&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 07:02:25] "GET /load_site_table?csrfmiddlewaretoken=A2lHt09PhPBw7H4xy6QPjjwOESfOksgjRYADSA8dG30PbGY8nAK5gSNP3f2Ubt04&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:02:27] "GET /load_site_table?csrfmiddlewaretoken=A2lHt09PhPBw7H4xy6QPjjwOESfOksgjRYADSA8dG30PbGY8nAK5gSNP3f2Ubt04&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 07:02:30] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:02:30] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:02:30] "GET /load_tables_info?csrfmiddlewaretoken=u0pd6VcDir99TdsnX2uINxsPlh9y9Y72LWE9vvb1HFysXcmYMwoYK6JQKEWE0ZRN HTTP/1.1" 200 1006
+[21/Apr/2021 07:04:54] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:04:54] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:04:54] "GET /load_tables_info?csrfmiddlewaretoken=7BsTasv1z3hl1Wk02DghtwD7vDO0M00goxHPz2upYhGE5VeBR7axq5U8U0B6D1K1 HTTP/1.1" 200 1006
+[21/Apr/2021 07:04:56] "GET /load_site_table?csrfmiddlewaretoken=7BsTasv1z3hl1Wk02DghtwD7vDO0M00goxHPz2upYhGE5VeBR7axq5U8U0B6D1K1&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56360
+[21/Apr/2021 07:04:57] "GET /load_site_table?csrfmiddlewaretoken=7BsTasv1z3hl1Wk02DghtwD7vDO0M00goxHPz2upYhGE5VeBR7axq5U8U0B6D1K1&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 07:04:58] "GET /load_site_table?csrfmiddlewaretoken=7BsTasv1z3hl1Wk02DghtwD7vDO0M00goxHPz2upYhGE5VeBR7axq5U8U0B6D1K1&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:04:59] "GET /load_site_table?csrfmiddlewaretoken=7BsTasv1z3hl1Wk02DghtwD7vDO0M00goxHPz2upYhGE5VeBR7axq5U8U0B6D1K1&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 07:05:00] "GET /load_site_table?csrfmiddlewaretoken=7BsTasv1z3hl1Wk02DghtwD7vDO0M00goxHPz2upYhGE5VeBR7axq5U8U0B6D1K1&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:05:01] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:05:01] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:05:01] "GET /load_tables_info?csrfmiddlewaretoken=HbvgldJELYVpOlza7FRjNjvZ8Bpz8XdrY7KcKNI2ackISktLW9LzKSM0xYcFZYXc HTTP/1.1" 200 1006
+[21/Apr/2021 07:05:18] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:05:18] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:05:18] "GET /load_tables_info?csrfmiddlewaretoken=xELNbg0FlC6kBVgEQEbUtwQhsKDSv6g0OA0JAQZ3KQvDFUafF85aq57iR7qYm70L HTTP/1.1" 200 1006
+[21/Apr/2021 07:07:19] "GET /load_site_table?csrfmiddlewaretoken=xELNbg0FlC6kBVgEQEbUtwQhsKDSv6g0OA0JAQZ3KQvDFUafF85aq57iR7qYm70L&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:07:31] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:07:31] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:07:31] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:07:32] "GET /load_tables_info?csrfmiddlewaretoken=7fV5nkGlwtS2VoQOcSgVL5qRkpELRbJH9njACBM1FaQZ4PSjOcVvgBQKyUyEL1t0 HTTP/1.1" 200 1006
+[21/Apr/2021 07:07:33] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:07:38] "GET /load_site_table?csrfmiddlewaretoken=7fV5nkGlwtS2VoQOcSgVL5qRkpELRbJH9njACBM1FaQZ4PSjOcVvgBQKyUyEL1t0&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56384
+[21/Apr/2021 07:08:39] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:08:39] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:08:39] "GET /load_tables_info?csrfmiddlewaretoken=fQ3ssET9YmLRmegaJ5BraGMcGPFtXb3HhYrXHVZP73JOvFiFlpg1Fcc5UkzmR1N0 HTTP/1.1" 200 1006
+[21/Apr/2021 07:08:40] "GET /load_site_table?csrfmiddlewaretoken=fQ3ssET9YmLRmegaJ5BraGMcGPFtXb3HhYrXHVZP73JOvFiFlpg1Fcc5UkzmR1N0&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 07:08:42] "GET /load_config_table?csrfmiddlewaretoken=fQ3ssET9YmLRmegaJ5BraGMcGPFtXb3HhYrXHVZP73JOvFiFlpg1Fcc5UkzmR1N0&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 07:08:48] "GET /load_config_table?csrfmiddlewaretoken=fQ3ssET9YmLRmegaJ5BraGMcGPFtXb3HhYrXHVZP73JOvFiFlpg1Fcc5UkzmR1N0&table=domaininfo&table_chinese_name=%E5%9F%9F%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 12507
+[21/Apr/2021 07:08:50] "GET /load_config_table?csrfmiddlewaretoken=fQ3ssET9YmLRmegaJ5BraGMcGPFtXb3HhYrXHVZP73JOvFiFlpg1Fcc5UkzmR1N0&table=siteinfo&table_chinese_name=%E7%AB%99%E7%82%B9%E8%A1%A8 HTTP/1.1" 200 6735
+[21/Apr/2021 07:08:53] "GET /load_site_table?csrfmiddlewaretoken=fQ3ssET9YmLRmegaJ5BraGMcGPFtXb3HhYrXHVZP73JOvFiFlpg1Fcc5UkzmR1N0&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 07:09:54] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:09:54] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:09:54] "GET /load_tables_info?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv HTTP/1.1" 200 1006
+[21/Apr/2021 07:09:56] "GET /load_site_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+ select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql[21/Apr/2021 07:10:02] "GET /load_site_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&site_no=2&database=iot&table_name=telemetry&all_keys=%7B%22device_name%22%3A%22all%22%2C%22site_name%22%3A%22all%22%7D HTTP/1.1" 200 14030
+[21/Apr/2021 07:12:55] "GET /load_config_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&table=domaininfo&table_chinese_name=%E5%9F%9F%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 12507
+[21/Apr/2021 07:12:58] "GET /load_config_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 07:14:03] "GET /load_config_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&table=domaininfo&table_chinese_name=%E5%9F%9F%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 12507
+[21/Apr/2021 07:14:22] "GET /load_site_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:14:35] "GET /load_site_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:15:08] "GET /load_site_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:21:45] "GET /load_config_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&table=domaininfo&table_chinese_name=%E5%9F%9F%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 12507
+[21/Apr/2021 07:21:47] "GET /load_config_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 07:21:56] "GET /load_site_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 07:21:58] "GET /load_site_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:22:09] "GET /load_config_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&table=domaininfo&table_chinese_name=%E5%9F%9F%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 12507
+[21/Apr/2021 07:22:58] "GET /load_site_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 07:22:59] "GET /load_site_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56384
+[21/Apr/2021 07:23:13] "GET /load_config_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&table=domaininfo&table_chinese_name=%E5%9F%9F%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 12507
+[21/Apr/2021 07:23:19] "GET /load_config_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&table=domaininfo&table_chinese_name=%E5%9F%9F%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 12507
+[21/Apr/2021 07:28:32] "GET /load_site_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56360
+[21/Apr/2021 07:28:42] "GET /load_site_table?csrfmiddlewaretoken=9M3UYiZf66sUe73PqiJG9bUzvnAeSExKqIiQnSYDvkRdi6XqfMDW6KbAUKnkJFhv&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31866
+[21/Apr/2021 07:29:32] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:29:32] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:29:32] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:29:33] "GET /load_tables_info?csrfmiddlewaretoken=zvs9GAa6KXzoEduVYmGLgWGKUpObIMMQQrH55a9u9bYHIcowNQA1dvXLjMBhzNwB HTTP/1.1" 200 1006
+[21/Apr/2021 07:29:52] "GET /static/lib/layer/2.4/skin/default/icon.png HTTP/1.1" 200 11493
+[21/Apr/2021 07:29:58] "GET /logout/ HTTP/1.1" 302 0
+[21/Apr/2021 07:29:58] "GET / HTTP/1.1" 302 0
+[21/Apr/2021 07:29:58] "GET /login/?next=/ HTTP/1.1" 200 3184
+[21/Apr/2021 07:29:58] "GET /static/hplus-admin/css/bootstrap.min.css?v=3.3.5 HTTP/1.1" 200 121200
+[21/Apr/2021 07:29:58] "GET /static/hplus-admin/css/animate.min.css HTTP/1.1" 200 47160
+[21/Apr/2021 07:29:58] "GET /static/hplus-admin/css/style.min.css?v=4.0.0 HTTP/1.1" 200 99448
+[21/Apr/2021 07:29:58] "GET /captchaimage/38b8ea3d5558e9580721fe113aff08f6abe8610a/ HTTP/1.1" 200 4697
+[21/Apr/2021 07:30:01] "GET /login/?next=/ HTTP/1.1" 200 3184
+[21/Apr/2021 07:30:01] "GET /captchaimage/fa787f6e16eda2bddb71f48ab00d0b27ac580d77/ HTTP/1.1" 200 4505
+[21/Apr/2021 07:30:13] "POST /login/?next=/ HTTP/1.1" 302 0
+[21/Apr/2021 07:30:13] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:30:13] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:30:13] "GET /load_tables_info?csrfmiddlewaretoken=jc8vuHu1SFj3kSMdRsqr14P2sd4AyMvRA8nrThtphTImoRGOGWkHYD63RARGpNfC HTTP/1.1" 200 1006
+[21/Apr/2021 07:30:18] "GET /load_site_table?csrfmiddlewaretoken=jc8vuHu1SFj3kSMdRsqr14P2sd4AyMvRA8nrThtphTImoRGOGWkHYD63RARGpNfC&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56415
+[21/Apr/2021 07:30:19] "GET /load_site_table?csrfmiddlewaretoken=jc8vuHu1SFj3kSMdRsqr14P2sd4AyMvRA8nrThtphTImoRGOGWkHYD63RARGpNfC&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31876
+[21/Apr/2021 07:30:20] "GET /load_site_table?csrfmiddlewaretoken=jc8vuHu1SFj3kSMdRsqr14P2sd4AyMvRA8nrThtphTImoRGOGWkHYD63RARGpNfC&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:30:21] "GET /load_site_table?csrfmiddlewaretoken=jc8vuHu1SFj3kSMdRsqr14P2sd4AyMvRA8nrThtphTImoRGOGWkHYD63RARGpNfC&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 07:30:23] "GET /load_site_table?csrfmiddlewaretoken=jc8vuHu1SFj3kSMdRsqr14P2sd4AyMvRA8nrThtphTImoRGOGWkHYD63RARGpNfC&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:30:24] "GET /load_site_table?csrfmiddlewaretoken=jc8vuHu1SFj3kSMdRsqr14P2sd4AyMvRA8nrThtphTImoRGOGWkHYD63RARGpNfC&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 07:30:26] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:30:26] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:30:26] "GET /load_tables_info?csrfmiddlewaretoken=n9RSyUW84gNjoKOHBFIwtFP3Eq0QHM2WE56OXuVwtucCsJIiq9CMqe643NNWyNMH HTTP/1.1" 200 1006
+[21/Apr/2021 07:30:27] "GET /load_site_table?csrfmiddlewaretoken=n9RSyUW84gNjoKOHBFIwtFP3Eq0QHM2WE56OXuVwtucCsJIiq9CMqe643NNWyNMH&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 07:37:26] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:37:26] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:37:26] "GET /load_tables_info?csrfmiddlewaretoken=NmqmQ6jURZ2gsESAeiHfQg2ODemAox5v4iFifGiigdrzwDMb3MBvNPjP2B9GfyPg HTTP/1.1" 200 1006
+[21/Apr/2021 07:37:31] "GET /load_site_table?csrfmiddlewaretoken=NmqmQ6jURZ2gsESAeiHfQg2ODemAox5v4iFifGiigdrzwDMb3MBvNPjP2B9GfyPg&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:37:32] "GET /load_site_table?csrfmiddlewaretoken=NmqmQ6jURZ2gsESAeiHfQg2ODemAox5v4iFifGiigdrzwDMb3MBvNPjP2B9GfyPg&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 07:37:34] "GET /load_site_table?csrfmiddlewaretoken=NmqmQ6jURZ2gsESAeiHfQg2ODemAox5v4iFifGiigdrzwDMb3MBvNPjP2B9GfyPg&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 07:37:39] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:37:39] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:37:39] "GET /load_tables_info?csrfmiddlewaretoken=vDWdfzwfoekOBApfybZp1u9vCe4fMH16Mzb9E9vDNsJ7FzjQnFTFY3qw1BRlDILR HTTP/1.1" 200 1006
+[21/Apr/2021 07:37:41] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:37:41] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:37:41] "GET /load_tables_info?csrfmiddlewaretoken=6PKuzewVyab2ZKFXGsVpEjEMKoSuCAksnLZqYOvjXoAl3JzyvWPFBSVN9LFAtB4d HTTP/1.1" 200 1006
+[21/Apr/2021 07:42:03] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:42:03] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:42:03] "GET /load_tables_info?csrfmiddlewaretoken=DTwzlzk57R7G87fDKi0n6Y8C8EQLB2QiUPLvK9jtw5wZc69ezMUD3xpDx1DRs3A3 HTTP/1.1" 200 1006
+[21/Apr/2021 07:42:04] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:42:04] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:42:04] "GET /load_tables_info?csrfmiddlewaretoken=lQ9YQdc7AdQDAb5Gk3bTUpjmWnoemT96CMoUfNbvZrfWEaZh9x59RYAnlKbkdUTR HTTP/1.1" 200 1006
+[21/Apr/2021 07:42:04] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:42:04] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:42:04] "GET /load_tables_info?csrfmiddlewaretoken=xiH3E1JOgAaMiqTDkNItjJhgvGLW7mLSOeWZ3BIcFOz5mpNe9hCJgiyhU3y2YnvD HTTP/1.1" 200 1006
+[21/Apr/2021 07:42:04] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 07:42:04] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 07:42:04] "GET /load_tables_info?csrfmiddlewaretoken=QilIVIi85l3d0AWmkAhy3XftCvXmS8aS7eAEkihwuzsw4zQX94bO0wwu1SKsJ9UD HTTP/1.1" 200 1006
+[21/Apr/2021 08:36:10] "GET /manage/ HTTP/1.1" 200 5261
+[21/Apr/2021 08:36:10] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[21/Apr/2021 08:36:25] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 08:36:25] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 08:36:25] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 08:36:25] "GET /load_tables_info?csrfmiddlewaretoken=XNlxGSqGcMDDrctUWJl6oII7ywAbtoVaeJAt5sp4B02WvbnvLdfmlhZ8XTnhkpFV HTTP/1.1" 200 1006
+[21/Apr/2021 08:36:30] "GET /load_site_table?csrfmiddlewaretoken=XNlxGSqGcMDDrctUWJl6oII7ywAbtoVaeJAt5sp4B02WvbnvLdfmlhZ8XTnhkpFV&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56384
+[21/Apr/2021 08:36:32] "GET /load_site_table?csrfmiddlewaretoken=XNlxGSqGcMDDrctUWJl6oII7ywAbtoVaeJAt5sp4B02WvbnvLdfmlhZ8XTnhkpFV&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 08:36:33] "GET /load_site_table?csrfmiddlewaretoken=XNlxGSqGcMDDrctUWJl6oII7ywAbtoVaeJAt5sp4B02WvbnvLdfmlhZ8XTnhkpFV&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 08:36:34] "GET /load_site_table?csrfmiddlewaretoken=XNlxGSqGcMDDrctUWJl6oII7ywAbtoVaeJAt5sp4B02WvbnvLdfmlhZ8XTnhkpFV&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 08:36:37] "GET /load_site_table?csrfmiddlewaretoken=XNlxGSqGcMDDrctUWJl6oII7ywAbtoVaeJAt5sp4B02WvbnvLdfmlhZ8XTnhkpFV&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 08:36:38] "GET /load_site_table?csrfmiddlewaretoken=XNlxGSqGcMDDrctUWJl6oII7ywAbtoVaeJAt5sp4B02WvbnvLdfmlhZ8XTnhkpFV&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 08:36:43] "GET /load_site_table?csrfmiddlewaretoken=XNlxGSqGcMDDrctUWJl6oII7ywAbtoVaeJAt5sp4B02WvbnvLdfmlhZ8XTnhkpFV&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 08:36:45] "GET /load_site_table?csrfmiddlewaretoken=XNlxGSqGcMDDrctUWJl6oII7ywAbtoVaeJAt5sp4B02WvbnvLdfmlhZ8XTnhkpFV&site_no=1&database=timeservice&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 56384
+[21/Apr/2021 08:36:46] "GET /load_site_table?csrfmiddlewaretoken=XNlxGSqGcMDDrctUWJl6oII7ywAbtoVaeJAt5sp4B02WvbnvLdfmlhZ8XTnhkpFV&site_no=1&database=timeservice&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 31883
+[21/Apr/2021 08:36:47] "GET /load_site_table?csrfmiddlewaretoken=XNlxGSqGcMDDrctUWJl6oII7ywAbtoVaeJAt5sp4B02WvbnvLdfmlhZ8XTnhkpFV&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[21/Apr/2021 08:36:48] "GET /load_site_table?csrfmiddlewaretoken=XNlxGSqGcMDDrctUWJl6oII7ywAbtoVaeJAt5sp4B02WvbnvLdfmlhZ8XTnhkpFV&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 08:36:48] "GET /load_site_table?csrfmiddlewaretoken=XNlxGSqGcMDDrctUWJl6oII7ywAbtoVaeJAt5sp4B02WvbnvLdfmlhZ8XTnhkpFV&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[21/Apr/2021 08:37:01] "GET /load_config_table?csrfmiddlewaretoken=XNlxGSqGcMDDrctUWJl6oII7ywAbtoVaeJAt5sp4B02WvbnvLdfmlhZ8XTnhkpFV&table=siteinfo&table_chinese_name=%E7%AB%99%E7%82%B9%E8%A1%A8 HTTP/1.1" 200 6735
+[21/Apr/2021 08:37:05] "GET / HTTP/1.1" 200 34618
+[21/Apr/2021 08:37:05] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[21/Apr/2021 08:37:05] "GET /load_tables_info?csrfmiddlewaretoken=8H6wzN02MQKsfxNAJyMwLwmfmExVNV7qpDlsYnZqb49LjwHby2GMI5DgL1k1EWRb HTTP/1.1" 200 1006
+[21/Apr/2021 08:37:07] "GET /load_config_table?csrfmiddlewaretoken=8H6wzN02MQKsfxNAJyMwLwmfmExVNV7qpDlsYnZqb49LjwHby2GMI5DgL1k1EWRb&table=siteinfo&table_chinese_name=%E7%AB%99%E7%82%B9%E8%A1%A8 HTTP/1.1" 200 6735
+[21/Apr/2021 08:37:33] "GET /load_config_table?csrfmiddlewaretoken=8H6wzN02MQKsfxNAJyMwLwmfmExVNV7qpDlsYnZqb49LjwHby2GMI5DgL1k1EWRb&table=tableinfo&table_chinese_name=%E8%A1%A8%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 1614
+[21/Apr/2021 08:37:57] "GET /load_config_table?csrfmiddlewaretoken=8H6wzN02MQKsfxNAJyMwLwmfmExVNV7qpDlsYnZqb49LjwHby2GMI5DgL1k1EWRb&table=tableinfo&table_chinese_name=%E8%A1%A8%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 1614
+[21/Apr/2021 08:38:01] "GET /load_config_table?csrfmiddlewaretoken=8H6wzN02MQKsfxNAJyMwLwmfmExVNV7qpDlsYnZqb49LjwHby2GMI5DgL1k1EWRb&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[21/Apr/2021 08:38:21] "GET /manage/ HTTP/1.1" 200 5261
+[21/Apr/2021 08:38:21] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[21/Apr/2021 08:38:28] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[21/Apr/2021 08:38:52] "GET /manage/post/influx_sync/ HTTP/1.1" 200 18727
+Not Found: /js/plugins/datapicker/bootstrap-datepicker.js
+[21/Apr/2021 08:38:52] "GET /js/plugins/datapicker/bootstrap-datepicker.js HTTP/1.1" 404 4338
+[21/Apr/2021 08:39:05] "GET /manage/post/influx_rebalance/ HTTP/1.1" 200 22321
+[21/Apr/2021 08:39:05] "GET /manage/json/influx_rebalance?csrfmiddlewaretoken=ZIMEG6J7FkbkqLWYQiQoppTRFwnLau43gE1A5GIv4yADuKQzFMKEmYaS4TaR1vOO HTTP/1.1" 301 0
+[21/Apr/2021 08:39:05] "GET /manage/json/influx_rebalance/?csrfmiddlewaretoken=ZIMEG6J7FkbkqLWYQiQoppTRFwnLau43gE1A5GIv4yADuKQzFMKEmYaS4TaR1vOO HTTP/1.1" 200 4132
+[21/Apr/2021 08:39:12] "GET /manage/post/influx_recovery/ HTTP/1.1" 200 26142
+[21/Apr/2021 08:39:12] "GET /manage/json/influx_recovery?csrfmiddlewaretoken=lddCk8sB5jy3YqxeWVCCU00U5dA08F8xC9syJIrZuxXm2prPLpwSRzhVuAn6ZGSi HTTP/1.1" 301 0
+[21/Apr/2021 08:39:12] "GET /manage/json/influx_recovery/?csrfmiddlewaretoken=lddCk8sB5jy3YqxeWVCCU00U5dA08F8xC9syJIrZuxXm2prPLpwSRzhVuAn6ZGSi HTTP/1.1" 200 4132
+[21/Apr/2021 08:39:32] "GET /manage/ HTTP/1.1" 200 5261
+[21/Apr/2021 08:39:32] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[22/Apr/2021 03:43:12] "GET /manage/ HTTP/1.1" 200 5261
+[22/Apr/2021 03:43:12] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[22/Apr/2021 03:43:15] "GET / HTTP/1.1" 200 34618
+[22/Apr/2021 03:43:15] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[22/Apr/2021 03:43:16] "GET /load_tables_info?csrfmiddlewaretoken=G16b9tVkh8pHMjuBaz9dISOKv61ETBUcXXl7y3UIGmO0QiocZ33tFr5LUtOKKCEX HTTP/1.1" 200 1006
+[22/Apr/2021 03:44:01] "GET / HTTP/1.1" 200 34618
+[22/Apr/2021 03:44:01] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+[22/Apr/2021 03:44:02] "GET /load_tables_info?csrfmiddlewaretoken=OIzLnLkveBxf9sWaJ4NuotGk2oh8irPA5EOHMljTDPWydrQLyyHKl2XlrL4e9szl HTTP/1.1" 200 1006
+[22/Apr/2021 03:44:08] "GET / HTTP/1.1" 200 34618
+[22/Apr/2021 03:44:08] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1700
+ select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telemetry  order by time desc LIMIT 100
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['siteinfo', 'site_name', 'site_chinese_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+influx sql select * from telesignalling  order by time desc LIMIT 100
+['siteinfo', 'site_name', 'site_chinese_name']
+['deviceinfo', 'device_name', 'device_chinese_name']
+['deviceinfo', 'data_name', 'data_chinese_name', 'device_name']
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+info influx_rebalance
+info influx_recovery
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice
+site_no 2
+iot
+iot
+site_no 1
+timeservice
+timeservice[22/Apr/2021 03:44:08] "GET /load_tables_info?csrfmiddlewaretoken=uHrUlfKst8ECBx3w5rMiUs5rwP8T4oU3LDGQKPJQSm3VFwX7UVGyR1msVcVZVpEO HTTP/1.1" 200 1006
+[22/Apr/2021 03:56:48] "GET /manage/ HTTP/1.1" 200 5261
+[22/Apr/2021 03:56:48] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[22/Apr/2021 03:56:57] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[22/Apr/2021 03:56:57] "GET /manage/post/influx_sync/ HTTP/1.1" 200 18727
+Not Found: /js/plugins/datapicker/bootstrap-datepicker.js
+[22/Apr/2021 03:56:57] "GET /js/plugins/datapicker/bootstrap-datepicker.js HTTP/1.1" 404 4338
+Not Found: /js/plugins/datapicker/bootstrap-datepicker.js
+[22/Apr/2021 03:56:57] "GET /js/plugins/datapicker/bootstrap-datepicker.js HTTP/1.1" 404 4338
+----------------------------------------
+Exception happened during processing of request from ('10.28.234.220', 56820)
+Traceback (most recent call last):
+  File "/home/zeal/miniconda3/envs/influx/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/home/zeal/miniconda3/envs/influx/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/zeal/miniconda3/envs/influx/lib/python3.7/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/home/zeal/miniconda3/envs/influx/lib/python3.7/site-packages/django/core/servers/basehttp.py", line 171, in handle
+    self.handle_one_request()
+  File "/home/zeal/miniconda3/envs/influx/lib/python3.7/site-packages/django/core/servers/basehttp.py", line 179, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/home/zeal/miniconda3/envs/influx/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+[22/Apr/2021 03:56:58] "GET /manage/post/influx_rebalance/ HTTP/1.1" 200 22321
+[22/Apr/2021 03:56:58] "GET /manage/json/influx_rebalance?csrfmiddlewaretoken=gGrJWAMcU8oIrNMOOZpPoDDCzUGK7FhWxCGFlaLAjmN1vMGpDtj5lcUDYhtQYG1H HTTP/1.1" 301 0
+[22/Apr/2021 03:56:58] "GET /manage/json/influx_rebalance/?csrfmiddlewaretoken=gGrJWAMcU8oIrNMOOZpPoDDCzUGK7FhWxCGFlaLAjmN1vMGpDtj5lcUDYhtQYG1H HTTP/1.1" 200 4132
+[22/Apr/2021 03:56:58] "GET /manage/post/influx_recovery/ HTTP/1.1" 200 26142
+[22/Apr/2021 03:56:59] "GET /manage/json/influx_recovery?csrfmiddlewaretoken=iSpFova2MzpIQTK6UGfPRbZpTr9EdGUIzOEBN59qbNO1USEHJa95OKgqiOWK4HEt HTTP/1.1" 301 0
+[22/Apr/2021 03:56:59] "GET /manage/json/influx_recovery/?csrfmiddlewaretoken=iSpFova2MzpIQTK6UGfPRbZpTr9EdGUIzOEBN59qbNO1USEHJa95OKgqiOWK4HEt HTTP/1.1" 200 4132
+[22/Apr/2021 03:57:59] "GET /manage/ HTTP/1.1" 200 5261
+[22/Apr/2021 03:57:59] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[22/Apr/2021 03:58:18] "GET /manage/ HTTP/1.1" 200 5261
+[22/Apr/2021 03:58:18] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[22/Apr/2021 03:58:40] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[22/Apr/2021 03:58:40] "GET /manage/post/influx_sync/ HTTP/1.1" 200 18727
+Not Found: /js/plugins/datapicker/bootstrap-datepicker.js
+[22/Apr/2021 03:58:40] "GET /js/plugins/datapicker/bootstrap-datepicker.js HTTP/1.1" 404 4338
+Not Found: /js/plugins/datapicker/bootstrap-datepicker.js
+[22/Apr/2021 03:58:40] "GET /js/plugins/datapicker/bootstrap-datepicker.js HTTP/1.1" 404 4338
+[22/Apr/2021 03:58:42] "GET /manage/post/influx_rebalance/ HTTP/1.1" 200 22321
+[22/Apr/2021 03:58:42] "GET /manage/json/influx_rebalance?csrfmiddlewaretoken=ASrc9PXkibHgy2atNzdrHnKvsD33dsshROG8ypWIHp6zC144C37HEW1wR0Q94tc2 HTTP/1.1" 301 0
+[22/Apr/2021 03:58:42] "GET /manage/json/influx_rebalance/?csrfmiddlewaretoken=ASrc9PXkibHgy2atNzdrHnKvsD33dsshROG8ypWIHp6zC144C37HEW1wR0Q94tc2 HTTP/1.1" 200 4132
+[22/Apr/2021 03:58:43] "GET /manage/post/influx_recovery/ HTTP/1.1" 200 26142
+[22/Apr/2021 03:58:43] "GET /manage/json/influx_recovery?csrfmiddlewaretoken=GlypIrAicfWE4iGPIIYv4G0U2YVKQ2q2XhNl71zGBtlX8hAqxcSL1fhVrlIQH3aN HTTP/1.1" 301 0
+[22/Apr/2021 03:58:43] "GET /manage/json/influx_recovery/?csrfmiddlewaretoken=GlypIrAicfWE4iGPIIYv4G0U2YVKQ2q2XhNl71zGBtlX8hAqxcSL1fhVrlIQH3aN HTTP/1.1" 200 4132
+[22/Apr/2021 03:59:02] "GET /manage/ HTTP/1.1" 200 5261
+[22/Apr/2021 03:59:02] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[22/Apr/2021 03:59:06] "GET /manage/ HTTP/1.1" 200 5261
+[22/Apr/2021 03:59:06] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[22/Apr/2021 03:59:18] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[22/Apr/2021 03:59:19] "GET /manage/post/influx_sync/ HTTP/1.1" 200 18727
+Not Found: /js/plugins/datapicker/bootstrap-datepicker.js
+[22/Apr/2021 03:59:19] "GET /js/plugins/datapicker/bootstrap-datepicker.js HTTP/1.1" 404 4338
+Not Found: /js/plugins/datapicker/bootstrap-datepicker.js
+[22/Apr/2021 03:59:19] "GET /js/plugins/datapicker/bootstrap-datepicker.js HTTP/1.1" 404 4338
+[22/Apr/2021 03:59:19] "GET /manage/post/influx_recovery/ HTTP/1.1" 200 26142
+[22/Apr/2021 03:59:20] "GET /manage/json/influx_recovery?csrfmiddlewaretoken=8UPeWFQP0dbRvbkUXppUzVuUFOKGC6dCpQ4alfPdprAazaevMTjawuLV4bxMt7Xn HTTP/1.1" 301 0
+[22/Apr/2021 03:59:20] "GET /manage/json/influx_recovery/?csrfmiddlewaretoken=8UPeWFQP0dbRvbkUXppUzVuUFOKGC6dCpQ4alfPdprAazaevMTjawuLV4bxMt7Xn HTTP/1.1" 200 4132
+[22/Apr/2021 03:59:20] "GET /manage/post/influx_rebalance/ HTTP/1.1" 200 22321
+[22/Apr/2021 03:59:20] "GET /manage/json/influx_rebalance?csrfmiddlewaretoken=alazGWqC7ImwUlFUHLwKiE14kCxXQOvdrhpv5wp0wWLPYkzvwfq0fdi5JZk3HPfY HTTP/1.1" 301 0
+[22/Apr/2021 03:59:20] "GET /manage/json/influx_rebalance/?csrfmiddlewaretoken=alazGWqC7ImwUlFUHLwKiE14kCxXQOvdrhpv5wp0wWLPYkzvwfq0fdi5JZk3HPfY HTTP/1.1" 200 4132
+[22/Apr/2021 03:59:45] "GET /manage/ HTTP/1.1" 200 5261
+[22/Apr/2021 03:59:45] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[22/Apr/2021 03:59:45] "GET /manage/post/influx_sync/ HTTP/1.1" 200 18727
+Not Found: /js/plugins/datapicker/bootstrap-datepicker.js
+[22/Apr/2021 03:59:45] "GET /js/plugins/datapicker/bootstrap-datepicker.js HTTP/1.1" 404 4338
+Not Found: /js/plugins/datapicker/bootstrap-datepicker.js
+[22/Apr/2021 03:59:45] "GET /js/plugins/datapicker/bootstrap-datepicker.js HTTP/1.1" 404 4338
+[22/Apr/2021 03:59:46] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[22/Apr/2021 03:59:47] "GET /manage/post/influx_rebalance/ HTTP/1.1" 200 22321
+[22/Apr/2021 03:59:47] "GET /manage/json/influx_rebalance?csrfmiddlewaretoken=21JukAOB3gCYD22fZAOh6KLv5qm18v1pjXYqJaNZsu1hH1WQO4Ix3j2wuN97ZwLa HTTP/1.1" 301 0
+[22/Apr/2021 03:59:47] "GET /manage/json/influx_rebalance/?csrfmiddlewaretoken=21JukAOB3gCYD22fZAOh6KLv5qm18v1pjXYqJaNZsu1hH1WQO4Ix3j2wuN97ZwLa HTTP/1.1" 200 4132
+[22/Apr/2021 03:59:47] "GET /manage/post/influx_recovery/ HTTP/1.1" 200 26142
+[22/Apr/2021 03:59:47] "GET /manage/json/influx_recovery?csrfmiddlewaretoken=V3J01UCthDBNnyLVi1IfaRwII8RJJmmxcZYWquBRGR06rxFw7vCv7qNJ7vEPAn6i HTTP/1.1" 301 0
+[22/Apr/2021 03:59:48] "GET /manage/json/influx_recovery/?csrfmiddlewaretoken=V3J01UCthDBNnyLVi1IfaRwII8RJJmmxcZYWquBRGR06rxFw7vCv7qNJ7vEPAn6i HTTP/1.1" 200 4132
+[22/Apr/2021 04:04:44] "GET /manage/ HTTP/1.1" 200 5261
+[22/Apr/2021 04:04:44] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[22/Apr/2021 04:04:46] "GET /manage/post/current_state/ HTTP/1.1" 200 16351
+[22/Apr/2021 04:04:47] "GET /manage/post/influx_sync/ HTTP/1.1" 200 18727
+Not Found: /js/plugins/datapicker/bootstrap-datepicker.js
+[22/Apr/2021 04:04:47] "GET /js/plugins/datapicker/bootstrap-datepicker.js HTTP/1.1" 404 4338
+Not Found: /js/plugins/datapicker/bootstrap-datepicker.js
+[22/Apr/2021 04:04:47] "GET /js/plugins/datapicker/bootstrap-datepicker.js HTTP/1.1" 404 4338
+[22/Apr/2021 04:04:47] "GET /manage/post/influx_rebalance/ HTTP/1.1" 200 22321
+[22/Apr/2021 04:04:48] "GET /manage/json/influx_rebalance?csrfmiddlewaretoken=tQgJPR5t3dw5Mr8LUb4ZadLP8TQhFEEaKMvFer4RsrVoQq2mJFYf7M2QxgDnwFoV HTTP/1.1" 301 0
+[22/Apr/2021 04:04:48] "GET /manage/json/influx_rebalance/?csrfmiddlewaretoken=tQgJPR5t3dw5Mr8LUb4ZadLP8TQhFEEaKMvFer4RsrVoQq2mJFYf7M2QxgDnwFoV HTTP/1.1" 200 4132
+[22/Apr/2021 04:04:48] "GET /manage/post/influx_recovery/ HTTP/1.1" 200 26142
+[22/Apr/2021 04:04:48] "GET /manage/json/influx_recovery?csrfmiddlewaretoken=jeFhFggrvQwLoNTnERpCMHk5OGvAwuL2AaUd4QfPU4V4sMNYtljSJgB6d3iGnvvN HTTP/1.1" 301 0
+[22/Apr/2021 04:04:48] "GET /manage/json/influx_recovery/?csrfmiddlewaretoken=jeFhFggrvQwLoNTnERpCMHk5OGvAwuL2AaUd4QfPU4V4sMNYtljSJgB6d3iGnvvN HTTP/1.1" 200 4132
+[23/Apr/2021 02:50:59] "GET / HTTP/1.1" 302 0
+[23/Apr/2021 02:50:59] "GET /login/?next=/ HTTP/1.1" 200 3184
+[23/Apr/2021 02:54:22] "GET / HTTP/1.1" 302 0
+[23/Apr/2021 02:54:22] "GET /login/?next=/ HTTP/1.1" 200 3184
+[23/Apr/2021 02:54:22] "GET /static/hplus-admin/css/bootstrap.min.css?v=3.3.5 HTTP/1.1" 200 121200
+[23/Apr/2021 02:54:22] "GET /static/hplus-admin/css/font-awesome.min.css?v=4.4.0 HTTP/1.1" 200 26711
+[23/Apr/2021 02:54:22] "GET /static/hplus-admin/css/animate.min.css HTTP/1.1" 200 47160
+[23/Apr/2021 02:54:22] "GET /static/hplus-admin/css/style.min.css?v=4.0.0 HTTP/1.1" 200 99448
+[23/Apr/2021 02:54:22] "GET /captchaimage/ad977283343141e2a3bc7ed3c36a4d805a28b635/ HTTP/1.1" 200 4398
+Not Found: /login/favicon.ico
+[23/Apr/2021 02:54:22] "GET /login/favicon.ico HTTP/1.1" 404 4250
+[23/Apr/2021 02:54:34] "POST /login/?next=/ HTTP/1.1" 200 3249
+[23/Apr/2021 02:54:35] "GET /captchaimage/a692710f42ee0f0ba63c5083637e12b5c09d0a23/ HTTP/1.1" 200 4907
+[23/Apr/2021 02:54:41] "POST /login/?next=/ HTTP/1.1" 302 0
+[23/Apr/2021 02:54:41] "GET / HTTP/1.1" 200 34618
+[23/Apr/2021 02:54:41] "GET /static/h-ui/css/H-ui.min.css HTTP/1.1" 200 174693
+[23/Apr/2021 02:54:41] "GET /static/h-ui.admin/css/H-ui.admin.css HTTP/1.1" 200 7042
+[23/Apr/2021 02:54:41] "GET /static/lib/Hui-iconfont/1.0.8/iconfont.css HTTP/1.1" 200 16591
+[23/Apr/2021 02:54:41] "GET /static/h-ui.admin/skin/default/skin.css HTTP/1.1" 200 1173
+[23/Apr/2021 02:54:41] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1696
+[23/Apr/2021 02:54:41] "GET /static/bootstrap-3.3.7/plus/table/bootstrap-table.min.css HTTP/1.1" 200 5309
+[23/Apr/2021 02:54:41] "GET /static/lib/layer/2.4/layer.js HTTP/1.1" 200 19843
+[23/Apr/2021 02:54:41] "GET /static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.css HTTP/1.1" 200 22598
+[23/Apr/2021 02:54:41] "GET /static/lib/jquery/1.9.1/jquery.min.js HTTP/1.1" 200 92629
+[23/Apr/2021 02:54:41] "GET /static/h-ui/js/H-ui.js HTTP/1.1" 200 293004
+[23/Apr/2021 02:54:41] "GET /static/h-ui.admin/js/H-ui.admin.page.js HTTP/1.1" 200 3090
+[23/Apr/2021 02:54:41] "GET /static/bootstrap-3.3.7/plus/table/bootstrap-table.min.js HTTP/1.1" 200 45501
+[23/Apr/2021 02:54:41] "GET /static/bootstrap-3.3.7/plus/table/bootstrap-table-zh-CN.min.js HTTP/1.1" 200 852
+[23/Apr/2021 02:54:41] "GET /static/h-ui.admin/css/style.css HTTP/1.1" 404 1696
+[23/Apr/2021 02:54:41] "GET /static/bootstrap-3.3.7/plus/table/bootstrap-table-edit.js HTTP/1.1" 200 13691
+[23/Apr/2021 02:54:41] "GET /static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.min.js HTTP/1.1" 200 36623
+[23/Apr/2021 02:54:41] "GET /static/bootstrap-3.3.7/plus/bootstrap-select.js HTTP/1.1" 200 29142
+[23/Apr/2021 02:54:41] "GET /static/bootstrap-3.3.7/js/bootstrap.min.js HTTP/1.1" 200 36816
+[23/Apr/2021 02:54:41] "GET /static/bootstrap-3.3.7/js/html5shiv.min.js HTTP/1.1" 200 2636
+[23/Apr/2021 02:54:41] "GET /static/bootstrap-3.3.7/plus/datatime/bootstrap-datetimepicker.zh-CN.js HTTP/1.1" 200 813
+[23/Apr/2021 02:54:41] "GET /static/lib/layer/2.4/skin/layer.css HTTP/1.1" 200 14042
+[23/Apr/2021 02:54:41] "GET /static/h-ui/js/vue.js HTTP/1.1" 200 340880
+[23/Apr/2021 02:54:42] "GET /static/h-ui.admin/skin/default/icon_arrow.png HTTP/1.1" 200 1484
+[23/Apr/2021 02:54:42] "GET /static/lib/Hui-iconfont/1.0.8/iconfont.woff HTTP/1.1" 200 80688
+[23/Apr/2021 02:54:42] "GET /load_tables_info?csrfmiddlewaretoken=NjLJj9MwAV30YZtOmgPsB0aVsdoJjtnk1IgYWCinJjcVELbtk62UxnQnQhAGFoib HTTP/1.1" 200 1006
+Not Found: /favicon.ico
+[23/Apr/2021 02:54:42] "GET /favicon.ico HTTP/1.1" 404 4232
+[23/Apr/2021 02:54:46] "GET /load_site_table?csrfmiddlewaretoken=NjLJj9MwAV30YZtOmgPsB0aVsdoJjtnk1IgYWCinJjcVELbtk62UxnQnQhAGFoib&site_no=2&database=iot&table_name=telemetry&table_chinese_name=%E9%81%A5%E6%B5%8B%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 14048
+[23/Apr/2021 02:54:48] "GET /load_site_table?csrfmiddlewaretoken=NjLJj9MwAV30YZtOmgPsB0aVsdoJjtnk1IgYWCinJjcVELbtk62UxnQnQhAGFoib&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230
+[23/Apr/2021 03:00:44] "GET /load_config_table?csrfmiddlewaretoken=NjLJj9MwAV30YZtOmgPsB0aVsdoJjtnk1IgYWCinJjcVELbtk62UxnQnQhAGFoib&table=domaininfo&table_chinese_name=%E5%9F%9F%E5%90%8D%E8%A1%A8 HTTP/1.1" 200 12507
+[23/Apr/2021 03:00:44] "GET /load_config_table?csrfmiddlewaretoken=NjLJj9MwAV30YZtOmgPsB0aVsdoJjtnk1IgYWCinJjcVELbtk62UxnQnQhAGFoib&table=deviceinfo&table_chinese_name=%E8%AE%BE%E5%A4%87%E8%A1%A8 HTTP/1.1" 200 24118
+[23/Apr/2021 03:01:58] "GET /load_site_table?csrfmiddlewaretoken=NjLJj9MwAV30YZtOmgPsB0aVsdoJjtnk1IgYWCinJjcVELbtk62UxnQnQhAGFoib&site_no=2&database=iot&table_name=telesignalling&table_chinese_name=%E9%81%A5%E4%BF%A1%E8%A1%A8&all_keys=%7B%7D HTTP/1.1" 200 12230

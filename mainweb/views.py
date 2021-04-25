@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from .models import Influxsite,Domaininfo,Siteinfo,Tableinfo,Deviceinfo
+from .models import Influxsite,Domaininfo,Siteinfo,Tableinfo,Deviceinfo2
 from django.db import connection
 from influxdb import InfluxDBClient
 from django.core import serializers
@@ -123,7 +123,7 @@ def load_site_table(request):
     # print("Result: {0}".format(result))
     test_points = list(result.get_points(measurement=table))
     # print(test_points)
-    chinese_title = list(Domaininfo.objects.filter(table_name=table).values())
+    chinese_title = list(Domaininfo.objects.filter(table_name=table).order_by('id').values())
     test_points = [dict([(x,str(y))for x, y in l.items()])for l in test_points]
 
     cursor = connection.cursor()
@@ -181,118 +181,6 @@ def load_site_table(request):
     return JsonResponse(content,safe=False)
 
 
-
-# def load_site_table1(request):
-#     site_no = request.GET.get('site_no', '1')
-#     database = request.GET.get('database', 'iot')
-#     table = request.GET.get('table_name','telemetry')
-#     table_chinese_name = request.GET.get('table_chinese_name','')
-#     # site_port = request.POST.get()
-#     # print(database,table,site_no)
-#     content = {}
-#     site_info = Influxsite.objects.get(site_no=site_no,database=database)
-    
-#     client = InfluxDBClient(host=site_info.ip,port=site_info.port,username=site_info.user,password=site_info.passwd,database=site_info.database)
-    
-#     result = client.query('select * from %s'%(table)) ## 需要加上时间限制，否则读取的数据过多，导致卡死。
-
-#     # print("Result: {0}".format(result))
-#     test_points = list(result.get_points(measurement=table))
-#     # print(test_points)
-#     chinese_title = list(Domaininfo.objects.filter(table_name=table).values())
-#     test_points = [dict([(x,str(y))for x, y in l.items()])for l in test_points]
-
-#     optional_result = Domaininfo.objects.filter(table_name=table,isoptional=1)
-
-#     cursor = connection.cursor()
-
-#     para_list = {}
-
-#     require_translate = {}
-
-#     for result in optional_result:
-#         if result.optional == "None":
-#             continue
-        
-#         eles = result.optional.split('|')
-#         index = eles[0]
-#         # trans_table = eles[1]
-#         # trans_domain = eles[2]
-#         # trans_domain_chinese = eles[3]
-
-#         if index not in para_list:
-#             para_list[index] = []
-#             require_translate[index] = ""
-        
-#         require_translate[index] += (result.domain_name+"|")
-
-#         for i in range(1,len(eles)):
-#             para_list[index].append(eles[i])
-
-
-#     require_translate = list(require_translate.values())
-
-#     # print("require_translate",require_translate)
-
-#     query_sqls = []
-#     for table_name, para in para_list.items():
-#         query_sql = "select "
-#         for p in para:
-#             query_sql += (p +  ",")
-#             # query_sql +=
-#         query_sql = query_sql[0:-1]
-#         query_sql += " from "+table_name
-#         query_sqls.append(query_sql)
-
-#     print("**********************query_sqls",query_sqls)
-
-#     translate_table = {}
-#     for sql in query_sqls:
-#         cursor.execute(sql)
-
-#         for row in cursor.fetchall():
-#             eng_domain_name = ""
-#             eng_domain_chinese_name = ""
-#             for i in range(len(row)):
-#                 if i % 2 ==0:
-#                     eng_domain_name += (row[i]+"|") 
-#                 else:
-#                     eng_domain_chinese_name += (row[i]+"|")
-
-                
-#             translate_table[eng_domain_name] = eng_domain_chinese_name
-
-#         # print("translate_table",translate_table)
-
-
-#     for points in test_points:
-#         for domain in require_translate:
-#             # domain_chinese = translate_table(domain)
-#             domain_list = domain.split('|')
-#             # domain_chinese_list = domain_chinese.split('|')
-#             translate_table_index = ""
-#             for i in range(len(domain_list) - 1):
-#                 translate_table_index += ((points[domain_list[i]]) + "|")
-
-#             if translate_table_index in translate_table:
-#                 domain_chinese_list = translate_table[translate_table_index].split('|')
-#                 # domain_chinese_list = domain_chinese.split('|')
-
-#                 for i  in range(len(domain_list) - 1):
-#                     points[domain_list[i]] = domain_chinese_list[i]
-
-#                 # if domain_list[i] in points:
-#                     # points[domain_list[i]] = domain_chinese_list[i]
-                
-#     content = {
-#         "table_name":site_info.site_chinese_name+"-"+site_info.database_chinese_name+"-"+table_chinese_name,
-#         "chinese_title":chinese_title,
-#         "table_data":test_points
-#     }
-
-#     return JsonResponse(content,safe=False)
-
-
 def load_config_table(request):
     table_name = request.GET.get('table','siteinfo')
     table_chinese_name = request.GET.get('table_chinese_name','')
@@ -307,8 +195,8 @@ def load_config_table(request):
         table_obj = Siteinfo
     elif table_name == "tableinfo":
         table_obj = Tableinfo
-    elif table_name == "deviceinfo":
-        table_obj = Deviceinfo
+    elif table_name == "deviceinfo2":
+        table_obj = Deviceinfo2
 
     data = list(table_obj.objects.values())
     data = [dict([(x,str(y))for x, y in l.items()])for l in data]
@@ -469,6 +357,8 @@ def save_influx_tables(request):
                     data[field] = '0.0'
                 body['fields'][field] = float(data[field])
             bodys.append(body)
+
+        print("")
 
         res = client.write_points(bodys)
         update_state = 1

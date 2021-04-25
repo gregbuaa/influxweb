@@ -40,6 +40,7 @@
 
 	<body class="gray-bg">
 		<div class="wrapper wrapper-content">
+			{% if request.session.user_type == "root"%}
 			{% for item in site_list %}
 			<div class="col-sm-8">
                 <div class="ibox float-e-margins">
@@ -95,7 +96,34 @@
                     </div>
                 </div>
             </div>	
-			{% endfor %}
+			{% endfor %}{% else %}
+			<div class="row">
+				<div class="col-sm-8">
+					<div class="ibox float-e-margins">
+						<div class="ibox-title">
+							
+							<div class="ibox-tools">
+								<a class="collapse-link">
+									<i class="fa fa-chevron-up"></i>
+								</a>
+								<a class="close-link">
+									<i class="fa fa-times"></i>
+								</a>
+							</div>
+						</div>
+						<div class="ibox-content">
+
+							<div class="row">
+								<div class="col-sm-12">
+									<h2>用户{{request.session.user_name}}无权限操作！！！</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			{% endif %}
 
 			{% for item in sync_state %}
 			<div class="row">

@@ -34,7 +34,11 @@
 								<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 									<span class="clear">
 										<span class="block m-t-xs"><strong class="font-bold">{{ request.session.user_name }}</strong></span>
+										{% if request.session.user_type == "root" %}
 										<span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
+										{% else %}
+										<span class="text-muted text-xs block">普通用户<b class="caret"></b></span>
+										{% endif %}
 									</span>
 								</a>
 								<ul class="dropdown-menu animated fadeInRight m-t-xs">

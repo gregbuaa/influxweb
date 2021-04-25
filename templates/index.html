@@ -71,7 +71,11 @@
 			<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
 				<ul class="cl">
 					{% if request.session.is_login %}
-					<li>超级管理员</li>
+						{% if request.session.user_type == "root" %}
+						<li>管理员</li>
+						{% else %}
+						<li>普通用户</li>
+						{% endif %}
 					<li class="dropDown dropDown_hover"> <a href="#" class="dropDown_A">{{ request.session.user_name }} <i class="Hui-iconfont">&#xe6d5;</i></a>
 						<ul class="dropDown-menu menu radius box-shadow">
 							<li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>
@@ -291,10 +295,12 @@ ul.l_tree:before {
 <section class="Hui-article-box">
 	<nav >
 		<span class="c-666">数据展示</span>
+				{% if request.session.user_type == "root"%}
 	
 				<button type="button" class="btn btn-default" id="addRowbtn">添加行</button>
 				<button type="button" class="btn btn-default" id="saveRowbtn">保存</button>
 				<button type="button" class="btn btn-default" id="dropbtn">丢弃修改</button>
+				{% endif %}
 				
 				<div class="div1" id="refresh_component">
 					<select class="form-control" id="refresh_time">
@@ -345,7 +351,7 @@ ul.l_tree:before {
 
 
 	<div class="Hui-article">
-		<article class="cl pd-20" style="width: 1400px">
+		<article class="cl pd-20" style="width: 1150px">
 			
 			<!-- <table class="table table-border table-bordered table-bg" id="show_data" /> -->
 			<table class="table table-striped table-hover" id="reportTable"></table>
@@ -566,6 +572,8 @@ ul.l_tree:before {
 
 	function generate_selector(device_name, rowIndex, joint_optional_content, value){
 		var setInfo = device_name;
+		// value = value.replace(/\s*/g,"");
+
 		
 		if(setInfo==null){
 			return '<input type="text" value="无" class="form-control" id="select_'+rowIndex+'">';
@@ -574,16 +582,26 @@ ul.l_tree:before {
 				setInfo = Object.keys(joint_optional_content)[0];
 			}
 			var opt = joint_optional_content[setInfo];
-			str = '<select class="form-control" style="width:120px;" id="select_'+rowIndex+'" onchange="select_change('+rowIndex+')">';
-			for(i = 0; i < opt.length; i++) {
+			{% if request.session.user_type == "root" %}
+			str = '<select class="form-control" style="width:150px;" id="select_'+rowIndex+'" onchange="select_change('+rowIndex+')">';
+			{% else %}
+			str = '<select class="form-control" disabled="disabled" style="width:150px;" id="select_'+rowIndex+'" onchange="select_change('+rowIndex+')">';
+			{% endif %}
+			if(opt == null) {
+				str += '<option value="'+value+'" selected="selected">'+value+'</option>'
+			}
+			else{
+				for(i = 0; i < opt.length; i++) {
 				row2 = opt[i];
 				if(row2['id'] == value){
 					str+='<option value="'+row2['id']+'" selected="selected">'+row2['text']+'</option>'
 				}else{
 					str+='<option value="'+row2['id']+'">'+row2['text']+'</option>'
 				}
-				
+				}
 			}
+
+
 			str+='</select>'
 		}
 		return str;
@@ -657,12 +675,10 @@ ul.l_tree:before {
 									valueField:'id',
 									textField:'text',
 									onSelect:function(val,rec){
-										console.log(val,rec);
 										// console.log($element);
 										if(item['domain_name']=='device_name'){
 											if(current_click_row > -1) {
 												var current_selector = document.getElementById("select_"+String(current_click_row));
-												console.log(current_selector);
 													str = generate_selector(val, current_click_row, joint_optional_content, null);
 													// console.log(str);
 													current_selector.innerHTML = str;
@@ -706,19 +722,25 @@ ul.l_tree:before {
 		});
 
 		if(current_config.database_type=="mysql") {
+			{%  if request.session.user_type == "root" %}
 			title_filed.push({field:"del_field",title:"删除数据",align:"center",formatter:function(value,row,rowIndex){
 					var strHtml = '<a href="javascript:void(0);" onclick="removeRow('+rowIndex+')">删除</a>';
 					return strHtml;
 				},edit:false})
+			{% endif %}
 		}
 
 
 		//编辑表格
 		$('#reportTable').bootstrapTable({
 			method: 'get',
+			{% if request.session.user_type == "root" %}
 			editable:true,//开启编辑模式
+			{% else %}
+			editable:false,//开启编辑模式
+			{% endif %}
 			// clickToSelect: true,
-			height: 5000,  
+			height: 10000,  
 			columns: [
 				[
 					{colspan:20,title:table_chinese_name,align:"center"}
@@ -727,7 +749,6 @@ ul.l_tree:before {
 			],
 			onClickRow: function (row,$element) {
 				var index = $element.data('index');
-				console.log(row);
 				current_table_name = table_name
 				all_modify_index.add(index)	
 				current_click_row = index			
@@ -746,7 +767,6 @@ ul.l_tree:before {
 			onDblClickCell: function(field,value,row,$element){
 				// 双击之后，将该value复制到所有选中的行，以完成批量操作。该操作只对“text”类型的field有效。
 				current_value = $element.find("input").val();
-				console.log("current_value:"+current_value);
 
 				// if(current_config.database_type == "influx" && field_type[field]=="text") {
 				// 	row[field] = current_value;
@@ -762,7 +782,6 @@ ul.l_tree:before {
 					var rows=$("#reportTable").bootstrapTable('getSelections');
 					for(var i = 0; i < rows.length; i++) {
 						index_id =  rows[i].number;
-						console.log(index_id);
 						current_row = rows[i];
 						// current_row = $('#reportTable').bootstrapTable('getData',useCurrentPage=true)[index_id];		
 						current_row[field] = current_value;
@@ -842,7 +861,6 @@ ul.l_tree:before {
               }else if(current_config.database_type == "influx"){
                 //  alert("取消");
 				var all_keys = {};
-				console.log(current_select_keys);
 				for(var i = 0; i < current_select_keys.length; i++) {
 					all_keys[current_select_keys[i]] = $('#select_'+current_select_keys[i]).val();
 				}
@@ -905,7 +923,6 @@ ul.l_tree:before {
 				if(window.confirm('你确定要删除这条记录吗？')){
 					
 					var rows= $('#reportTable').bootstrapTable('getData',useCurrentPage=true)[rowIndex];
-					console.log(rows);
 					delete_config_data(current_config.table_name,rows);
 
 					$('#reportTable').bootstrapTable('removeRow',rowIndex);
@@ -947,7 +964,6 @@ ul.l_tree:before {
 
 	function save_data(table_name, row){
 		var all_modify_data = []
-		console.log(row)
 		for(var x of row){
 			var r= $('#reportTable').bootstrapTable('getData',useCurrentPage=true)[x];
 			var newr = {}
@@ -980,7 +996,6 @@ ul.l_tree:before {
 
 	function save_data_influx(site_no, database, table_name, row){
 		var all_modify_data = []
-		console.log(row)
 		for(var x of row){
 			var r= $('#reportTable').bootstrapTable('getData',useCurrentPage=true)[x];
 			var newr = {}
@@ -1020,7 +1035,6 @@ ul.l_tree:before {
 
 	function update_influx_data(refresh_time) {
 		var all_keys = {};
-		console.log(current_select_keys);
 		for(var i = 0; i < current_select_keys.length; i++) {
 			all_keys[current_select_keys[i]] = $('#select_'+current_select_keys[i]).val();
 		}
@@ -1059,7 +1073,6 @@ ul.l_tree:before {
 		// current_select_keys
 		// console.log(elem);
 		var all_keys = {};
-		console.log(current_select_keys);
 		for(var i = 0; i < current_select_keys.length; i++) {
 			all_keys[current_select_keys[i]] = $('#select_'+current_select_keys[i]).val();
 		}
