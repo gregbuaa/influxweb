@@ -115,9 +115,9 @@ def load_site_table(request):
     site_info = Influxsite.objects.get(site_no=site_no,database=database)
     
     client = InfluxDBClient(host=site_info.ip,port=site_info.port,username=site_info.user,password=site_info.passwd,database=site_info.database)
-    print("influx sql", 'select * from %s %s order by time desc LIMIT 100'%(table, condition_sql))
+    print("influx sql", 'select * from %s %s order by time desc LIMIT 100 '%(table, condition_sql))
 
-    result = client.query('select * from %s %s order by time desc LIMIT 100'%(table, condition_sql)) ## 需要加上时间限制，否则读取的数据过多，导致卡死。
+    result = client.query("select * from %s %s order by time desc LIMIT 100"%(table, condition_sql)) ## 需要加上时间限制，否则读取的数据过多，导致卡死。
 
    
     # print("Result: {0}".format(result))
@@ -407,7 +407,8 @@ def refresh_influx_table(request):
     site_info = Influxsite.objects.get(site_no=site_no,database=database)
     client = InfluxDBClient(host=site_info.ip,port=site_info.port,username=site_info.user,password=site_info.passwd,database=site_info.database)
     
-    result = client.query('select * from %s where time >= NOW() -%sms and time <= Now() %s order by time desc'%(table_name,refresh_time, condition_sql)) 
+    result = client.query('select * from %s where time >= NOW()+8h -%sms and time <= NOW()+8h %s order by time desc'%(table_name,refresh_time, condition_sql)) 
+    print("Query Order", 'select * from %s where time >= NOW()+8h-%sms and time <= NOW()+8h %s order by time desc'%(table_name,refresh_time, condition_sql))
     print("Result: {0}".format(result))
     test_points = list(result.get_points(measurement=table_name))
     test_points = [dict([(x,str(y))for x, y in l.items()])for l in test_points]

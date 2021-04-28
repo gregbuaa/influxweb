@@ -3,7 +3,7 @@ from datetime import datetime
 from influxdb import InfluxDBClient
 import random
 
-client = InfluxDBClient(host="219.224.169.20",port=13005,username="root",password="g927@buaa",database="iot")
+client = InfluxDBClient(host="127.0.0.1",port=7921,username="root",password="root@buaa",database="newiot")
 table_name = "telesignalling"
 
 
@@ -13,14 +13,12 @@ def job():
     body=  {
             "measurement":table_name,
             "fields": {
-                "state":0.0,
-                "blocked":0.0,
                 'detected_value':round(random.uniform(10,100),1)
             },
             "tags":{
-                "site_name":"Shanghai",
-                "device_name":"EDFA_relay_device1",
-                "data_name":"output_power"
+                "site_name":"上海",
+                "device_name":"EDFA设备",
+                "data_name":"输入光功率"
             }
         }
 
