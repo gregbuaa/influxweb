@@ -321,7 +321,7 @@ def save_influx_tables(request):
 
     print("current modify rows ",modify_rows)
 
-    site_info = Influxsite.objects.get(site_no=site_no,database=database)
+    site_info = Influxsite.objects.get(site_no=site_no,database=database, influx_type='proxy')
     
     client = InfluxDBClient(host=site_info.ip,port=site_info.port,username=site_info.user,password=site_info.passwd,database=site_info.database)
 
