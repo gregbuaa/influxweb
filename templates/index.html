@@ -200,7 +200,7 @@ ul.l_tree:before {
     <td height="50%">
 	<div id="demo">
 	<div class="l_tree_container">
-		<ew1-tree :model="testdata"></ew1-tree>
+		<ew1-tree :model="testdata" :default-expanded-keys="idArr"></ew1-tree>
 	</div>
 	</div>
 
@@ -212,18 +212,19 @@ ul.l_tree:before {
 		Vue.component('ew1-tree', {
 			template: `
 			<ul class="l_tree">
-				<li class="l_tree_branch" v-for="item in model" :key="item.id">
+				<li class="l_tree_branch" v-for="item in model" :key="item.chinese_name">
 					<div class="l_tree_click">
-						<button type="button" class="l_tree_children_btn" v-if="item.children"  @click="toggle(item)">{% verbatim myblock %}{{ !item.show ? '-' : '+' }}{% endverbatim myblock %}</button>
+						<button type="button" class="l_tree_children_btn" v-if="item.children"  @click="toggle(item)">{% verbatim myblock %}{{ !item.show ? '+' : '-' }}{% endverbatim myblock %}</button>
 						<span class="l_folder"  @click="achievesite(item)"><strong>{% verbatim myblock %}{{ item.chinese_name }}{% endverbatim myblock %}</strong></span>
 					</div>
-					<ew1-tree v-show="!item.show" v-if="item.children" :model="item.children"></ew1-tree>
+					<ew1-tree v-show="item.show" v-if="item.children" :model="item.children"></ew1-tree>
 				</li>
 			</ul>`,
 			props: {
 				model: {}
 			},
 			methods: {
+				
 				toggle: function (item) {
 					var idx = this.model.indexOf(item)
 					Vue.set(this.model[idx], 'show', !item.show)
@@ -235,8 +236,9 @@ ul.l_tree:before {
 					// console.log(item.name)
 					// console.log(item.database)
 					// console.log(item.site_no)
-					on_click_influx_table(item.site_no, item.database, item.name, item.chinese_name,{})
-				}
+					on_click_influx_table(item.site_no, item.database, item.chinese_database,item.name, item.chinese_name,{})
+				},
+
 			}
 		});
 		
@@ -248,7 +250,7 @@ ul.l_tree:before {
     <td height="50%">
 	<div id="demo2">
 	<div class="l_tree_container">
-		<ew2-tree :model="testdata"></ew2-tree>
+		<ew2-tree :model="testdata" ></ew2-tree>
 	</div>
 	</div>
 
@@ -495,8 +497,8 @@ ul.l_tree:before {
 						}
 					})
 		}
-		function on_click_influx_table(site_no, database, name, chinese_name, all_keys){
-			data = {'site_no':site_no, "database":database, 'table_name':name,'table_chinese_name':chinese_name, "all_keys":JSON.stringify(all_keys)}
+		function on_click_influx_table(site_no, database, chinese_database, name, chinese_name, all_keys){
+			data = {'site_no':site_no, "database":database, "chinese_database":chinese_database, 'table_name':name,'table_chinese_name':chinese_name, "all_keys":JSON.stringify(all_keys)}
 					$.ajax({
 						url:"{% url 'load_site_table' %}",
 						type:"GET",
@@ -507,6 +509,7 @@ ul.l_tree:before {
 							current_config.table_chinese_name = chinese_name
 							current_config.site_no = site_no
 							current_config.database = database
+							current_config.chinese_database = chinese_database
 							console.log(result);
 							all_modify_index = new Set()
 							current_table_name = ""
@@ -519,6 +522,17 @@ ul.l_tree:before {
 							date.setDate(date.getDate()-1);
 							start_time = date.Format("yyyy-MM-dd hh:mm:ss");
 							$('#from_time_id').val(start_time);
+
+							influx_type = result["influx_type"]
+							if(influx_type == "node") {
+								$('#addRowbtn').css({ "display": "none" });
+								$('#saveRowbtn').css({ "display": "none" });
+								$('#dropbtn').css({ "display": "none" });
+							}else {
+								$('#addRowbtn').css({ "display": "inline-block" });
+								$('#saveRowbtn').css({ "display": "inline-block" });
+								$('#dropbtn').css({ "display": "inline-block" });
+							}
 
 							show_selected_key(result, all_keys);
 							show_influx_table(data, result);
@@ -543,18 +557,23 @@ ul.l_tree:before {
 				// console.log(result)
 				site_tables = result['site_tables']
 				config_tables = result['config_tables']
-
+				idArr = []
+				site_tables.forEach(m=>{
+            			idArr.push((m.chinese_name))
+     			});
 				// new_site_tables = []
 				// for 
 				new Vue({
 					el: "#demo",
 					data() {
+
 						return {
 							testdata: [{chinese_name: "influx数据库",
 							children:site_tables
-							}]
+							}],
+							idArr: idArr
 						}
-					}
+					},	
 				})
 				new Vue({
 					el:"#demo2",
@@ -734,11 +753,7 @@ ul.l_tree:before {
 		//编辑表格
 		$('#reportTable').bootstrapTable({
 			method: 'get',
-			{% if request.session.user_type == "root" %}
 			editable:true,//开启编辑模式
-			{% else %}
-			editable:false,//开启编辑模式
-			{% endif %}
 			// clickToSelect: true,
 			height: 10000,  
 			columns: [
@@ -864,7 +879,7 @@ ul.l_tree:before {
 				for(var i = 0; i < current_select_keys.length; i++) {
 					all_keys[current_select_keys[i]] = $('#select_'+current_select_keys[i]).val();
 				}
-				 on_click_influx_table(current_config.site_no, current_config.database, current_config.table_name, current_config.chinese_name,all_keys);
+				 on_click_influx_table(current_config.site_no, current_config.database, current_config.chinese_database, current_config.table_name, current_config.chinese_name,all_keys);
                  return true;
              } else {
 				 return false;
@@ -1082,7 +1097,7 @@ ul.l_tree:before {
 
 		// console.log( $('#from_time_id').val());
 
-		on_click_influx_table(current_config.site_no, current_config.database, current_config.table_name, current_config.chinese_name,all_keys);
+		on_click_influx_table(current_config.site_no, current_config.database, current_config.chinese_database, current_config.table_name, current_config.chinese_name,all_keys);
 	}
 
 	// function on_change_time(elem) {

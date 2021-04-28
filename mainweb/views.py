@@ -65,6 +65,7 @@ def load_tables_info(request):
             for i in range(len(tables)):
                 tables[i]['database'] = db_name
                 tables[i]['site_no'] = site_no
+                tables[i]['chinese_database'] = db_chinese_name
                 print(db_name)
             current_db.append({
                 "name": db_name,
@@ -86,8 +87,12 @@ def load_tables_info(request):
 def load_site_table(request):
     site_no = request.GET.get('site_no', '1')
     database = request.GET.get('database', 'iot')
+    chinese_database = request.GET.get('chinese_database','数据中心')
     table = request.GET.get('table_name','telemetry')
     table_chinese_name = request.GET.get('table_chinese_name','')
+    # influx_type = request.GET.get('influx_type', '')
+
+    print("table", database)
 
     all_keys = request.GET.get('all_keys','')
 
@@ -112,9 +117,14 @@ def load_site_table(request):
     # site_port = request.POST.get()
     # print(database,table,site_no)
     content = {}
-    site_info = Influxsite.objects.get(site_no=site_no,database=database)
-    
-    client = InfluxDBClient(host=site_info.ip,port=site_info.port,username=site_info.user,password=site_info.passwd,database=site_info.database)
+    site_info = Influxsite.objects.get(site_no=site_no,database=database,database_chinese_name=chinese_database)
+
+    influx_type = site_info.influx_type
+
+    if  site_info.user == "" and site_info.passwd== "":
+        client = InfluxDBClient(host=site_info.ip,port=site_info.port,database=site_info.database)
+    else:
+        client = InfluxDBClient(host=site_info.ip,port=site_info.port,username=site_info.user,password=site_info.passwd,database=site_info.database)
     print("influx sql", 'select * from %s %s order by time desc LIMIT 100 '%(table, condition_sql))
 
     result = client.query("select * from %s %s order by time desc LIMIT 100"%(table, condition_sql)) ## 需要加上时间限制，否则读取的数据过多，导致卡死。
@@ -175,7 +185,8 @@ def load_site_table(request):
         "chinese_title":chinese_title,
         "table_data":test_points,
         "optional_content":optional_content,
-        'joint_optional_content':joint_optional_content
+        'joint_optional_content':joint_optional_content,
+        'influx_type':influx_type
     }
 
     return JsonResponse(content,safe=False)
