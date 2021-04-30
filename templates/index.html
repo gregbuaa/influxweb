@@ -473,12 +473,14 @@ ul.l_tree:before {
 		// current_config_table_name = ""  //当前点击的表名
 		// current_config_table_chinese_name = "" //当前点击的表中文名
 		function on_click_config_table(name,chinese_name){
+			// console.log("Hello2");
 			data = {'table':name,'table_chinese_name':chinese_name}
 					$.ajax({
 						url:"{% url 'load_config_table' %}",
 						type:"GET",
 						data:data,
 						success:function(result) {
+							
 							// console.log(result)
 							current_config.database_type = "mysql"
 							current_config.table_name = name
@@ -493,6 +495,13 @@ ul.l_tree:before {
 							$('#select_key_div').css({ "display": "none" });
 							$('#from_time_div_id').css({ "display": "none" });
 							$('#to_time_div_id').css({ "display": "none" });
+							// console.log("Hello2");
+							{%  if request.session.user_type == "root" %}
+								// console.log("Hello")
+								$('#addRowbtn').css({ "display": "inline-block" });
+								$('#saveRowbtn').css({ "display": "inline-block" });
+								$('#dropbtn').css({ "display": "inline-block" });
+							{% endif %}
 							// $('#checkbox_div').css({ "display": "none" });
 							// $('#select_key_div').html("");
 						}
@@ -511,7 +520,7 @@ ul.l_tree:before {
 							current_config.site_no = site_no
 							current_config.database = database
 							current_config.chinese_database = chinese_database
-							console.log(result);
+							// console.log(result);
 							all_modify_index = new Set()
 							current_table_name = ""
 							current_click_row = -1
@@ -1020,7 +1029,7 @@ ul.l_tree:before {
 			all_modify_data.push(newr)
 		}
 
-		console.log(all_modify_data)
+		// console.log(all_modify_data)
 		var data = {modify_row: JSON.stringify(all_modify_data),table_name:table_name, site_no:site_no, database:database}
 
 		$.ajax({

@@ -415,7 +415,7 @@ def refresh_influx_table(request):
         condition_sql = "and "+condition_sql[0:-4]+" "
 
 
-    site_info = Influxsite.objects.get(site_no=site_no,database=database)
+    site_info = Influxsite.objects.get(site_no=site_no,database=database,influx_type="proxy")
     client = InfluxDBClient(host=site_info.ip,port=site_info.port,username=site_info.user,password=site_info.passwd,database=site_info.database)
     
     result = client.query('select * from %s where time >= NOW()+8h -%sms and time <= NOW()+8h %s order by time desc'%(table_name,refresh_time, condition_sql)) 
