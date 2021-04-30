@@ -171,7 +171,7 @@ def data_sync(request):
     site_no = str(site_no)
     http = urllib3.PoolManager()
     ## tick接口：所有 circle 互相同步从 <tick> 时间点开始（10位时间戳，包含该点）的数据，默认为 0，表示同步所有历史数据，暂不实现
-    site_info = Influxsite.objects.get(site_no = int(site_no))
+    site_info = Influxsite.objects.get(site_no = int(site_no), influx_type='proxy')
 
     r = http.request('POST','http://%s:%s/resync?u=%s&p=%s&worker=%s'%(site_info.ip, str(site_info.port),site_info.user, site_info.passwd, worker_num))
 
@@ -196,7 +196,7 @@ def data_rebalance(request):
 
     # rebalance代码
     ## 修改proxy.json实例，增删实例
-    site_info = Influxsite.objects.get(site_no = int(site_no))
+    site_info = Influxsite.objects.get(site_no = int(site_no), influx_type='proxy')
     with open(INFLUX_PROXY_CONFIG_PATH + site_info.config_file,"r") as f:
         proxy_config = json.load(f)
 
@@ -276,7 +276,7 @@ def data_recovery(request):
 
     # rebalance代码
     ## 修改proxy.json实例，增删实例
-    site_info = Influxsite.objects.get(site_no = int(site_no))
+    site_info = Influxsite.objects.get(site_no = int(site_no), influx_type='proxy')
 
     with open(INFLUX_PROXY_CONFIG_PATH + site_info.config_file,"r") as f:
         proxy_config = json.load(f)
