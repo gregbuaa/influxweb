@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!--360浏览器优先以webkit内核解析-->
+
+		<title>Influx主题订阅</title>
+
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link href="/static/hplus-admin/css/bootstrap.min.css?v=3.3.7" rel="stylesheet" />
+		<link href="/static/hplus-admin/css/font-awesome.css?v=4.4.0" rel="stylesheet" />
+
+		<link href="/static/hplus-admin/css/animate.css" rel="stylesheet" />
+		<link href="/static/hplus-admin/css/style.css?v=4.1.0" rel="stylesheet" />
+		<!-- Morris -->
+		<link href="/static/hplus-admin/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+
+		<!-- Gritter -->
+		<link href="/static/hplus-admin/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+		<link href="/static/hplus-admin/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+	</head>
+
+	<body class="gray-bg">
+		<div class="wrapper wrapper-content">
+			<!-- {% if request.session.user_type == "root"%} -->
+			{% for item in proxy_info %}
+			<div class="col-sm-8">
+                <div class="ibox float-e-margins" >
+                    <div class="ibox-title">
+                        <h5>站点{{item.site_chinese_name}}主题订阅</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+					
+                    <div class="ibox-content">
+                        <div class="form-horizontal">
+                            <p>对Influx代理的主题进行订阅设置</p>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">代理名字：</label>
+								<div class="col-sm-8">
+								
+									<input type="text" class="form-control" value="{{item.site_chinese_name}}" id="nameid_{{item.site_no}}">
+								<span class="help-block m-b-none">代理的IP信息和端口信息</span>
+								</div>
+                            </div>
+                            <div class="form-group">
+								<label class="col-sm-3 control-label">代理URL：</label>
+								<div class="col-sm-8">
+			
+									<input type="text" class="form-control" value="{{item.site_ip}}:{{item.site_port}}" disabled="disabled">
+								<span class="help-block m-b-none">代理的IP信息和端口信息</span>
+								</div>
+                            </div>
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label">管理的物理主机：</label>
+								<div class="col-sm-8">
+									
+										<div class="row">
+											<div class="col-sm-12">
+												<table class="table table-hover margin bottom">
+													<thead>
+														<tr>
+															<!-- <th>url</th> -->
+															<th class="text-center">ID</th>
+															<th class="text-center">ip地址</th>
+															<th class="text-center">端口号</th>
+															<th class="text-center">名称</th>
+															<th class="text-center">所属代理</th>
+														</tr>
+													</thead>
+													<tbody>
+														{% for node in item.node_info %}
+														
+														<tr>
+														<td>{{	forloop.counter	}}</td>
+														<td class="text-center"><a href="#">{{node.site_ip}}</a></td>
+														<td class="text-center">{{node.site_port}}</td>
+														<td class="text-center">{{node.database_chinese_name}}</td>
+														<td class="text-center">{{item.site_chinese_name}}</td>
+														</tr>
+														
+														{% endfor %}
+													</tbody>
+												</table>
+											</div>
+										</div>
+								<span class="help-block m-b-none">代理管理的物理节点信息</span>
+								</div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">订阅的主题</label>
+
+                                <div class="col-sm-8">
+									{% for subject in subject_info %}
+									{% if subject.site_name in item.subscribe %}
+									<label class="checkbox-inline">
+                                        <input type="checkbox" name="allcheck_{{item.site_no}}" value="{{subject.site_name}}" id="checkbox_{{item.site_no}}_{{subject.id}}" checked="checked">{{subject.site_chinese_name}}</label>
+									
+									{% else %}
+									<label class="checkbox-inline">
+									<input type="checkbox" name="allcheck_{{item.site_no}}" value="{{subject.site_name}}" id="checkbox_{{subject.id}}">{{subject.site_chinese_name}}</label>
+									{%　endif %}
+									{% endfor %}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-8">
+									<button class="btn btn-sm btn-white" id="synrbutton_{{item.site_no}}" onclick="synr(this)">修改订阅信息</button>
+									<span class="help-block m-b-none" id="prompt_{{item.site_no}}">请开始修改</span>	
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					
+                </div>
+            </div>	
+			{% endfor %}
+	
+			<!-- {% endif %} -->
+
+			{% for item in sync_state %}
+			<div class="row">
+				<div class="col-sm-8">
+					<div class="ibox float-e-margins">
+						<div class="ibox-title">
+							<h5>{{item.site_no}}</h5>
+							<div class="ibox-tools">
+								<a class="collapse-link">
+									<i class="fa fa-chevron-up"></i>
+								</a>
+								<a class="close-link">
+									<i class="fa fa-times"></i>
+								</a>
+							</div>
+						</div>
+						<div class="ibox-content">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+
+
+		    <!-- 全局js -->
+			<script src="/static/hplus-admin/js/jquery.min.js?v=2.1.4"></script>
+			<script src="/static/hplus-admin/js/bootstrap.min.js?v=3.3.7"></script>
+			<script src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+			<script>
+				$.ajaxSetup({
+					data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+				})
+			</script>
+			<!-- 逻辑代码 -->
+			<script>
+
+				function synr(ob) {
+					var spCodesTemp = "";
+					var id = $(ob).attr("id");
+					var site_no = id.split('_')[1];
+					var new_subjects = [];
+					$("input:checkbox[name='allcheck_"+site_no+"']:checked").each(function(i){
+						// console.log(String(i)+$(this).val());
+						new_subjects.push($(this).val());
+					});	
+					var newname = $('#nameid_'+site_no).val();
+					var data = {"new_subjects":JSON.stringify(new_subjects), "new_name":newname, "site_no":site_no};
+
+
+					$.ajax({
+							url:"{% url 'data_subscribe' %}",
+							type:"GET",
+							data:data,
+							success:function (result) { // result is String
+								response_state = result['response_state']
+								console.log(response_state);
+								if(response_state==true){
+									alert("已修改完成！！！");
+									$('#prompt_'+site_no).html("<font color='red'>已修改完成</font>");
+								}
+								else{
+									alter("修改失败，请检查设置");
+								}
+
+							}
+						});
+
+
+
+					// console.log(newname);
+				}
+
+			</script>
+	</body>
+</html>

@@ -19,7 +19,9 @@ from login.utils import login_required
 
 urlpatterns = [
     path('',login_required(views.load_home), name="manage_home"),
+    path('subscribe', login_required(views.influx_subscribe), name="influx_subscribe"),
     path('post/<str:info>/',login_required(views.influx_manage), name="influx_manage"),
+    path('data_subscribe',login_required(views.data_subscribe), name="data_subscribe"),
     path('data_sync',login_required(views.data_sync), name="data_sync"),
     path('data_rebalance',login_required(views.data_rebalance), name="data_rebalance"),
     path('data_recovery',login_required(views.data_recovery), name="data_recovery"),

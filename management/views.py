@@ -15,6 +15,80 @@ def load_home(request):
 
 
 
+def influx_subscribe(request):
+    influx_table = Influxsite.objects.filter()
+
+
+    proxy_info = []
+    node_info = {}
+    for proxy in influx_table:
+        info = {
+                "site_no": str(proxy.site_no),
+                "site_name":proxy.site_name,
+                "site_chinese_name":proxy.site_chinese_name,
+                "site_ip":proxy.ip,
+                "site_port":proxy.port,
+                "database_chinese_name":proxy.database_chinese_name
+            }
+        if proxy.influx_type=="proxy":
+            info["subscribe"]=proxy.subscribe.split(",")
+            proxy_info.append(info)
+        else:
+            site_no = str(proxy.site_no)
+            if site_no not in node_info:
+                node_info[site_no] = []
+            node_info[site_no].append(info)
+
+    for proxy in proxy_info:
+        if proxy['site_no'] in node_info:
+            proxy['node_info'] = node_info[proxy['site_no']]
+            # proxy['node_info']['bel']
+
+
+    influx_subject = Siteinfo.objects.filter()
+    subject_info = []
+    for site in influx_subject:
+        subject_info.append({
+            "id": site.id,
+            "site_chinese_name":site.site_chinese_name,
+            "site_name":site.site_name
+        })
+
+
+    contents = {
+        "proxy_info":proxy_info,
+        "subject_info":subject_info
+    }
+
+    return render(request,"manage_subscribe.html", contents)
+
+
+def data_subscribe(request):
+    new_subjects = request.GET.get('new_subjects', '[]')
+    new_name = request.GET.get('new_name', '4')
+    site_no = request.GET.get("site_no","0")
+    site_no = str(site_no)
+
+    new_subjects = json.loads(new_subjects)
+    subscribe_str=",".join(new_subjects)
+    print(subscribe_str)
+    if new_subjects == []:
+        Influxsite.objects.filter(site_no=site_no,influx_type="proxy").update(site_chinese_name=new_name)
+    else:
+        Influxsite.objects.filter(site_no=site_no,influx_type="proxy").update(site_chinese_name=new_name,subscribe=subscribe_str)
+
+
+    ## 还缺一个启动时的同步管理！！！根据订阅的主题，拉取一条最新的记录进入到INFLUXDB当中。
+
+    ## 状态查询
+    content= {
+        "response_state":True
+    }
+
+    return JsonResponse(content,safe=False)
+
+
+
 # def load_influx_state(request):
 #     return render(request,"index_v1.html")
 
