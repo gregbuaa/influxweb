@@ -5,6 +5,8 @@ from django.http import HttpResponse, JsonResponse
 from .models import Influxsite,Domaininfo,Siteinfo,Tableinfo,Deviceinfo
 import subprocess
 import os
+from influxdb import InfluxDBClient
+from django.db.models import Q
 
 import time
 
@@ -63,11 +65,60 @@ def influx_subscribe(request):
     return render(request,"manage_subscribe.html", contents)
 
 
+
+def write_influx_data(client, table_name, all_update_data):
+    table_attrs = Domaininfo.objects.filter(table_name=table_name)
+    title_name = {}
+    title_name['fields'] = []
+    title_name['tags'] = []
+    for attr in table_attrs: 
+        if attr.domaintype == "field":
+            title_name['fields'].append(attr.domain_name)
+        elif attr.domaintype == "tag":
+            title_name['tags'].append(attr.domain_name)
+        elif attr.domaintype == "datetime":
+            title_name['time'] = attr.domain_name
+
+    try:
+        bodys = []
+        for data in all_update_data:
+            body = {}
+            body['measurement'] = table_name
+            if title_name['time'] in data:
+                if data[title_name['time']] !='':
+                    if 'T' in data[title_name['time']]:
+                        timestamp = data[title_name['time']]
+                    else:
+                        timestamp = datetime.datetime.strptime(data[title_name['time']], '%Y-%m-%d %H:%M:%S').isoformat("T")+"Z"
+                    body['time'] = timestamp
+            body['tags'] = {}
+            body['fields'] = {}
+            for tag in title_name['tags']:
+                body['tags'][tag] = data[tag]
+            for field in title_name['fields']:
+                if data[field] == "":
+                    data[field] = '0.0'
+                body['fields'][field] = float(data[field])
+            bodys.append(body)
+
+        res = client.write_points(bodys)
+        update_state = 1
+        update_info = "更新成功！"
+    except Exception  as e:
+        print(e)
+        update_state = 0
+        update_info = "更新失败！请检查数据格式！"
+
+    return update_state, update_info
+
+
 def data_subscribe(request):
     new_subjects = request.GET.get('new_subjects', '[]')
     new_name = request.GET.get('new_name', '4')
     site_no = request.GET.get("site_no","0")
     site_no = str(site_no)
+
+    original_subscribe = Influxsite.objects.get(site_no=site_no,influx_type="proxy").subscribe
 
     new_subjects = json.loads(new_subjects)
     subscribe_str=",".join(new_subjects)
@@ -77,8 +128,40 @@ def data_subscribe(request):
     else:
         Influxsite.objects.filter(site_no=site_no,influx_type="proxy").update(site_chinese_name=new_name,subscribe=subscribe_str)
 
+    response_state = True
+    message = "设置完毕"
+    ## 启动时的同步管理！！！根据订阅的主题，拉取一条最新的记录进入到INFLUXDB当中。
+    if original_subscribe != subscribe_str:
+        current_site_list = new_subjects
+        original_site_list = original_subscribe.split(',')
 
-    ## 还缺一个启动时的同步管理！！！根据订阅的主题，拉取一条最新的记录进入到INFLUXDB当中。
+        new_sites = []
+        for site in current_site_list:
+            if site not in original_subscribe:
+                new_sites.append(site)
+
+        currentinflux = Influxsite.objects.get(influx_type="proxy",site_no=site_no)
+        currentclient = InfluxDBClient(host=currentinflux.ip,port=currentinflux.port,username=currentinflux.user,password=currentinflux.passwd,database=currentinflux.database)
+
+        for site in new_sites:
+            allinflux = Influxsite.objects.filter(influx_type="proxy",subscribe__contains=site).exclude(site_no=site_no)
+            print("allinflux",allinflux)
+            if allinflux == None:
+                message = "不包含站点%s信息，无法初始化同步！！！"
+
+            for site_info in allinflux:
+                if site_info.site_no == site_no:
+                    continue
+                ### 连接到代理上去
+                client = InfluxDBClient(host=site_info.ip,port=site_info.port,username=site_info.user,password=site_info.passwd,database=site_info.database)
+                ### 插入一条新的数据即可。
+                result_telem = client.query("select * from telemetry where site_name='%s' order by time desc LIMIT 5"%(site))
+                result_teles = client.query("select * from telesignalling where site_name='%s' order by time desc LIMIT 5"%(site))
+                result_telem = list(result_telem.get_points(measurement="telemetry"))
+                result_teles = list(result_teles.get_points(measurement="telesignalling"))
+                write_influx_data(currentclient, "telemetry", result_telem)
+                write_influx_data(currentclient, "telesignalling", result_teles)
+                
 
     ## 状态查询
     content= {
