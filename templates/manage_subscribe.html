@@ -11,6 +11,12 @@
 		<link rel="shortcut icon" href="favicon.ico" />
 		<link href="/static/hplus-admin/css/bootstrap.min.css?v=3.3.7" rel="stylesheet" />
 		<link href="/static/hplus-admin/css/font-awesome.css?v=4.4.0" rel="stylesheet" />
+		<!-- Chosen -->
+		<link href="/static/hplus-admin/css/plugins/chosen/chosen.css" rel="stylesheet" />
+		<link href="/static/hplus-admin/css/animate.css" rel="stylesheet" />
+		<link href="/static/hplus-admin/css/style.css?v=4.1.0" rel="stylesheet" />
+
+		<link href="/static/hplus-admin/css/font-awesome.css?v=4.4.0" rel="stylesheet" />
 
 		<link href="/static/hplus-admin/css/animate.css" rel="stylesheet" />
 		<link href="/static/hplus-admin/css/style.css?v=4.1.0" rel="stylesheet" />
@@ -97,8 +103,24 @@
 								</div>
                             </div>
 
+							<div class="form-group">
+								<label  class="col-sm-3 control-label">订阅的主题</label>
+								<div class="col-sm-8">
+									<select data-placeholder="选择主题（可多选）" class="chosen-select" multiple style="width:500px;" tabindex="4" id="subselect_{{item.site_no}}">
+										<option value="">请选择要订阅的主题（可多选）</option>
+										{% for subject in subject_info %}
+										{% if subject.site_name in item.subscribe %}
+										<option value="{{subject.site_name}}" hassubinfo="true" selected> {{subject.site_chinese_name}}</option>
+										{% else %}
+										<option value="{{subject.site_name}}" hassubinfo="true" > {{subject.site_chinese_name}}</option>
+										{% endif %}
+										{% endfor %}
+									</select>
+								</div>
+							</div>
 
-                            <div class="form-group">
+
+                            <!-- <div class="form-group">
                                 <label class="col-sm-3 control-label">订阅的主题</label>
 
                                 <div class="col-sm-8">
@@ -113,7 +135,7 @@
 									{%　endif %}
 									{% endfor %}
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-8">
@@ -158,7 +180,11 @@
 		    <!-- 全局js -->
 			<script src="/static/hplus-admin/js/jquery.min.js?v=2.1.4"></script>
 			<script src="/static/hplus-admin/js/bootstrap.min.js?v=3.3.7"></script>
-			<script src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+			<script src="/static/hplus-admin/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+			<!-- Chosen -->
+			<script src="/static/hplus-admin/js/plugins/chosen/chosen.jquery.js"></script>
+
+			<script src="/static/hplus-admin/js/demo/form-advanced-demo.js"></script>
 			<script>
 				$.ajaxSetup({
 					data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
@@ -172,13 +198,11 @@
 					var id = $(ob).attr("id");
 					var site_no = id.split('_')[1];
 					var new_subjects = [];
-					$("input:checkbox[name='allcheck_"+site_no+"']:checked").each(function(i){
-						// console.log(String(i)+$(this).val());
-						new_subjects.push($(this).val());
-					});	
+					
+
+					new_subjects = $("#subselect_"+site_no).val();
 					var newname = $('#nameid_'+site_no).val();
 					var data = {"new_subjects":JSON.stringify(new_subjects), "new_name":newname, "site_no":site_no};
-
 
 					$.ajax({
 							url:"{% url 'data_subscribe' %}",
@@ -197,10 +221,6 @@
 
 							}
 						});
-
-
-
-					// console.log(newname);
 				}
 
 			</script>
