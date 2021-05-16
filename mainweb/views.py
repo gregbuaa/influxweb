@@ -317,24 +317,12 @@ def save_config_tables(request):
 
 
 
-def save_influx_tables(request):
-    site_no = request.POST.get('site_no', '1')
-    database = request.POST.get('database', 'iot')
-    table_name = request.POST.get('table_name','telemetry')
-    modify_rows = request.POST.get('modify_row','')
-
-    print("current modify rows ",modify_rows)
-
+def save_influx_in_one_site(site_no, database, table_name, modify_rows, table_attrs,subscribe):
     site_info = Influxsite.objects.get(site_no=site_no,database=database, influx_type='proxy')
-    
     client = InfluxDBClient(host=site_info.ip,port=site_info.port,username=site_info.user,password=site_info.passwd,database=site_info.database)
-
-    table_attrs = Domaininfo.objects.filter(table_name=table_name,table_type="influx")
     title_name = {}
     title_name['fields'] = []
     title_name['tags'] = []
-    # title_name['time'] 
-    # title_name[]
 
     for attr in table_attrs: 
         if attr.domaintype == "field":
@@ -344,16 +332,15 @@ def save_influx_tables(request):
         elif attr.domaintype == "datetime":
             title_name['time'] = attr.domain_name
 
-
-
     update_state = 0
     update_info = ""
-    
-
     try:
-        all_update_data = json.loads(modify_rows)
         bodys = []
-        for data in all_update_data:
+        for data in modify_rows:
+            site_name = data['site_name']
+            ### 不是订阅的主题，不给予考虑的。
+            if site_name not in subscribe:
+                continue
             body = {}
             body['measurement'] = table_name
             if title_name['time'] in data:
@@ -373,8 +360,6 @@ def save_influx_tables(request):
                 body['fields'][field] = float(data[field])
             bodys.append(body)
 
-        print("")
-
         res = client.write_points(bodys)
         update_state = 1
         update_info = "更新成功！"
@@ -383,6 +368,40 @@ def save_influx_tables(request):
         update_state = 0
         update_info = "更新失败！请检查数据格式！"
 
+    return update_state, update_info
+
+#### 添加一个全局同布的功能，即修改的数据要同步到所有订阅主题的机器上去。
+def save_influx_tables(request):
+    site_no = request.POST.get('site_no', '1')
+    database = request.POST.get('database', 'iot')
+    table_name = request.POST.get('table_name','telemetry')
+    modify_rows = request.POST.get('modify_row','')
+    
+    all_update_data = json.loads(modify_rows)
+    all_subjects_sqls = [] 
+    for data in all_update_data:
+        all_subjects_sqls.append(" `subscribe` like '%"+data['site_name']+"%' ") 
+
+    subjects_sql = " or ".join(all_subjects_sqls)
+
+    select_sql = "select `site_no`, `database`,`subscribe` from `influxsite` where `influx_type`='proxy' and (%s)"%subjects_sql
+
+    cursor = connection.cursor()
+    cursor.execute( select_sql)
+    need_modify_sites = []
+    for row in cursor.fetchall():
+        need_modify_sites.append(
+            {
+                "site_no":row[0],
+                "database":row[1],
+                "subscribe":row[2]
+            }
+        )
+
+    table_attrs = Domaininfo.objects.filter(table_name=table_name,table_type="influx")
+
+    for site in need_modify_sites:
+        update_state, update_info = save_influx_in_one_site(site['site_no'], site['database'], table_name, all_update_data, table_attrs, site['subscribe'])
 
     content = {
         "update_state":update_state,
