@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from .models import Influxsite,Domaininfo,Siteinfo,Tableinfo,Deviceinfo2
+from .models import Influxsite,Domaininfo,Siteinfo,Tableinfo,Deviceinfo2,Telesignalling,Telemetry
 from django.db import connection
 from influxdb import InfluxDBClient
 from django.core import serializers
@@ -133,7 +133,7 @@ def load_site_table(request):
     # print("Result: {0}".format(result))
     test_points = list(result.get_points(measurement=table))
     # print(test_points)
-    chinese_title = list(Domaininfo.objects.filter(table_name=table).order_by('id').values())
+    chinese_title = list(Domaininfo.objects.filter(table_name=table,table_type="influx").order_by('id').values())
     test_points = [dict([(x,str(y))for x, y in l.items()])for l in test_points]
 
     cursor = connection.cursor()
@@ -141,7 +141,7 @@ def load_site_table(request):
     optional_content = {}
     joint_optional_content = {}
 
-    optional_result = Domaininfo.objects.filter(table_name=table,isoptional__gte=1) 
+    optional_result = Domaininfo.objects.filter(table_name=table,isoptional__gte=1,table_type="influx") 
     for result in optional_result:
         if result.optional == "None":
             continue
@@ -197,7 +197,7 @@ def load_config_table(request):
     table_chinese_name = request.GET.get('table_chinese_name','')
     # print(table_name)
     content = {}
-    chinese_title = list(Domaininfo.objects.filter(table_name=table_name).values())
+    chinese_title = list(Domaininfo.objects.filter(table_name=table_name,table_type="mysql").values())
 
     table_obj = Domaininfo
     if table_name == "domaininfo":
@@ -208,6 +208,10 @@ def load_config_table(request):
         table_obj = Tableinfo
     elif table_name == "deviceinfo2":
         table_obj = Deviceinfo2
+    elif table_name == "telemetry":
+        table_obj = Telemetry
+    elif table_name == "telesignalling":
+        table_obj = Telesignalling
 
     data = list(table_obj.objects.values())
     data = [dict([(x,str(y))for x, y in l.items()])for l in data]
@@ -325,7 +329,7 @@ def save_influx_tables(request):
     
     client = InfluxDBClient(host=site_info.ip,port=site_info.port,username=site_info.user,password=site_info.passwd,database=site_info.database)
 
-    table_attrs = Domaininfo.objects.filter(table_name=table_name)
+    table_attrs = Domaininfo.objects.filter(table_name=table_name,table_type="influx")
     title_name = {}
     title_name['fields'] = []
     title_name['tags'] = []

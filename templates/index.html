@@ -193,7 +193,7 @@ ul.l_tree:before {
 
 <aside class="Hui-aside">
 	<nav class="breadcrumb">
-		<span class="c-666">所有数据库</span> 
+		<span class="c-666"><a href="http://10.109.253.3:20243/dbManage/manage/navigation.html">返回首页</a></span> 
 		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <table>
   <tr>
@@ -280,7 +280,7 @@ ul.l_tree:before {
 					if(!item.name){
 						return;
 					}
-					// console.log(item.name)
+					console.log(item.name)
 					on_click_config_table(item.name, item.chinese_name)
 				}
 			}
@@ -473,7 +473,8 @@ ul.l_tree:before {
 		// current_config_table_name = ""  //当前点击的表名
 		// current_config_table_chinese_name = "" //当前点击的表中文名
 		function on_click_config_table(name,chinese_name){
-			// console.log("Hello2");
+			console.log("result");
+			console.log("Hello2");
 			data = {'table':name,'table_chinese_name':chinese_name}
 					$.ajax({
 						url:"{% url 'load_config_table' %}",
@@ -490,7 +491,10 @@ ul.l_tree:before {
 							current_table_name = ""
 							current_click_row = -1
 							current_select_keys = []
+							
+							console.log(result);
 							show_config_table(data, result);
+							
 							$('#refresh_component').css({ "display": "none" });
 							$('#select_key_div').css({ "display": "none" });
 							$('#from_time_div_id').css({ "display": "none" });

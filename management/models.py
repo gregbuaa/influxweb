@@ -151,6 +151,7 @@ class Domaininfo(models.Model):
     isrealtime = models.IntegerField(blank=True, null=True)
     modified = models.IntegerField(blank=True, null=True)
     pre = models.IntegerField(blank=True, null=True)
+    table_type = models.CharField(max_length=128)
 
     class Meta:
         managed = False

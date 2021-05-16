@@ -67,7 +67,7 @@ def influx_subscribe(request):
 
 
 def write_influx_data(client, table_name, all_update_data):
-    table_attrs = Domaininfo.objects.filter(table_name=table_name)
+    table_attrs = Domaininfo.objects.filter(table_name=table_name,table_type="influx")
     title_name = {}
     title_name['fields'] = []
     title_name['tags'] = []
