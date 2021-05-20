@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from .models import Influxsite,Domaininfo,Siteinfo,Tableinfo,Deviceinfo2,Telesignalling,Telemetry
+from .models import Influxsite,Domaininfo,Siteinfo,Tableinfo,Deviceinfo2,Telesignalling,Telemetry,ResourceInfo
 from django.db import connection
 from influxdb import InfluxDBClient
 from django.core import serializers
 from copy import deepcopy
 import json
+from copy import deepcopy
 
 import datetime
 
@@ -212,6 +213,8 @@ def load_config_table(request):
         table_obj = Telemetry
     elif table_name == "telesignalling":
         table_obj = Telesignalling
+    elif table_name == "resource_info":
+        table_obj = ResourceInfo
 
     data = list(table_obj.objects.values())
     data = [dict([(x,str(y))for x, y in l.items()])for l in data]
@@ -240,6 +243,12 @@ def del_config_tables(request):
         table_obj = Tableinfo
     elif table_name == "deviceinfo":
         table_obj = Deviceinfo
+    elif table_name == "telemetry":
+        table_obj = Telemetry
+    elif table_name == "telesignalling":
+        table_obj = Telesignalling
+    elif table_name == "resource_info":
+        table_obj = ResourceInfo
 
     all_update_data = json.loads(modify_rows)
     print(all_update_data)
@@ -285,19 +294,33 @@ def save_config_tables(request):
         table_obj = Tableinfo
     elif table_name == "deviceinfo":
         table_obj = Deviceinfo
+    elif table_name == "telemetry":
+        table_obj = Telemetry
+    elif table_name == "telesignalling":
+        table_obj = Telesignalling
+    elif table_name == "resource_info":
+        table_obj = ResourceInfo
 
     try:
-
         all_update_data = json.loads(modify_rows)
-        print(all_update_data)
-        for row in all_update_data:
-            print(row['id'])
+        updated_data = []
+        for elem in all_update_data:
+            updated_data.append(deepcopy(elem))
+        
+        for index, row in enumerate(all_update_data):
+            for key,value in row.items():
+                if value.lower()=="none" or value == "":
+                    del updated_data[index][key]
+
+        print(updated_data)
+        for row in updated_data:
             if 'id' in row and row['id']!="":
                 id_no = int(row['id'])
                 del row['id']
                 table_obj.objects.filter(id=id_no).update(**row)
             else:
-                del row['id']
+                if 'id' in row:
+                    del row['id']
                 table_obj.objects.create(**row)
 
 
