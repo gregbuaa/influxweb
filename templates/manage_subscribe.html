@@ -30,7 +30,7 @@
 
 	<body class="gray-bg">
 		<div class="wrapper wrapper-content">
-			<!-- {% if request.session.user_type == "root"%} -->
+			{% if request.session.user_type == "root"%}
 			{% for item in proxy_info %}
 			<div class="col-sm-8">
                 <div class="ibox float-e-margins" >
@@ -120,23 +120,6 @@
 							</div>
 
 
-                            <!-- <div class="form-group">
-                                <label class="col-sm-3 control-label">订阅的主题</label>
-
-                                <div class="col-sm-8">
-									{% for subject in subject_info %}
-									{% if subject.site_name in item.subscribe %}
-									<label class="checkbox-inline">
-                                        <input type="checkbox" name="allcheck_{{item.site_no}}" value="{{subject.site_name}}" id="checkbox_{{item.site_no}}_{{subject.id}}" checked="checked">{{subject.site_chinese_name}}</label>
-									
-									{% else %}
-									<label class="checkbox-inline">
-									<input type="checkbox" name="allcheck_{{item.site_no}}" value="{{subject.site_name}}" id="checkbox_{{subject.id}}">{{subject.site_chinese_name}}</label>
-									{%　endif %}
-									{% endfor %}
-                                </div>
-                            </div> -->
-
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-8">
 									<button class="btn btn-sm btn-white" id="synrbutton_{{item.site_no}}" onclick="synr(this)">修改订阅信息</button>
@@ -149,15 +132,12 @@
                 </div>
             </div>	
 			{% endfor %}
-	
-			<!-- {% endif %} -->
-
-			{% for item in sync_state %}
+			{% else %}
 			<div class="row">
 				<div class="col-sm-8">
 					<div class="ibox float-e-margins">
 						<div class="ibox-title">
-							<h5>{{item.site_no}}</h5>
+							
 							<div class="ibox-tools">
 								<a class="collapse-link">
 									<i class="fa fa-chevron-up"></i>
@@ -169,11 +149,19 @@
 						</div>
 						<div class="ibox-content">
 
+							<div class="row">
+								<div class="col-sm-12">
+									<h2>用户{{request.session.user_name}}无权限操作！！！</h2>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			{% endfor %}
+	
+	
+			{% endif %}
+
 		</div>
 
 

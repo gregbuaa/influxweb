@@ -56,7 +56,7 @@
 		<div class="container-fluid cl"> 
 			<span class="logo navbar-slogan f-l mr-10 hidden-xs">数据库管理系统</span> 
 			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
-			<nav class="nav navbar-nav">
+			<!-- <nav class="nav navbar-nav">
 				<ul class="cl">
 					<li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 集成工具 <i class="Hui-iconfont">&#xe6d5;</i></a>
 						<ul class="dropDown-menu menu radius box-shadow">
@@ -67,7 +67,7 @@
 				</ul>
 			</li>
 		</ul>
-	</nav>
+	</nav> -->
 			<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
 				<ul class="cl">
 					{% if request.session.is_login %}
@@ -79,10 +79,13 @@
 					<li class="dropDown dropDown_hover"> <a href="#" class="dropDown_A">{{ request.session.user_name }} <i class="Hui-iconfont">&#xe6d5;</i></a>
 						<ul class="dropDown-menu menu radius box-shadow">
 							<li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>
-							<li><a href="{% url 'logout' %}">切换账户</a></li>
-							<li><a href="{% url 'logout' %}">退出</a></li>
+							<li><a href="http://10.109.253.3:20243/dbManage/manage/login.html">切换账户</a></li>
+							<li><a href="http://10.109.253.3:20243/dbManage/manage/login.html">退出</a></li>
 						{% else %}
-						<li><a href="{% url 'login' %}">登录</a></li>
+						<script>
+							var r = window.confirm("身份验证错误，{{request.session.error}}");
+							window.location.replace("http://10.109.253.3:20243/dbManage/manage/login.html");
+							</script>
 					{% endif %}
 				</ul>
 			</li>

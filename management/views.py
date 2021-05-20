@@ -10,14 +10,29 @@ from django.db.models import Q
 
 import time
 
+from login.utils import auth_user
+
 
 # Create your views here.
 def load_home(request):
+    token= request.GET.get('token', '')
+    print("token>>>>>>>>>>>>>>>>>>>>>>>>>>>",token)
+    request = auth_user(token, request)
+
+    # print()
+
+
     return render(request,'manage_index.html')
 
 
 
 def influx_subscribe(request):
+    token= request.GET.get('token', '')
+    request = auth_user(token, request)
+
+    if not request.session['is_login']:
+        return render(request,'manage_index.html')
+
     influx_table = Influxsite.objects.filter()
 
 
@@ -176,6 +191,13 @@ def data_subscribe(request):
 #     return render(request,"index_v1.html")
 
 def influx_manage(request, info):
+    token= request.GET.get('token', '')
+    request = auth_user(token, request)
+
+    if not request.session['is_login']:
+        return render(request,'manage_index.html')
+
+
     if info == "current_state":
         contents =  influx_current_state(request)
         html_file = "current_state.html"

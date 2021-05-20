@@ -7,12 +7,23 @@ from django.core import serializers
 from copy import deepcopy
 import json
 from copy import deepcopy
-
 import datetime
+import jwt
+import datetime
+from jwt import exceptions
+import base64
+from login.utils import auth_user
+
+from influxweb.settings import JWT_SALT
+
+
 
 # Create your views here.
-def load_home(request):
-        return render(request,'index.html')
+def load_home(request):   
+    token= request.GET.get('token', '')
+    request = auth_user(token, request)
+
+    return render(request,'index.html')
 
 
 def load_tables_info(request):

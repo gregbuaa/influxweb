@@ -31,8 +31,10 @@
 						<li class="nav-header">
 							<div class="dropdown profile-element">
 								<span><img alt="image" class="img-circle" src="/static/hplus-admin/img/bg.png" /></span>
+								{% if request.session.is_login %}
 								<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 									<span class="clear">
+										
 										<span class="block m-t-xs"><strong class="font-bold">{{ request.session.user_name }}</strong></span>
 										{% if request.session.user_type == "root" %}
 										<span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
@@ -43,26 +45,32 @@
 								</a>
 								<ul class="dropdown-menu animated fadeInRight m-t-xs">
 									<li class="divider"></li>
-									<li><a href="{% url 'logout' %}">切换账户</a></li>
-									<li><a href="{% url 'logout' %}">退出</a></li>
+									<li><a href="http://10.109.253.3:20243/dbManage/manage/login.html">切换账户</a></li>
+									<li><a href="http://10.109.253.3:20243/dbManage/manage/login.html">退出</a></li>
 								</ul>
+								{% else %}
+								<script>
+									var r = window.confirm("身份验证错误，{{request.session.error}}");
+									window.location.replace("http://10.109.253.3:20243/dbManage/manage/login.html");
+									</script>
+								{% endif %}
 							</div>
 						</li>
 
 						<li>
-							<a class="J_menuItem" href="/manage/subscribe"><i class="fa fa-columns"></i> <span class="nav-label">Influx主题订阅</span></a>
+							<a class="J_menuItem" href="/manage/subscribe?token={{request.session.token}}"><i class="fa fa-columns"></i> <span class="nav-label">Influx主题订阅</span></a>
 						</li>
 						<li>
-							<a class="J_menuItem" href="/manage/post/current_state"><i class="fa fa-columns"></i> <span class="nav-label">Influx状态</span></a>
+							<a class="J_menuItem" href="/manage/post/current_state?token={{request.session.token}}"><i class="fa fa-columns"></i> <span class="nav-label">Influx状态</span></a>
 						</li>
 						<li>
-							<a class="J_menuItem" href="/manage/post/influx_sync"><i class="fa fa-columns"></i> <span class="nav-label">Influx同步管理</span></a>
+							<a class="J_menuItem" href="/manage/post/influx_sync?token={{request.session.token}}"><i class="fa fa-columns"></i> <span class="nav-label">Influx同步管理</span></a>
 						</li>
 						<li>
-							<a class="J_menuItem" href="/manage/post/influx_rebalance"><i class="fa fa-columns"></i> <span class="nav-label">Influx扩容管理</span></a>
+							<a class="J_menuItem" href="/manage/post/influx_rebalance?token={{request.session.token}}"><i class="fa fa-columns"></i> <span class="nav-label">Influx扩容管理</span></a>
 						</li>
 						<li>
-							<a class="J_menuItem" href="/manage/post/influx_recovery"><i class="fa fa-columns"></i> <span class="nav-label">Influx恢复管理</span></a>
+							<a class="J_menuItem" href="/manage/post/influx_recovery?token={{request.session.token}}"><i class="fa fa-columns"></i> <span class="nav-label">Influx恢复管理</span></a>
 						</li>
 
 					</ul>
@@ -101,7 +109,7 @@
 					<a href="#" class="roll-nav roll-right tabReload"><i class="fa fa-refresh"></i> 刷新</a>
 				</div>
 				<div class="row J_mainContent" id="content-main">
-					<iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="/manage/post/current_state" frameborder="0" data-id="/manage/post/current_state" seamless></iframe>
+					<iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="/manage/post/current_state?token={{request.session.token}}" frameborder="0" data-id="/manage/post/current_state" seamless></iframe>
 				</div>
 				<div class="footer">
 					<div class="pull-right">&copy; 2020-2021 <a href="http://www.buaa.edu.cn/" target="_blank">InfluxDB管理系统</a></div>

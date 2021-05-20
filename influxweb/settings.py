@@ -72,8 +72,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'influxweb.wsgi.application'
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+X_FRAME_OPTIONS = 'ALLOWALL'
 
+JWT_SALT = "MzQ3NmNkOTA0MGUyYWFjNjZlM2E3NmRmNDM4YWFjNmQxNzFhYTY1ZDllZjljMjQ0MWNiYzc2N2U3NDgwMTlkMzk0MjhlNTUwODFlMDQyY2I1MWVlOGE5MDM1YjY0ODMwMzFlMThiMDFkMzVmNTc1NmFjNGY1MmQyMWVjMjQ0Mjc="
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
