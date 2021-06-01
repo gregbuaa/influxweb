@@ -48,7 +48,7 @@ token = create_token({'user_id':1,'username':'wupeiqi'})
 print(token)
 
 
-token2 = "eyJvcmlnaW4iOiJUaW1lIFNlcnZpY2UiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ6aGFveGlueXUkcm9vdCJ9.Qe4XzuHOGog_Gmf0BCMopzkv3yZDuLPqol-9f1Qzkpg"
+token2 = "eyJvcmlnaW4iOiJUaW1lIFNlcnZpY2UiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJfX3RvdXJpc3RfXyR1c2VyIn0.HLh5NvM4woEfljY2EcFKFsQgKcpxd_ooyDsni9GK9tc"
 print(token2)
 print(parse_payload(token2))
 

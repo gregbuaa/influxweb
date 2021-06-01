@@ -384,3 +384,26 @@ class ResourceInfo(models.Model):
     class Meta:
         managed = False
         db_table = "resource_info"
+
+
+class ControlInfo(models.Model):
+    controler_add=models.CharField(max_length=255, blank=True, null=True)
+    monitor_add=models.CharField(max_length=255, blank=True, null=True)
+    sensor_add=models.CharField(max_length=255, blank=True, null=True)
+    site_name=models.CharField(max_length=255, blank=True, null=True)
+    device_name=models.CharField(max_length=255, blank=True, null=True)
+    resource_uri=models.CharField(max_length=255, blank=True, null=True)
+    data_name=models.CharField(max_length=255, blank=True, null=True)
+    data_type=models.CharField(max_length=255, blank=True, null=True)
+    measure_unit=models.CharField(max_length=255, blank=True, null=True)
+    conversion=models.CharField(max_length=255, blank=True, null=True)
+    length = models.IntegerField(blank=True, null=True)
+    offset= models.IntegerField(blank=True, null=True)
+    coefficient= models.IntegerField(blank=True, null=True)
+    storage_form = models.CharField(max_length=255, blank=True, null=True)
+    data_table = models.CharField(max_length=255, blank=True, null=True)
+    sequence =  models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = "control_info"

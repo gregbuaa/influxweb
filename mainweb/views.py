@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from .models import Influxsite,Domaininfo,Siteinfo,Tableinfo,Deviceinfo2,Telesignalling,Telemetry,ResourceInfo
+from .models import Influxsite,Domaininfo,Siteinfo,Tableinfo,Deviceinfo2,Telesignalling,Telemetry,ResourceInfo, ControlInfo
 from django.db import connection
 from influxdb import InfluxDBClient
 from django.core import serializers
@@ -226,6 +226,9 @@ def load_config_table(request):
         table_obj = Telesignalling
     elif table_name == "resource_info":
         table_obj = ResourceInfo
+    elif table_name == "control_info":
+        table_obj = ControlInfo
+
 
     data = list(table_obj.objects.values())
     data = [dict([(x,str(y))for x, y in l.items()])for l in data]
@@ -260,6 +263,8 @@ def del_config_tables(request):
         table_obj = Telesignalling
     elif table_name == "resource_info":
         table_obj = ResourceInfo
+    elif table_name == "control_info":
+        table_obj = ControlInfo
 
     all_update_data = json.loads(modify_rows)
     print(all_update_data)
@@ -311,6 +316,8 @@ def save_config_tables(request):
         table_obj = Telesignalling
     elif table_name == "resource_info":
         table_obj = ResourceInfo
+    elif table_name == "control_info":
+        table_obj = ControlInfo
 
     try:
         all_update_data = json.loads(modify_rows)
@@ -475,8 +482,8 @@ def refresh_influx_table(request):
     site_info = Influxsite.objects.get(site_no=site_no,database=database,influx_type="proxy")
     client = InfluxDBClient(host=site_info.ip,port=site_info.port,username=site_info.user,password=site_info.passwd,database=site_info.database)
     
-    result = client.query('select * from %s where time >= NOW()+8h -%sms and time <= NOW()+8h %s order by time desc'%(table_name,refresh_time, condition_sql)) 
-    print("Query Order", 'select * from %s where time >= NOW()+8h-%sms and time <= NOW()+8h %s order by time desc'%(table_name,refresh_time, condition_sql))
+    result = client.query('select * from %s where time >= NOW()+8h -%sms-800ms and time <= NOW()+8h %s order by time desc'%(table_name,refresh_time, condition_sql)) 
+    print("Query Order", 'select * from %s where time >= NOW()+8h-%sms-1s and time <= NOW()+8h %s order by time desc'%(table_name,refresh_time, condition_sql))
     print("Result: {0}".format(result))
     test_points = list(result.get_points(measurement=table_name))
     test_points = [dict([(x,str(y))for x, y in l.items()])for l in test_points]
