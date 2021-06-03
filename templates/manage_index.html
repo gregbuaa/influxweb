@@ -45,13 +45,13 @@
 								</a>
 								<ul class="dropdown-menu animated fadeInRight m-t-xs">
 									<li class="divider"></li>
-									<li><a href="http://10.109.253.3:20243/dbManage/manage/login.html">切换账户</a></li>
-									<li><a href="http://10.109.253.3:20243/dbManage/manage/login.html">退出</a></li>
+									<li><a href="http://192.168.1.116:8080/dbManage/manage/login.html">切换账户</a></li>
+									<li><a href="http://192.168.1.116:8080/dbManage/manage/login.html">退出</a></li>
 								</ul>
 								{% else %}
 								<script>
 									var r = window.confirm("身份验证错误，{{request.session.error}}");
-									window.location.replace("http://10.109.253.3:20243/dbManage/manage/login.html");
+									window.location.replace("http://192.168.1.116:8080/dbManage/manage/login.html");
 									</script>
 								{% endif %}
 							</div>
@@ -82,7 +82,7 @@
 				<div class="row border-bottom">
 					<nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0;">
 						<div class="navbar-header">
-							<a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="http://10.109.253.3:20243/dbManage/manage/navigation.html"></i>返回首页 </a>
+							<a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="http://192.168.1.116:8080/dbManage/manage/navigation.html"></i>返回首页 </a>
 							<!-- <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="fa fa-bars"></i> </a> -->
 							<form role="search" class="navbar-form-custom" method="post" action="search_results.html">
 								

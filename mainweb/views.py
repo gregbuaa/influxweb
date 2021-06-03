@@ -417,14 +417,15 @@ def save_influx_tables(request):
     database = request.POST.get('database', 'iot')
     table_name = request.POST.get('table_name','telemetry')
     modify_rows = request.POST.get('modify_row','')
-    
+    table_attrs = Domaininfo.objects.filter(table_name=table_name,table_type="influx")
+
     all_update_data = json.loads(modify_rows)
+    update_state, update_info = True, ""
     all_subjects_sqls = [] 
     for data in all_update_data:
         all_subjects_sqls.append(" `subscribe` like '%"+data['site_name']+"%' ") 
 
     subjects_sql = " or ".join(all_subjects_sqls)
-
     select_sql = "select `site_no`, `database`,`subscribe` from `influxsite` where `influx_type`='proxy' and (%s)"%subjects_sql
 
     cursor = connection.cursor()
@@ -439,10 +440,11 @@ def save_influx_tables(request):
             }
         )
 
-    table_attrs = Domaininfo.objects.filter(table_name=table_name,table_type="influx")
-
     for site in need_modify_sites:
         update_state, update_info = save_influx_in_one_site(site['site_no'], site['database'], table_name, all_update_data, table_attrs, site['subscribe'])
+
+    if len(need_modify_sites) == 0:
+        update_state, update_info = save_influx_in_one_site(site_no, database, table_name, all_update_data, table_attrs,",".join(all_subjects_sqls))
 
     content = {
         "update_state":update_state,

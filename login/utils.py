@@ -63,7 +63,6 @@ def auth_user(token,request):
         request.session['is_login'] = False
         request.session['error'] = error
 
-
     request.session['token'] = token
 
     return request

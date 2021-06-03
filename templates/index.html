@@ -79,12 +79,12 @@
 					<li class="dropDown dropDown_hover"> <a href="#" class="dropDown_A">{{ request.session.user_name }} <i class="Hui-iconfont">&#xe6d5;</i></a>
 						<ul class="dropDown-menu menu radius box-shadow">
 							<li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>
-							<li><a href="http://10.109.253.3:20243/dbManage/manage/login.html">切换账户</a></li>
-							<li><a href="http://10.109.253.3:20243/dbManage/manage/login.html">退出</a></li>
+							<li><a href="http://192.168.1.116:8080/dbManage/manage/login.html">切换账户</a></li>
+							<li><a href="http://192.168.1.116:8080/dbManage/manage/login.html">退出</a></li>
 						{% else %}
 						<script>
 							var r = window.confirm("身份验证错误，{{request.session.error}}");
-							window.location.replace("http://10.109.253.3:20243/dbManage/manage/login.html");
+							window.location.replace("http://192.168.1.116:8080/dbManage/manage/login.html");
 							</script>
 					{% endif %}
 				</ul>
@@ -196,7 +196,7 @@ ul.l_tree:before {
 
 <aside class="Hui-aside">
 	<nav class="breadcrumb">
-		<span class="c-666"><a href="http://10.109.253.3:20243/dbManage/manage/navigation.html">返回首页</a></span> 
+		<span class="c-666"><a href="http://192.168.1.116:8080/dbManage/manage/navigation.html">返回首页</a></span> 
 		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <table>
   <tr>

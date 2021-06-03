@@ -276,7 +276,7 @@ def influx_current_state(request):
     return  contents
 
 
-INFLUX_PROXY_CONFIG_PATH = r"/home/zeal/project/influx-proxy/"
+INFLUX_PROXY_CONFIG_PATH = r"/home/xian/project/influx-proxy/"
 def influx_return(request, order):
     influx_list = get_all_influx_site()
     http = urllib3.PoolManager()
